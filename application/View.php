@@ -42,7 +42,7 @@ class View
     }
     public function renderizar_web($vista, $item = false)   {
                
-        $_layoutParams = array(
+        $_webParams = array(
             'ruta_css' => BASE_URL . 'views/web/css/',
             'ruta_img' => BASE_URL . 'public/img/',
             'ruta_js' => BASE_URL . 'views/web/js/'

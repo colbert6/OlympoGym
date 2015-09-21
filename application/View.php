@@ -7,8 +7,7 @@ class View
         $this->_controlador = $peticion->getControlador();
     }
     
-    public function renderizar($vista, $item = false)
-    {
+    public function renderizar($vista, $item = false)   {
         $menu = array(
             array(
                 'id' => 'inicio',
@@ -37,6 +36,25 @@ class View
             include_once $rutaView;
             include_once ROOT . 'views'. DS . 'layout' . DS . DEFAULT_LAYOUT . DS . 'footer.php';
          } 
+        else {
+            throw new Exception('Error de vista');
+        }
+    }
+    public function renderizar_web($vista, $item = false)   {
+               
+        $_layoutParams = array(
+            'ruta_css' => BASE_URL . 'views/web/css/',
+            'ruta_img' => BASE_URL . 'public/img/',
+            'ruta_js' => BASE_URL . 'views/web/js/'
+        );
+              
+        $rutaView = ROOT . 'views' . DS .  'web' . DS . $vista . '.php';
+        
+        if(is_readable($rutaView)){
+            include_once ROOT . 'views'. DS . 'web' . DS . 'header.php';
+            include_once $rutaView;
+            include_once ROOT . 'views'. DS . 'web' . DS . 'footer.php';
+        } 
         else {
             throw new Exception('Error de vista');
         }

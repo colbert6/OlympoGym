@@ -1,7 +1,7 @@
 <?php
 
-define('BASE_URL', 'http://localhost/IS2/OlympoGym/');
-define('DEFAULT_CONTROLLER', 'index');
+define('BASE_URL', '/IS2/OlympoGym/');
+define('DEFAULT_CONTROLLER', 'web');
 define('DEFAULT_LAYOUT', 'default');
 
 define('APP_NAME', 'Mi Framework');

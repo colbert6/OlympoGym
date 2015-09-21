@@ -1,6 +1,6 @@
 <?php
 
-define('BASE_URL', 'http://localhost/git/OlympoGym/');
+define('BASE_URL', 'http://localhost/IS2/OlympoGym/');
 define('DEFAULT_CONTROLLER', 'index');
 define('DEFAULT_LAYOUT', 'default');
 

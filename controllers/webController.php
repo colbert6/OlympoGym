@@ -20,7 +20,7 @@ class webController extends controller {
     public function productos(){
         $this->_view->renderizar_web('productos');
     }
-    public function servicios(){
+    public function servicioS(){
         $this->_view->renderizar_web('servicios');
     }    
     public function contactenos(){

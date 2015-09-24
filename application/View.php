@@ -46,28 +46,28 @@ class View
             array(
                 'id' => 'inicio',
                 'titulo' => 'INICIO',
-                'enlace' => BASE_URL
+                'enlace' => BASE_URL.'web/'
                 ),
             
             array(
                 'id' => 'nosotros',
                 'titulo' => 'NOSOTROS',
-                'enlace' => BASE_URL . 'nosotros'
+                'enlace' => BASE_URL . 'web/nosotros'
                 ),
             array(
-                'id' => 'servicio',
+                'id' => 'servicios',
                 'titulo' => 'SERVICIOS',
-                'enlace' => BASE_URL. 'servicio'
+                'enlace' => BASE_URL. 'web/servicios'
                 ),
             array(
                 'id' => 'productos',
                 'titulo' => 'PRODUCTOS',
-                'enlace' => BASE_URL. 'productos'
+                'enlace' => BASE_URL. 'web/productos'
                 ),
             array(
                 'id' => 'contactenos',
                 'titulo' => 'CONTÁCTENOS',
-                'enlace' => BASE_URL. 'contactenos'
+                'enlace' => BASE_URL. 'web/contactenos'
                 )
             
         );

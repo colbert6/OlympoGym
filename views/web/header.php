@@ -49,7 +49,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">OLYMPOGYM</a>
+                    <a class="navbar-brand" href="<?php echo BASE_URL.'web' ; ?>">OLYMPOGYM</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="myNavbar">
@@ -71,6 +71,12 @@
                         <?php endfor; ?>
                         <?php endif; ?>
                     </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                       <li>
+                           <a href="#" data-toggle="modal" data-target="#myModal">
+                               <span class="glyphicon glyphicon-log-in"></span> Login </a>
+                       </li>
+                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
             </div>

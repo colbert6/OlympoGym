@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="row">
-                     <div class="col-sm-12 col-lg-12 col-md-12" >
+                     <!--div class="col-sm-12 col-lg-12 col-md-12" -->
                         <div class="panel panel-default">  
                             <div class="panel-heading" > 
                                 
@@ -84,26 +84,22 @@
                                 
                                     <strong >Ubiquenos</strong>
                             </div> 
+                            <div >
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7928.577112153539!2d-76.3594834!3d-6.4850947!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ba0c07765eff75%3A0xdb6f16d92c725847!2sJiron+San+Martin+422%2C+Tarapoto%2C+Per%C3%BA!5e0!3m2!1ses!2s!4v1443068297596" width="100%" height="200px" frameborder="0" style="border:0" allowfullscreen></iframe>
                             
-                            <a target="_blank"  href="https://www.google.com/maps/place/Jiron+San+Martin+422,+Tarapoto,+Per%C3%BA/@-6.4850947,-76.3594834,16z/data=!4m2!3m1!1s0x91ba0c07765eff75:0xdb6f16d92c725847?hl=es-ES">
-                                <img class="img-responsive" src="<?php echo $_webParams['ruta_img']; ?>mapa.png">
-                            </a>
-
-                            <p><strong>Telefono: #973949944</strong>
-                            </p>
                           
-                        </div>
+                            </div>
                         
                   
-                      </div><!-- /.login-box-body -->
+                      <!--/div><!-- /.login-box-body -->
                 </div>
                 
 
                 <div class="row">
                     <div class="col-sm-12 col-lg-12 col-md-12" >
-                        <div class="panel panel-default"> 
+                        <div > 
                      
-                        <div class="fb-page" data-href="https://www.facebook.com/OlympoFitness" data-width="500" data-height="200" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+                        <div class="fb-page" data-href="https://www.facebook.com/OlympoFitness" width="100%" height="200px" >
                             <div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/OlympoFitness"><a href="https://www.facebook.com/OlympoFitness">Olympo Fitness</a></blockquote>
                             </div>
                         </div>
@@ -133,7 +129,7 @@
 
                         </div>
                         <div class="col-lg-12">
-                            <p>Copyright &copy; Your Website 2014</p>
+                            <p>Copyright &copy; 2014</p>
                         </div>
                     </div>
                 </footer>

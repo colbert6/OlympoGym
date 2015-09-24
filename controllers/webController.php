@@ -16,20 +16,20 @@ class webController extends controller {
         $this->_view->renderizar_web('inicio');
     }
     public function nosotros(){
-        $this->_view->renderizar_web('nosotros');
+        $this->_view->renderizar_web('nosotros','nosotros');
     }
     public function productos(){
-        $this->_view->renderizar_web('productos');
+        $this->_view->renderizar_web('productos','productos');
     }
-    public function servicioS(){
-        $this->_view->renderizar_web('servicios');
+    public function servicios(){
+        $this->_view->renderizar_web('servicios','servicios');
     }    
     public function contactenos(){
-        $this->_view->renderizar_web('contactenos');
+        $this->_view->renderizar_web('contactenos','contactenos');
     }
         
     public function fotos(){
-        $this->_view->renderizar_web('fotos');
+        $this->_view->renderizar_web('fotos','fotos');
     }
         
     public function faceJungla($id){

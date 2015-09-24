@@ -41,11 +41,41 @@ class View
         }
     }
     public function renderizar_web($vista, $item = false)   {
-               
+        
+        $menu = array(
+            array(
+                'id' => 'inicio',
+                'titulo' => 'INICIO',
+                'enlace' => BASE_URL
+                ),
+            
+            array(
+                'id' => 'nosotros',
+                'titulo' => 'NOSOTROS',
+                'enlace' => BASE_URL . 'nosotros'
+                ),
+            array(
+                'id' => 'servicio',
+                'titulo' => 'SERVICIOS',
+                'enlace' => BASE_URL. 'servicio'
+                ),
+            array(
+                'id' => 'productos',
+                'titulo' => 'PRODUCTOS',
+                'enlace' => BASE_URL. 'productos'
+                ),
+            array(
+                'id' => 'contactenos',
+                'titulo' => 'CONTÁCTENOS',
+                'enlace' => BASE_URL. 'contactenos'
+                )
+            
+        );
         $_webParams = array(
             'ruta_css' => BASE_URL . 'views/web/css/',
             'ruta_img' => BASE_URL . 'public/img/',
-            'ruta_js' => BASE_URL . 'views/web/js/'
+            'ruta_js' => BASE_URL . 'views/web/js/',
+            'menu'=>$menu
         );
               
         $rutaView = ROOT . 'views' . DS .  'web' . DS . $vista . '.php';
@@ -57,6 +87,16 @@ class View
         } 
         else {
             throw new Exception('Error de vista');
+        }
+    }
+    public function setJs(array $js)
+    {
+        if(is_array($js) && count($js)){
+            for($i=0; $i < count($js); $i++){
+                $this->_js[] = BASE_URL . 'views/' . $this->_controlador . '/js/' . $js[$i] . '.js';
+            }
+        } else {
+            throw new Exception('Error de js');
         }
     }
 }

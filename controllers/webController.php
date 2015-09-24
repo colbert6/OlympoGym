@@ -18,9 +18,12 @@ class webController extends controller {
     public function nosotros(){
         $this->_view->renderizar_web('nosotros');
     }
+    public function productos(){
+        $this->_view->renderizar_web('productos');
+    }
     public function servicios(){
         $this->_view->renderizar_web('servicios');
-    }
+    }    
     public function contactenos(){
         $this->_view->renderizar_web('contactenos');
     }

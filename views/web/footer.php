@@ -1,3 +1,127 @@
+            <div class="col-md-3">
+                <div class="row ">
+                    <div class="col-sm-12 col-lg-12 col-md-12"  >
+                                   
+                      <div class="panel panel-default">  
+                        <div class="panel-heading" > 
+                            
+                            <span class="glyphicon glyphicon-calendar "></span>
+                            
+                                <strong >EVENTOS</strong>
+                                
+                            
+                            
+                        </div> 
+
+                        <div class="panel-body" id="inner-content-div">  
+                            
+                            <ul class="media-list">
+                                
+                                <li class="media" >
+                                    <div class="pull-left" >
+                                      <div type="button" class="media-object" >
+                                        <div class="lista_eventos"> 15</br>OCT</div>
+                                      </div>
+                                    </div>
+                                    <div class="media-body">
+                                      <h5 class="media-heading"><strong><u>Comp. Fitness</u></strong></h5>
+                                      <small><strong>Lugar:</strong> IPD Morales</small> </br>
+                                      <small><strong>Hora:</strong> 3:00 pm</small>
+                                    </div>
+                                </li>
+                                <li class="media" >
+                                    <div class="pull-left" >
+                                      <div type="button" class="media-object" >
+                                        <div class="lista_eventos">30 </br>SEP</div>
+                                      </div>
+                                    </div>
+                                    <div class="media-body">
+                                      <h5 class="media-heading"><strong><u>Comp. Fitness</u></strong></h5>
+                                      <small><strong>Lugar:</strong> IPD Morales</small> </br>
+                                      <small><strong>Hora:</strong> 3:00 pm</small>
+                                    </div>
+                                </li>
+                                <li class="media" >
+                                    <div class="pull-left" >
+                                      <div type="button" class="media-object" >
+                                        <div class="lista_eventos">10 </br>JUL</div>
+                                      </div>
+                                    </div>
+                                    <div class="media-body">
+                                      <h5 class="media-heading"><strong><u>Comp. Fitness</u></strong></h5>
+                                      <small><strong>Lugar:</strong> IPD Morales</small> </br>
+                                      <small><strong>Hora:</strong> 3:00 pm</small>
+                                    </div>
+                                </li>
+                                <li class="media" >
+                                    <div class="pull-left" >
+                                      <div type="button" class="media-object" >
+                                        <div class="lista_eventos">10 </br>FEB</div>
+                                      </div>
+                                    </div>
+                                    <div class="media-body">
+                                      <h5 class="media-heading"><strong><u>Comp. Fitness</u></strong></h5>
+                                      <small><strong>Lugar:</strong> IPD Morales</small> </br>
+                                      <small><strong>Hora:</strong> 3:00 pm</small>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        
+                        </div>
+                        
+                       </div> 
+
+                    </div>
+                </div>
+
+                <div class="row">
+                     <div class="col-sm-12 col-lg-12 col-md-12" >
+                        <div class="panel panel-default">  
+                            <div class="panel-heading" > 
+                                
+                                <span class="glyphicon glyphicon-map-marker"></span>
+                                
+                                    <strong >Ubiquenos</strong>
+                            </div> 
+                            
+                            <a target="_blank"  href="https://www.google.com/maps/place/Jiron+San+Martin+422,+Tarapoto,+Per%C3%BA/@-6.4850947,-76.3594834,16z/data=!4m2!3m1!1s0x91ba0c07765eff75:0xdb6f16d92c725847?hl=es-ES">
+                                <img class="img-responsive" src="<?php echo $_webParams['ruta_img']; ?>mapa.png">
+                            </a>
+
+                            <p><strong>Telefono: #973949944</strong>
+                            </p>
+                          
+                        </div>
+                        
+                  
+                      </div><!-- /.login-box-body -->
+                </div>
+                
+
+                <div class="row">
+                    <div class="col-sm-12 col-lg-12 col-md-12" >
+                        <div class="panel panel-default"> 
+                     
+                        <div class="fb-page" data-href="https://www.facebook.com/OlympoFitness" data-width="500" data-height="200" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false">
+                            <div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/OlympoFitness"><a href="https://www.facebook.com/OlympoFitness">Olympo Fitness</a></blockquote>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+        
+
+ 
+    <!-- /.container -->
+
+
+        <!-- Footer-->
+        
+        </div>
+        
+    <!-- Modal -->                
                 <footer>
                     <div class="row">
                         <div class="col-md-9">

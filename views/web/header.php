@@ -52,27 +52,25 @@
                     <a class="navbar-brand" href="#">OLYMPOGYM</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div  class="collapse navbar-collapse" id="myNavbar">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="#">INICIO</a>
-                        </li>
-                        <li>
-                            <a href="#">NOSOTROS</a>
-                        </li>
-                        <li>
-                            <a href="#">SERVICIOS</a>
-                        </li>
-                        <li>
-                            <a href="#">CONTÁCTENOS</a>
-                        </li>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul  class="nav navbar-nav">
+                        <?php if(isset($_webParams['menu'])): ?>
+                        <?php for($i = 0; $i < count($_webParams['menu']); $i++): ?>
+                        <?php 
 
+                        if($item && $_webParams['menu'][$i]['id'] == $item ){ 
+                            $_item_style = 'current'; 
+                        } else {
+                            $_item_style = '';
+                        }
+
+                        ?>
+
+                        <li><a class="<?php echo $_item_style; ?>" href="<?php echo $_webParams['menu'][$i]['enlace']; ?>"><?php  echo $_webParams['menu'][$i]['titulo']; ?></a></li>
+
+                        <?php endfor; ?>
+                        <?php endif; ?>
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <li><a href="#" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                      </ul>
-
                 </div>
                 <!-- /.navbar-collapse -->
             </div>

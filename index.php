@@ -2,7 +2,7 @@
 
 
 define('DS',DIRECTORY_SEPARATOR);
-define('ROOT', realpath(dirname(__FILE__)) . DS);
+define('ROOT', realpath(dirname(__FILE__)) . DS);//C:Xampp/htdcos/carpta de trabajo
 define('APP_PATH', ROOT . 'application' . DS);
 
 

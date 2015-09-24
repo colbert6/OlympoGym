@@ -7,7 +7,9 @@
 body {
     padding-top: 0px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     width:100%;
+    background-color: #E2E2DB;
     margin: 0 auto;
+    
 }
 
 /* Customize the text color and shadow color and to optimize text legibility. */
@@ -103,12 +105,6 @@ nav{
 .mycontainer{
   padding-right: 12.5%;
   padding-left: 12.5%;
-  margin-right: auto;
-  margin-left: auto;
-}
-.container_sis{
-  padding-right: 12%;
-  padding-left: 12%;
   margin-right: auto;
   margin-left: auto;
 }

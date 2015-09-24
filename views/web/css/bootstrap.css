@@ -1577,24 +1577,25 @@ pre code {
   overflow-y: scroll;
 }
 .container {
-  padding-right: 5.5%;
-  padding-left: 5.5%;
+  background-color: #FFFFFF;
+  padding-right: 0%;
+  padding-left:0%;
   margin-right: auto;
   margin-left: auto;
 }
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 653px; //97.65%=750
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 843px;//97.65%=970
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1020px;//97.65%=1170
   }
 }
 .container-fluid {

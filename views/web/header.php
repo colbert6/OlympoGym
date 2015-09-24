@@ -81,5 +81,6 @@
                 <!-- /.navbar-collapse -->
             </div>
         </nav>
-
+        </div>
+        <div class="container" style="padding-left:1%; padding-right:1%;" >
         <div class="row">

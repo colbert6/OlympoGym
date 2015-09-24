@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="row">
-                     <!--div class="col-sm-12 col-lg-12 col-md-12" -->
+                     <div class="col-sm-12 col-lg-12 col-md-12" >
                         <div class="panel panel-default">  
                             <div class="panel-heading" > 
                                 
@@ -85,13 +85,17 @@
                                     <strong >Ubiquenos</strong>
                             </div> 
                             <div >
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7928.577112153539!2d-76.3594834!3d-6.4850947!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ba0c07765eff75%3A0xdb6f16d92c725847!2sJiron+San+Martin+422%2C+Tarapoto%2C+Per%C3%BA!5e0!3m2!1ses!2s!4v1443068297596" width="100%" height="200px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7928.577112153539!2d-
+                                    76.3594834!3d-6.4850947!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ba0c07765eff75%3A
+                                    0xdb6f16d92c725847!2sJiron+San+Martin+422%2C+Tarapoto%2C+Per%C3%BA!5e0!3m2!1ses!
+                                    2s!4v1443068297596" width="100%" height="200px" frameborder="0" style="border:0"
+                                    allowfullscreen></iframe>
                             
                           
                             </div>
                         
-                  
-                      <!--/div><!-- /.login-box-body -->
+                        </div>
+                      </div><!-- /.login-box-body -->
                 </div>
                 
 
@@ -110,16 +114,20 @@
         
 
  
-    <!-- /.container -->
+    
 
 
-        <!-- Footer-->
         
-        </div>
         
-    <!-- Modal -->                
+            </div>
+        </div><!-- row-->
+   </div><!-- /.container -->
+
+        
+     
+        <div class="container">
                 <footer>
-                    <div class="row">
+                   
                         <div class="col-md-9">
 
                         <a href="https://www.facebook.com/OlympoFitness?fref=ts" target="_blank"><img alt="siguenos en facebook" height="40" 
@@ -128,11 +136,15 @@
                         src="<?php echo $_webParams['ruta_img']; ?>twiter.png" title="siguenos en Twitter" width="40" /></a>
 
                         </div>
+                        
                         <div class="col-lg-12">
-                            <p>Copyright &copy; 2014</p>
+                            <p>Copyright &copy; OLYMPO FITNNES 2014</p>
                         </div>
-                    </div>
+                   
                 </footer>
+        </div>
+   <!-- Modal -->
+                
                 <div class="modal fade" id="myModal" role="dialog">
                     <div class="modal-dialog modal-sm">
                       <div class="modal-content">
@@ -164,8 +176,7 @@
                       </div>
                     </div>
                  </div>
-            </div>
-        </div>
+            
     </body>
 </html>
     

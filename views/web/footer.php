@@ -1,6 +1,6 @@
             <div class="col-md-3">
-                <div class="row ">
-                    <div class="col-sm-12 col-lg-12 col-md-12"  >
+                
+                    <div class="row carousel-holder"  >
                                    
                       <div class="panel panel-default">  
                         <div class="panel-heading" > 
@@ -13,7 +13,7 @@
                             
                         </div> 
 
-                        <div class="panel-body" id="inner-content-div">  
+                        <div class="panel-body" id="inner-content-div" >  
                             
                             <ul class="media-list">
                                 
@@ -73,10 +73,10 @@
                        </div> 
 
                     </div>
-                </div>
+                
 
-                <div class="row">
-                     <div class="col-sm-12 col-lg-12 col-md-12" >
+                <div class="row" >
+                     <div >
                         <div class="panel panel-default">  
                             <div class="panel-heading" > 
                                 

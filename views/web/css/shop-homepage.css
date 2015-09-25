@@ -108,3 +108,25 @@ nav{
   margin-right: auto;
   margin-left: auto;
 }
+#footer{
+        background:#096;
+        width: 100%;
+        margin: auto;
+	border:solid 1px #096;
+        border-radius:0px 0px 15px 15px;
+        -moz-border-radius:0px 0px 15px 15px;
+        -webkit-border-radius:0px 0px 15px 15px;
+        -o-border-radius:0px 0px 15px 15px;
+}
+#txtFooter{
+        padding: 10px;
+	color:#FFF;
+}
+#footer a{
+        text-decoration: none;
+        color:#FFF;
+}
+#footer a:hover{
+        text-decoration: underline;
+        color: #EEE;
+}

@@ -128,20 +128,22 @@
         <div class="container">
                 <footer>
                    
-                        <div class="col-md-9">
+                        
+                   
+                </footer>
+                <div align="center" id="footer">
+                    <div class="col-md-6">
 
                         <a href="https://www.facebook.com/OlympoFitness?fref=ts" target="_blank"><img alt="siguenos en facebook" height="40" 
                         src="<?php echo $_webParams['ruta_img']; ?>facebook.png" title="siguenos en facebook" width="40" /></a>
                         <a href="https://twitter.com/" target="_blank"><img alt="siguenos en Twitter" height="40" 
                         src="<?php echo $_webParams['ruta_img']; ?>twiter.png" title="siguenos en Twitter" width="40" /></a>
 
-                        </div>
-                        
-                        <div class="col-lg-12">
-                            <p>Copyright &copy; OLYMPO FITNNES 2014</p>
-                        </div>
-                   
-                </footer>
+                    </div>
+                    <div id="txtFooter">
+                           <p>Copyright &copy; OLYMPO FITNNES 2014</p>
+                    </div>
+                </div>
         </div>
    <!-- Modal -->
                 

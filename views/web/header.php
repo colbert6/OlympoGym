@@ -23,15 +23,22 @@
     <script src="<?php echo $_webParams['ruta_js']; ?>extras/menu_pegajoso.js"></script>
     <script src="<?php echo $_webParams['ruta_js']; ?>fastclick.min.js"></script>
     <script src="<?php echo $_webParams['ruta_js']; ?>bootstrap.min.js"></script>
-    <!--Funcion de Facebook--> 
-    <script> (function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4&appId=125908714428652";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-    </script>
+    
+    <?php if(isset($_params['js']) && count($_params['js'])): ?>
+        <?php for($i=0; $i < count($_params['js']); $i++): ?>
+
+                    <script src="<?php echo $_params['js'][$i] ?>" type="text/javascript"></script>
+
+        <?php endfor; ?>
+    <?php endif; ?>
+
+    <?php if(isset($_params['css']) && count($_params['css'])): ?>
+        <?php for($i=0; $i < count($_params['css']); $i++): ?>
+
+           <link href="<?php echo $_params['css'][$i] ?>" type="text/css" rel="stylesheet" media="screen" />
+
+        <?php endfor; ?>
+    <?php endif; ?>
     
 
 </head>

@@ -15,24 +15,26 @@ class webController extends controller {
     }
     
     public function index() {
-        $this->_view->renderizar_web('index');
+        $this->_view->renderizar_web('index',true);
     }
     
     public function inicio(){
-        $this->_view->renderizar_web('inicio');
+        $this->_view->renderizar_web('inicio',true);
     }
     public function nosotros(){
-        $this->_view->renderizar_web('nosotros','nosotros');
+        $this->_view->renderizar_web('nosotros',false,'nosotros');
     }
     public function productos(){
-        $this->_view->renderizar_web('productos','productos');
+        $this->_view->renderizar_web('productos',true,'productos');
     }
     public function servicios(){
         $this->_view->datos = $this->_web_servicios->getServicios();
-        $this->_view->renderizar_web('servicios','servicios');
+        //$this->_view->setJs(array('css','css'));
+        //$this->_view->setJs(array('sexylightbox','jquery.easing'));
+        $this->_view->renderizar_web('servicios',true,'servicios');
     }    
     public function contactenos(){
-        $this->_view->renderizar_web('contactenos','contactenos');
+        $this->_view->renderizar_web('contactenos',false,'contactenos');
     }
         
     public function fotos(){

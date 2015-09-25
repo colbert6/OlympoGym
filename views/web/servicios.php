@@ -1,7 +1,7 @@
 <div class="col-md-12">
     
         <?php if (isset($this->datos) && count($this->datos)) {?>
-                <div class="col-md-3">
+                <div class="col-md-2">
                     <div class="list-group">
         <?php for ($i = 0; $i < count($this->datos); $i++) { ?>
                         <a href="#" class="list-group-item"><?php echo $this->datos[$i]['nombre'] ?></a>
@@ -9,10 +9,14 @@
                     </div>
                 </div>
                 
-                <div class="col-md-9">
+            <div class="col-md-1">  
+            </div>    
+             <div class="col-md-6">   
+        <?php for ($i = 0; $i < count($this->datos); $i++) { ?>        
+                <div class="col-md-12">
                     <div class="row carousel-holder">
 
-                    <div class="col-md-12">
+                    
 
                         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
@@ -38,13 +42,21 @@
                                 <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
                         </div>
-                    </div>
+                    
 
                 </div>
                 </div>       
-        
-                
-    
+         <?php } //lista de Servicios   ?>  
+            </div>
+    <div class="col-md-1">  
+            </div> 
+    <div class="col-md-2">
+                    <div class="list-group">
+        <?php for ($i = 0; $i < count($this->datos); $i++) { ?>
+                        <a href="#" class="list-group-item"><?php echo $this->datos[$i]['nombre'] ?></a>
+        <?php } //lista de Servicios   ?>      
+                    </div>
+                </div>
             
                 
                         

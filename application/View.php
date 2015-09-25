@@ -40,7 +40,7 @@ class View
             throw new Exception('Error de vista');
         }
     }
-    public function renderizar_web($vista, $item = false)   {
+    public function renderizar_web($vista,$columna = false, $item = false)   {
         
         $menu = array(
             array(
@@ -83,10 +83,23 @@ class View
         if(is_readable($rutaView)){
             include_once ROOT . 'views'. DS . 'web' . DS . 'header.php';
             include_once $rutaView;
+            if($columna){
+            include_once ROOT . 'views'. DS . 'web' . DS . 'columna.php';    
+            }
             include_once ROOT . 'views'. DS . 'web' . DS . 'footer.php';
         } 
         else {
             throw new Exception('Error de vista');
+        }
+    }
+    public function setCss(array $css)
+    {
+        if(is_array($css) && count($css)){
+            for($i=0; $i < count($css); $i++){
+                $this->_css[] = BASE_URL . 'views/' . $this->_controlador . '/css/' . $css[$i] . '.css';
+            }
+        } else {
+            throw new Exception('Error de css');
         }
     }
     public function setJs(array $js)

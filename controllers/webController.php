@@ -2,9 +2,15 @@
 
 class webController extends controller {
     
+    private $_web_servicios;
+    private $_web_productos;
+    private $_datos_olympo;
     
     public function __construct() {
         parent::__construct();
+        $this->_web_servicios = $this->loadModel('servicio');
+        $this->_web_productos = $this->loadModel('producto');
+        //$this->$_datos_olympo = $this->loadModel('articulos');
  
     }
     
@@ -22,6 +28,7 @@ class webController extends controller {
         $this->_view->renderizar_web('productos','productos');
     }
     public function servicios(){
+        $this->_view->datos = $this->_web_servicios->getServicios();
         $this->_view->renderizar_web('servicios','servicios');
     }    
     public function contactenos(){

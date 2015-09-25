@@ -25,7 +25,7 @@
                    <div class="form-group">
                        <label for="inputPais" class="control-label col-xs-5">Pais &nbsp &nbsp &nbsp &nbsp</label>
                        <div class="col-xs-7">
-                           <select class="form-control input-lg">
+                           <select class="form-control">
                                <option> Selecciona... </option>
                                <option> Perù </option>
                                <option> Ecuador </option>

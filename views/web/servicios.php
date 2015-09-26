@@ -35,13 +35,13 @@
                                 </div>
                             </div>
                             <div class="carousel-caption">
-                                        <a href="<?php echo BASE_URL.'web/servicios/cardio' ; ?>">
-                                            <h3>Cardio</h3>
-                                        <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
-                                        </a>
-                                    </div>
+                                <a href="<?php echo BASE_URL.'web/servicios/'.$this->datos[$i]['nombre']; ?>">
+                                   <h2><?php echo $this->datos[$i]['nombre']; ?></h2>
+                                   <p><?php echo $this->datos[$i]['descripcion']; ?></p>
+                                </a>
+                            </div>
                                
-                            <a  class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left"></span>
                             </a>
                             <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
@@ -52,7 +52,11 @@
                     </div>
                 </div>
         <?php } //lista de Servicios   ?>
-        <?php }else { //saber si se ha pedido informacion de algun servicio?> 
+        <?php }else { //saber si se ha pedido informacion de algun servicio
+                for ($i = 0; $i < count($this->datos); $i++) {
+                    if($this->informacion==$this->datos[$i]['nombre']){ ?>
+                        
+                        
                  <div class="row">
                     <div class="row carousel-holder">
 
@@ -76,7 +80,7 @@
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>OLYMPOFITNNES2
+                                <span class="glyphicon glyphicon-chevron-left"></span>
                             </a>
                             <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right"></span>
@@ -87,11 +91,19 @@
                 <div class="row">
                      <div class="col-sm-12 col-lg-12 col-md-12" >
                         <ul class="nav nav-tabs" >
-                            <li class="active"><a data-toggle="tab" href="#bienvenida">BIENVENIDA</a></li>
-                            <li ><a data-toggle="tab" href="#mision">MISION</a></li>
-                            
-                            <li><a data-toggle="tab" href="#vision">VISION</a></li>
-                          </ul>
+                            <li class="active">
+                                <a data-toggle="tab" href="#bienvenida">SERVICIO</a>
+                            </li>
+                            <li >
+                                <a data-toggle="tab" href="#mision">INSTRUCTORES</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#vision">OBJETIVOS</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#vision">HORARIOS</a>
+                            </li>
+                        </ul>
 
                         <div class="tab-content">
                             <div id="bienvenida" class="tab-pane fade in active">
@@ -132,9 +144,10 @@
                     </div>
 
 
-                </div> 
-                 
-            <?php } //se muestra la informacion ?>
+                </div>
+        <?php       }
+                } 
+           } //se muestra la informacion ?>
             
                 
                         

@@ -25,21 +25,21 @@
     <script src="<?php echo $_webParams['ruta_js']; ?>fastclick.min.js"></script>
     <script src="<?php echo $_webParams['ruta_js']; ?>bootstrap.min.js"></script>
     
-    <?php if(isset($_params['js']) && count($_params['js'])): ?>
-        <?php for($i=0; $i < count($_params['js']); $i++): ?>
+    <?php if(isset($_webParams['js']) && count($_webParams['js'])){ ?>
+        <?php for($i=0; $i < count($_webParams['js']); $i++){ ?>
 
-                    <script src="<?php echo $_params['js'][$i] ?>" type="text/javascript"></script>
+                    <script src="<?php echo $_webParams['js'][$i] ?>" type="text/javascript"></script>
 
-        <?php endfor; ?>
-    <?php endif; ?>
+        <?php } ?>
+    <?php } ?>
 
-    <?php if(isset($_params['css']) && count($_params['css'])): ?>
-        <?php for($i=0; $i < count($_params['css']); $i++): ?>
+    <?php if(isset($_webParams['css']) && count($_webParams['css'])){ ?>
+        <?php for($i=0; $i < count($_webParams['css']); $i++){ ?>
 
-           <link href="<?php echo $_params['css'][$i] ?>" type="text/css" rel="stylesheet" media="screen" />
+           <link href="<?php echo $_webParams['css'][$i] ?>" type="text/css" rel="stylesheet" media="screen" />
 
-        <?php endfor; ?>
-    <?php endif; ?>
+        <?php } ?>
+    <?php } ?>
     
 
 </head>

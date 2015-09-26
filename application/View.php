@@ -2,6 +2,8 @@
 class View
 {
     private $_controlador;
+    private $_js;
+    private $_css;
     
     public function __construct(Request $peticion) {
         $this->_controlador = $peticion->getControlador();
@@ -41,6 +43,15 @@ class View
         }
     }
     public function renderizar_web($vista,$columna = false, $item = false)   {
+        $js = array();
+        $css = array();
+
+        if (count($this->_js)) {
+            $js = $this->_js;
+        }
+        if (count($this->_css)) {
+            $css = $this->_css;
+        }
         
         $menu = array(
             array(
@@ -75,7 +86,9 @@ class View
             'ruta_css' => BASE_URL . 'views/web/css/',
             'ruta_img' => BASE_URL . 'views/web/img/',
             'ruta_js' => BASE_URL . 'views/web/js/',
-            'menu'=>$menu
+            'menu'=>$menu,
+            'js' => $js,
+            'css' => $css
         );
               
         $rutaView = ROOT . 'views' . DS .  'web' . DS . $vista . '.php';

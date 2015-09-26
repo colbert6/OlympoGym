@@ -15,11 +15,11 @@
                 <div class="row">
                     <div class="row carousel-holder">
                         
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <div id="<?php echo "carousel-".$this->datos[$i]['nombre']; ?>" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                <li data-target="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide-to="0" class="active"></li>
+                                <li data-target="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide-to="1"></li>
+                                <li data-target="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide-to="2"></li>
                             </ol>
                            
                             <div class="carousel-inner">
@@ -41,10 +41,10 @@
                                 </a>
                             </div>
                                
-                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <a class="left carousel-control" href="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left"></span>
                             </a>
-                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <a class="right carousel-control" href="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
                             
@@ -54,23 +54,27 @@
         <?php } //lista de Servicios   ?>
         <?php }else { //saber si se ha pedido informacion de algun servicio
                 for ($i = 0; $i < count($this->datos); $i++) {
-                    if($this->informacion==$this->datos[$i]['nombre']){ ?>
+                    if($this->informacion==$this->datos[$i]['nombre']){ 
+                        $i=$i;
+                        break;
+                    }
+                }          ?>
                         
                         
                  <div class="row">
                     <div class="row carousel-holder">
-
-                    
-
-                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        
+                        <div id="<?php echo "carousel-".$this->datos[$i]['nombre']; ?>" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                                <li data-target="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide-to="0" class="active"></li>
+                                <li data-target="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide-to="1"></li>
+                                <li data-target="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide-to="2"></li>
                             </ol>
+                           
                             <div class="carousel-inner">
                                 <div class="item active">
                                     <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>1.png" alt="">
+                                                                       
                                 </div>
                                 <div class="item">
                                     <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>2.png" alt="">
@@ -79,75 +83,56 @@
                                     <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>3.jpg" alt="">
                                 </div>
                             </div>
-                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <div class="carousel-caption">
+                                <a href="<?php echo BASE_URL.'web/servicios/'.$this->datos[$i]['nombre']; ?>">
+                                   <h2><?php echo $this->datos[$i]['nombre']; ?></h2>
+                                   <p><?php echo $this->datos[$i]['descripcion']; ?></p>
+                                </a>
+                            </div>
+                               
+                            <a class="left carousel-control" href="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide="prev">
                                 <span class="glyphicon glyphicon-chevron-left"></span>
                             </a>
-                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <a class="right carousel-control" href="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide="next">
                                 <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
+                            
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                     <div class="col-sm-12 col-lg-12 col-md-12" >
-                        <ul class="nav nav-tabs" >
-                            <li class="active">
-                                <a data-toggle="tab" href="#bienvenida">SERVICIO</a>
-                            </li>
-                            <li >
-                                <a data-toggle="tab" href="#mision">INSTRUCTORES</a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#vision">OBJETIVOS</a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#vision">HORARIOS</a>
-                            </li>
-                        </ul>
-
-                        <div class="tab-content">
-                            <div id="bienvenida" class="tab-pane fade in active">
-                               <br>
-                                    <div class="media">
-                                      <a class="pull-left" href="#">
-                                        <img class="img-thumbnail" src="<?php echo $_webParams['ruta_img']; ?>bienvenida.jpg" alt="">
-                                      </a>
-                                      <div class="media-body">
-                                        
-                                        <p class="text-justify">
-                                            La familia <strong>Olimpo Ginevra & Company Fitness</strong> te da la bienvenida a nuestra página web y al mismo tiempo te invita a formar parte de nuestra gran familia en donde te ayudaremos a cumplir tus metas y objetivos para mejorar tu estilo de vida de forma sana haciendo lo que más nos gusta,<strong> ¡DEPORTE!</strong>.</p>
-                                          <p class="text-justify">
-                                            <strong>¡No lo pienses más!</strong> y únete a la familia <strong>Olimpo Ginevra & Company Fitness </strong>  y disfruta de nuestros servicios de Cardiovascular, Maquinas y pesas, Baile, Aeróbicos y mucho más, recuerda que tus metas son nuestras metas. Vive sano y saludable haciendo deporte.
-                                        </p>
-                                      </div>
-                                    </div>
-                                        
-                                    
-                                   <br>                                 
-                            </div>
-                            <div id="mision" class="tab-pane fade">
-                                    <br/>
-                        
-                                    
-                                    <p class="text-justify">Inspirar a nuestros miembros inconparable energia para ayudarles a alcanzar sus objetivos individuales; con nuestra amplia experiencia les preeveemos bienestar en base a un esmerado servicio, a un ambiente agradabre y con un personal entrenado en los ultimos conocimientos disponibles.</p>
-
-                                    <br>
-                            </div>
-                            <div id="vision" class="tab-pane fade">
-                                <br/>
-                               
-                                <p class="text-justify">Ser el mejor Gimnasio de la Region brindando bienestar a nuestos mienbros y en general a la poblacion, generando valor a nuestra empresa, a nuestros colaboradores y a nuestra comunidad.</p>
-
-                                <br>
-                            </div>
+                    <div class="col-md-12" >
+                        <div class="bs-callout bs-callout-info">
+                            <h4>SERVICIO <?php echo $this->datos[$i]['nombre']; ?></h4>
+                            This is a default callout.
                         </div>
+                    
+                
+                
+                   
+                        <div class="bs-callout bs-callout-primary">
+                            <h4>HORARIOS</h4>
+                           LUNES MARTES MIERCOLES JUEVES VIERNES SABADO 
+                           <br>
+                           8:00 AM a 7:00 PM
+                        </div>
+                        
+                    
+                
+                
+                    
+                        <div class="bs-callout bs-callout-warning">
+                            <h4>CONSEJOS</h4>
+                            <ul>
+                                <li>Consumir Alimentos bajos en grasa</li>
+                                <li>Practicar deporte</li>
+                                <li>No consumir Bebidas Alcoholicas</li>
+                            </ul>
+                        </div>
+                        
                     </div>
-
-
-                </div>
-        <?php       }
-                } 
-           } //se muestra la informacion ?>
+                </div>  
+        <?php    } //se muestra la informacion ?>
             
                 
                         

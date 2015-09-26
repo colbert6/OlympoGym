@@ -95,18 +95,23 @@ body .scrollpanel .sp-scrollbar.active .sp-thumb {
 
 }
 
-footer {
-    margin: 50px 0;
-}
+
 
 nav{
   background: red;
 }
+//--------------------NAVEGADOR CUANDO ESTA EN FIXED---------
 .mycontainer{
   padding-right: 12.5%;
   padding-left: 12.5%;
   margin-right: auto;
   margin-left: auto;
+}
+
+
+//---------------PIE DE PAGINA------------------
+footer {
+    margin: 50px 0;
 }
 #footer{
         background:#000000;

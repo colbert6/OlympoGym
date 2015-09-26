@@ -63,11 +63,11 @@
             
             <div class="col-md-3 img-portfolio">
                 <div class="thumbnail">
-                <a href="portfolio-item.html">
+                <a href="#">
                     <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
                 </a>
                 <h4 class="text-center">
-                    <a href="portfolio-item.html"><?php echo $this->datos[$i]['nombre']; ?></a>
+                    <a href="#"><?php echo $this->datos[$i]['nombre']; ?></a>
                 </h4>
                 <p class="text-center"> <strong>Precio:</strong><?php echo " ".$this->datos[$i]['precio']; ?></p>
                 <p class="text-center"><strong>Stock:</strong><?php echo " ".$this->datos[$i]['stock']; ?></p>

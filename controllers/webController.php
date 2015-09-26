@@ -27,7 +27,8 @@ class webController extends controller {
     public function productos(){
         $this->_view->renderizar_web('productos',true,'productos');
     }
-    public function servicios(){
+    public function servicios($servicio=false){
+        $this->_view->informacion =$servicio;
         $this->_view->datos = $this->_web_servicios->getServicios();
         //$this->_view->setJs(array('css','css'));
         //$this->_view->setJs(array('sexylightbox','jquery.easing'));

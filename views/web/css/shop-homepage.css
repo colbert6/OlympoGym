@@ -109,10 +109,10 @@ nav{
   margin-left: auto;
 }
 #footer{
-        background:#096;
+        background:#000000;
         width: 100%;
         margin: auto;
-	border:solid 1px #096;
+	border:solid 1px #000000;
         border-radius:0px 0px 15px 15px;
         -moz-border-radius:0px 0px 15px 15px;
         -webkit-border-radius:0px 0px 15px 15px;

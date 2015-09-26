@@ -1,14 +1,17 @@
-<div class="row">
-                <br>
-                <div class="row clearfix">
-                    <h1 class="text-left animated zoomIn" style="font-family: 'Lobster, cursive';font-size: 36px;    font-weight: 500;
+<div class="jumbotron">
+   <div class="container">
+                <div class="row clearfix" >
+                    <div class="col-xs-12 col-md-6 col-lg-5 left col-md-push-3 ">
+                    <h1 class="text-left" style="font-family: 'Lobster, cursive';font-size: 35px;    font-weight: 500;
                                 line-height: 1.1;    margin: 0.67em 0;animation-name: zoomIn;
                                 color: #0C9CF2;">
-                        <span class="glyphicon glyphicon-bullhorn"></span> Contacta con nosotros</h1>
+                        <span class="glyphicon glyphicon-bullhorn"></span> 
+                        Contacta con nosotros</h1>
                     <hr>
+                    </div>
                 </div>
-                <div class="row clearfix">
-                    <div class="col-xs-12 col-md-6 col-lg-6 left">
+                <div class="row clearfix col-md-11">
+                    <div class=" col-md-5 left col-md-push-1 ">
                         <h3 class="text-left" style="font-family: 'Lobster, cursive';font-size: 26px;    font-weight: 500;
                                 line-height: 1.1;    margin: 0.67em 0;animation-name: zoomIn;
                                 color: #0C9CF2;">
@@ -16,7 +19,7 @@
                             Formulario de contacto
                         </h3>
                         
-                        <form id="formu" action="contactar.php" method="post"> <!-- formulario -->
+                        <form id="formu" action=" " method="post"> <!-- formulario -->
                             <fieldset>
                                 <div class="col-md-12 form-group">
                                     <label for="nombre" class="control-label">Nombre:<span>*</span></label>
@@ -44,17 +47,20 @@
                                     <input type="reset" name="Borrar" class="btn btn-danger btn-sm">
                                 </div>
                                 <div class="col-md-6 form-group">
-                                    <p class="text-right">* Campos obligatorios.</p>
+                                    * Campos obligatorios.</a><br>
                                 </div>
                             </fieldset>
                         </form> <!-- Fin formulario -->
                     </div> <!-- Fin col-md-6 -->
-                    <div class="col-xs-6"></div>
-                    <div class="col-lg-6 col-md-push-1">
+                    
+                    <div class="col-md-5 col-md-push-1">
                         <address >
-                                  <h3 class="panel-heading" style="font-family: 'Lobster, cursive';font-size: 26px;    font-weight: 500;
+                                  <h3 class="text-left" style="font-family: 'Lobster, cursive';font-size: 26px;    font-weight: 500;
                                           line-height: 1.1;    margin: 0.67em 0;animation-name: zoomIn;
-                                          color: #0C9CF2;"><span class="glyphicon glyphicon glyphicon-user"></span> Mapa de situación</h3>
+                                          color: #0C9CF2;">
+                                                <span class="glyphicon glyphicon glyphicon-user"></span> 
+                                                Mapa de situación
+                                  </h3>
                                   <aside class="thumbnailbox listformat">                 
                                       <div id="map">
                                           <p class="lead"><p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7928.577112153539!2d-
@@ -72,3 +78,4 @@
                    </div>
           </div> <!-- Fin row -->
     </div> 
+</div> 

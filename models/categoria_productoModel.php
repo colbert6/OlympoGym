@@ -12,7 +12,7 @@
         public function getCategoria_Producto($id){
 
             $post = $this->_db->query("select * from categoria_producto where id_categoria_producto=$id");
-            return $post->fetchall();
+            return $post->fetch();
         }
     }
     

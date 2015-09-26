@@ -27,13 +27,15 @@ class webController extends controller {
     public function nosotros(){
         $this->_view->renderizar_web('nosotros',false,'nosotros');
     }
-    public function productos($param=false){
+    public function productos($categoria=false,$param=false){
         
         $this->_view->informacion = $param; 
         if(!$param){
             $this->_view->datos = $this->_web_categoria_productos->getCategoria_Productos();
+           
         }else{
             $this->_view->datos = $this->_web_productos->getProductosxCategoria($param);
+            $this->_view->categoria = $categoria;
         }
         $this->_view->renderizar_web('productos',true,'productos');
     }

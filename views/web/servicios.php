@@ -103,26 +103,17 @@
                 <div class="row">
                     <div class="col-md-12" >
                         <div class="bs-callout bs-callout-info">
-                            <h4>SERVICIO <?php echo $this->datos[$i]['nombre']; ?></h4>
+                            <h3>SERVICIO <?php echo $this->datos[$i]['nombre']; ?></h3>
                             This is a default callout.
                         </div>
-                    
-                
-                
-                   
                         <div class="bs-callout bs-callout-primary">
-                            <h4>HORARIOS</h4>
+                            <h3>HORARIOS</h3>
                            LUNES MARTES MIERCOLES JUEVES VIERNES SABADO 
                            <br>
                            8:00 AM a 7:00 PM
                         </div>
-                        
-                    
-                
-                
-                    
                         <div class="bs-callout bs-callout-warning">
-                            <h4>CONSEJOS</h4>
+                            <h3>CONSEJOS</h3>
                             <ul>
                                 <li>Consumir Alimentos bajos en grasa</li>
                                 <li>Practicar deporte</li>

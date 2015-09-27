@@ -18,6 +18,10 @@
                                 <h4><a href="<?php echo BASE_URL."web/productos/".$this->datos[$i]['descripcion']."/". $this->datos[$i]['id_categoria_producto'];?>"><?php echo $this->datos[$i]['descripcion']; ?></a>
                                 </h4>
                                 <p>Para afianzarnos con nuestros clientes</p>
+                                <div class="ratings">
+                                    <p class="text-center"><a href="<?php echo BASE_URL."web/productos/".$this->datos[$i]['descripcion']."/". $this->datos[$i]['id_categoria_producto'];?>" class="btn btn-success">Ver Detalles</a></p>
+                                
+                            </div>
                                 
                             </div>
                             
@@ -71,6 +75,7 @@
                 </h4>
                 <p class="text-center"> <strong>Precio:</strong><?php echo " ".$this->datos[$i]['precio']; ?></p>
                 <p class="text-center"><strong>Stock:</strong><?php echo " ".$this->datos[$i]['stock']; ?></p>
+                
                 </div>
             </div>
                 <?php } ?>

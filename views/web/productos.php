@@ -84,7 +84,7 @@
         </div>
      <?php } else {?>
               <div class="col-lg-12">
-                         <h4>No Hay Categoria de Productos</h4>
+                         <h4>No Hay Productos en esta Categoria</h4>
                     </div>
         <?php }?>
 

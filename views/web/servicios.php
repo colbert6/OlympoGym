@@ -50,12 +50,16 @@
                 </div>
         <?php } //lista de Servicios   ?>
         <?php }else { //saber si se ha pedido informacion de algun servicio
+                $flag_servicio_informacion=false;
                 for ($i = 0; $i < count($this->datos); $i++) {
                     if($this->informacion==$this->datos[$i]['nombre']){ 
                         $i=$i;
+                        $flag_servicio_informacion=true;
                         break;
                     }
-                }          ?>
+                    
+                }    
+                if($flag_servicio_informacion){ ?>
                  <div class="row">
                         <div class="col-lg-12">
                             <div class="col-lg-12">
@@ -134,12 +138,17 @@
                         
                     </div>
                 </div>  
-        <?php    } //se muestra la informacion ?>
+        <?php   }else{
+                    echo "<h1>No existe el servicio solicitado</h1>";
+            
+                }    
+                
+                } //acaba el else if(!$this->informacion) ?>
             
                 
                         
                  
-        <?php } else echo "<h1>No hay Servicios</h1>"; ?>
+        <?php } else echo "<h1>No hay Servicios Disponibles</h1>"; ?>
      
         </div>
   

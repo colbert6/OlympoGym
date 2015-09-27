@@ -6249,18 +6249,23 @@ button.close {
 .carousel-caption {
   position: absolute;
   right: 15%;
-  bottom: 20px;
+  top: 5px;
   left: 15%;
   z-index: 10;
-  padding-top: 20px;
+  padding-top: 5px;
   padding-bottom: 20px;
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, .6);
 }
-.carousel-caption .btn {
+.carousel-caption .botton {
   text-shadow: none;
 }
+.carousel-caption .bottom {
+  text-shadow: none;
+}
+
+
 @media screen and (min-width: 768px) {
   .carousel-control .glyphicon-chevron-left,
   .carousel-control .glyphicon-chevron-right,

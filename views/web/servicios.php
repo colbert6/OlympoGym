@@ -35,10 +35,10 @@
                                 </div>
                             </div>
                             <div class="carousel-caption">
-                                <a href="<?php echo BASE_URL.'web/servicios/'.$this->datos[$i]['nombre']; ?>">
-                                   <h2><?php echo $this->datos[$i]['nombre']; ?></h2>
-                                   <p><?php echo $this->datos[$i]['descripcion']; ?></p>
-                                </a>
+                                <a style="color:white;font: bold 24px/45px Helvetica, Sans-Serif;" href="<?php echo BASE_URL.'web/servicios/'.$this->datos[$i]['nombre']; ?>">
+                                        <h2 style="text-transform: uppercase;background: rgb(0, 0, 0);background: rgba(0, 0, 0, 0.4);
+                                        padding: 10px;" >SERVICIO DE <?php echo $this->datos[$i]['nombre']; ?></h2>
+                                    </a>
                             </div>
                                
                             <a class="left carousel-control" href="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide="prev">
@@ -84,10 +84,9 @@
                                 </div>
                             </div>
                             <div class="carousel-caption">
-                                <a href="<?php echo BASE_URL.'web/servicios/'.$this->datos[$i]['nombre']; ?>">
-                                   <h2><?php echo $this->datos[$i]['nombre']; ?></h2>
-                                   <p><?php echo $this->datos[$i]['descripcion']; ?></p>
-                                </a>
+                                
+                                <h2><span><?php echo $this->datos[$i]['nombre']; ?></span></h2>
+                                
                             </div>
                                
                             <a class="left carousel-control" href="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide="prev">
@@ -103,14 +102,14 @@
                 <div class="row">
                     <div class="col-md-12" >
                         <div class="bs-callout bs-callout-info">
-                            <h3>SERVICIO <?php echo $this->datos[$i]['nombre']; ?></h3>
-                            This is a default callout.
+                            <h3 style="text-transform: uppercase;" >SERVICIO DE <?php echo $this->datos[$i]['nombre']; ?></h3>
+                            <p>This is a default callout.</p>
                         </div>
                         <div class="bs-callout bs-callout-primary">
                             <h3>HORARIOS</h3>
-                           LUNES MARTES MIERCOLES JUEVES VIERNES SABADO 
+                           <p>LUNES MARTES MIERCOLES JUEVES VIERNES SABADO 
                            <br>
-                           8:00 AM a 7:00 PM
+                           8:00 AM a 7:00 PM</p>
                         </div>
                         <div class="bs-callout bs-callout-warning">
                             <h3>CONSEJOS</h3>

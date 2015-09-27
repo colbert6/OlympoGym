@@ -1,5 +1,4 @@
-<div class="jumbotron">
-   <div class="container">
+   <div class="row">
                 <div class="row clearfix" >
                     <div class="col-xs-12 col-md-6 col-lg-5 left col-md-push-3 ">
                     <h1 class="text-left" style="font-family: 'Lobster, cursive';font-size: 35px;    font-weight: 500;
@@ -10,9 +9,9 @@
                     <hr>
                     </div>
                 </div>
-                <div class="row clearfix col-md-11">
+                <div class="row clearfix col-md-12">
                     <div class=" col-md-5 left col-md-push-1 ">
-                        <h3 class="text-left" style="font-family: 'Lobster, cursive';font-size: 26px;    font-weight: 500;
+                        <h3 class="text-left text-center" style="font-family: 'Lobster, cursive';font-size: 26px;    font-weight: 500;
                                 line-height: 1.1;    margin: 0.67em 0;animation-name: zoomIn;
                                 color: #0C9CF2;">
                             <span class="glyphicon glyphicon-list-alt"></span> 
@@ -33,10 +32,6 @@
                                     <label for="correo" class="control-label">Correo electrónico:<span>*</span></label>
                                     <input type="email" id="correo" class="form-control input-sm" placeholder="correo@correo.es" name="correo" required>
                                 </div>
-                                <div class="col-md-12 form-group">
-                                    <label for="poblacion" class="control-label">Población:<span>*</span></label>
-                                    <input type="text" id="poblacion" class="form-control input-sm" name="poblacion">
-                                </div>
                                 <input type="hidden" name="pagina" value="Situación">
                                 <div class="col-md-12 form-group">
                                     <label class="control-label">Asunto:<span>*</span></label>
@@ -55,7 +50,7 @@
                     
                     <div class="col-md-5 col-md-push-1">
                         <address >
-                                  <h3 class="text-left" style="font-family: 'Lobster, cursive';font-size: 26px;    font-weight: 500;
+                                  <h3 class="text-left text-center" style="font-family: 'Lobster, cursive';font-size: 26px;    font-weight: 500;
                                           line-height: 1.1;    margin: 0.67em 0;animation-name: zoomIn;
                                           color: #0C9CF2;">
                                                 <span class="glyphicon glyphicon glyphicon-user"></span> 
@@ -78,4 +73,3 @@
                    </div>
           </div> <!-- Fin row -->
     </div> 
-</div> 

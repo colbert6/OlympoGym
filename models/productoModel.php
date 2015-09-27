@@ -13,8 +13,8 @@
             $post = $this->_db->query("select * from producto where id_producto=$id");
             return $post->fetchall();
         }
-        public function getProductosxCategoria($id){
-             $post = $this->_db->query("select * from producto p inner join categoria_producto ct on (p.id_categoria_producto = ct.id_categoria_producto) where p.id_categoria_producto=$id");
+        public function getProductosxCategoria($categoria){
+             $post = $this->_db->query("select * from producto p inner join categoria_producto ct on (p.id_categoria_producto = ct.id_categoria_producto) where ct.descripcion='$categoria'");
             return $post->fetchall();
         }
         

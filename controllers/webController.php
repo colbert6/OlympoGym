@@ -27,17 +27,22 @@ class webController extends controller {
     public function nosotros(){
         $this->_view->renderizar_web('nosotros',false,'nosotros');
     }
-    public function productos($categoria=false,$param=false){
+    public function productos($categoria=false,$id=false){
         
-        $this->_view->informacion = $param; 
-        if(!$param){
+        $this->_view->categoria = $categoria; 
+        $this->_view->setCss(array('productos'));
+        if(!$categoria && !$id){
             $this->_view->datos = $this->_web_categoria_productos->getCategoria_Productos();
-           
-        }else{
-            $this->_view->datos = $this->_web_productos->getProductosxCategoria($param);
-            $this->_view->categoria = $categoria;
+            $this->_view->renderizar_web('pro_categoria',true,'productos');
+        }else if($categoria && !$id) {
+            $this->_view->datos = $this->_web_productos->getProductosxCategoria($categoria);
+            $this->_view->renderizar_web('pro_lista',true,'productos');
+        }else if($categoria && $id){
+            $this->_view->datos = $this->_web_productos->getProducto($id);
+            $this->_view->renderizar_web('pro_detalle',true,'productos');  
         }
-        $this->_view->renderizar_web('productos',true,'productos');
+        
+        
     }
     public function servicios($servicio=false){
         $this->_view->informacion =$servicio;

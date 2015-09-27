@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-09-2015 a las 03:45:00
+-- Tiempo de generación: 25-09-2015 a las 00:15:53
 -- Versión del servidor: 5.6.21
 -- Versión de PHP: 5.6.3
 
@@ -171,18 +171,6 @@ CREATE TABLE IF NOT EXISTS `categoria_producto` (
   `id_categoria_producto` int(11) NOT NULL,
   `descripcion` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `categoria_producto`
---
-
-INSERT INTO `categoria_producto` (`id_categoria_producto`, `descripcion`) VALUES
-(1, 'Complementos'),
-(2, 'Bebidas'),
-(3, 'Batidos'),
-(4, 'Polos'),
-(5, 'Truzas'),
-(6, 'Mallas');
 
 -- --------------------------------------------------------
 
@@ -388,14 +376,6 @@ CREATE TABLE IF NOT EXISTS `marca` (
   `descripcion` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Volcado de datos para la tabla `marca`
---
-
-INSERT INTO `marca` (`id_marca`, `descripcion`) VALUES
-(1, 'Gloria'),
-(2, 'OL-GYM');
-
 -- --------------------------------------------------------
 
 --
@@ -507,16 +487,6 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `stock_max` int(11) NOT NULL,
   `imagen` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `producto`
---
-
-INSERT INTO `producto` (`id_producto`, `id_categoria_producto`, `id_marca`, `presentacion`, `stock`, `precio`, `nombre`, `stock_min`, `stock_max`, `imagen`) VALUES
-(1, 1, 1, 'Con proteina y suero de leche', 40, 56, 'OLD-GYM', 5, 20, ''),
-(2, 1, 1, 'asdasd', 22, 22, 'Truza', 4, 10, ''),
-(3, 1, 1, '', 22, 22, 'PS-D', 4, 5, ''),
-(4, 1, 2, '1', 5, 22, 'LP-PROTEINAS', 3, 5, '');
 
 -- --------------------------------------------------------
 

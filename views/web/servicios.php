@@ -35,10 +35,7 @@
                                 </div>
                             </div>
                             <div class="carousel-caption">
-                                <a style="color:white;font: bold 24px/45px Helvetica, Sans-Serif;" href="<?php echo BASE_URL.'web/servicios/'.$this->datos[$i]['nombre']; ?>">
-                                        <h2 style="text-transform: uppercase;background: rgb(0, 0, 0);background: rgba(0, 0, 0, 0.4);
-                                        padding: 10px;" >SERVICIO DE <?php echo $this->datos[$i]['nombre']; ?></h2>
-                                    </a>
+                                <a class="link-servicios" href="<?php echo BASE_URL.'web/servicios/'.$this->datos[$i]['nombre']; ?>" ><?php echo $this->datos[$i]['nombre']; ?></a>
                             </div>
                                
                             <a class="left carousel-control" href="<?php echo "#carousel-".$this->datos[$i]['nombre']; ?>" data-slide="prev">
@@ -85,7 +82,7 @@
                             </div>
                             <div class="carousel-caption">
                                 
-                                <h2><span><?php echo $this->datos[$i]['nombre']; ?></span></h2>
+                                <h2 class="informacion-servicio" ><?php echo $this->datos[$i]['nombre']; ?></h2>
                                 
                             </div>
                                
@@ -103,7 +100,8 @@
                     <div class="col-md-12" >
                         <div class="bs-callout bs-callout-info">
                             <h3 style="text-transform: uppercase;" >SERVICIO DE <?php echo $this->datos[$i]['nombre']; ?></h3>
-                            <p>This is a default callout.</p>
+                            <p>El servicio de cardio ayuda a las personas con padecias en enfermedades cardio vasculares,
+                                ademas de mejorar la presion sanguinea</p>
                         </div>
                         <div class="bs-callout bs-callout-primary">
                             <h3>HORARIOS</h3>

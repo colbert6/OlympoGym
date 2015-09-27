@@ -56,7 +56,21 @@
                         break;
                     }
                 }          ?>
-                        
+                 <div class="row">
+                        <div class="col-lg-12">
+                            <div class="col-lg-12">
+                                <ol class="breadcrumb">
+
+                                    <li><a href="<?php echo BASE_URL."web/servicios/";?>">Servicios</a>
+                                    </li>
+                                    <li class="active"><?php if(isset($this->datos[$i]['nombre'])){ echo $this->datos[$i]['nombre'];} ?></li>
+
+                                </ol>
+                            </div>
+
+                        </div>
+
+                    </div>       
                         
                  <div class="row">
                     <div class="row carousel-holder">

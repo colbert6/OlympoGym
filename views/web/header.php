@@ -78,6 +78,14 @@
 
                         <?php endfor; ?>
                         <?php endif; ?>
+                        <?php if(true){ ?>
+                        <li><a href="<?php echo BASE_URL ?>index"><label>SISTEMA</label></a></li>
+                        <style type="text/css">
+                            #menu li{
+                                width:19.87%;
+                            }
+                        </style>
+                        <?php }?>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                        <li>

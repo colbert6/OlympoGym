@@ -39,24 +39,20 @@
                         </div>
 
                             <div class="modal-body">
-                                 <form action="../sistema/autentificacion.php" method="post" id="loginForm">
+                                <form action="<?php echo BASE_URL ?>login" method="post" id="loginForm">
                                   <div class="form-group has-feedback">
-                                    <input type="text" class="form-control" required placeholder="Usuario" name="username">
+                                    <input type="text" class="form-control" required placeholder="Usuario" name="usuario">
                                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                                   </div>
                                   <div class="form-group has-feedback">
-                                    <input type="password" class="form-control" required placeholder="Contraseña"  name="password" >
+                                    <input type="password" class="form-control" required placeholder="Contraseña"  name="clave" >
                                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                                   </div>
-
-
-
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                          <button type="submit" class="btn btn-primary">Entrar</button>
-                        </div>
-                       </form>  
+                                  <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                      <button type="submit" class="btn btn-primary">Entrar</button>
+                                  </div>
+                                </form>  
                       </div>
                     </div>
                  </div>

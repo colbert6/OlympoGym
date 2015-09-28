@@ -12,7 +12,7 @@
                                <br>
                                     <div class="media">
                                       <a class="pull-left" href="#">
-                                        <img class="img-thumbnail" src="<?php echo $_webParams['ruta_img']; ?>bienvenida.jpg" alt="">
+                                        <img class="img-thumbnail" src="<?php echo $_webParams['ruta_img']; ?>web/bienvenida.jpg" alt="">
                                       </a>
                                       <div class="media-body">
                                         
@@ -105,13 +105,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>1.png" alt="">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/1.png" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>2.png" alt="">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/2.png" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>3.jpg" alt="">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/3.jpg" alt="">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -152,7 +152,7 @@
 
                     <div class="col-sm-3 col-lg-3 col-md-3">
                         <div class="img-thumbnail_1 center-block">
-                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>images.jpg" alt="">
+                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>web/images.jpg" alt="">
                             <div class="caption text-center">
                                 <h4><a href="#">Servicios</a></h4>
                                 <h5>David J. Robbins Senior Vice President</h5>
@@ -164,7 +164,7 @@
                     
                     <div class="col-sm-3 col-lg-3 col-md-3">
                         <div class="img-thumbnail_1 center-block">
-                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>images.jpg" alt="">
+                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>web/images.jpg" alt="">
                             <div class="caption text-center">
                                 <h4><a href="#">Servicios</a></h4>
                                 <h5>David J. Robbins Senior Vice President</h5>
@@ -176,7 +176,7 @@
                     
                     <div class="col-sm-3 col-lg-3 col-md-3">
                         <div class="img-thumbnail_1 center-block">
-                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>images.jpg" alt="">
+                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>web/images.jpg" alt="">
                             <div class="caption text-center">
                                 <h4><a href="#">Servicios</a></h4>
                                 <h5>David J. Robbins Senior Vice President</h5>
@@ -188,7 +188,7 @@
                     
                     <div class="col-sm-3 col-lg-3 col-md-3">
                         <div class="img-thumbnail_1 center-block">
-                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>images.jpg" alt="">
+                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>web/images.jpg" alt="">
                             <div class="caption text-center">
                                 <h4><a href="#">Servicios</a></h4>
                                 <h5>David J. Robbins Senior Vice President</h5>

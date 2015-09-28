@@ -1,6 +1,6 @@
 <?php
 
-class almacenes extends Main{
+class almacenModel extends Main{
 
     public $idalmacen;
     public $descripcion;

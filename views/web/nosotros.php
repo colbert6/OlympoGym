@@ -77,12 +77,27 @@
   <section  class="row">
         <div class="row">
             <div class="col-sm-6 ">
-                <h2 class="col-lg-offset-3"> What we are</h2>
-                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+                <h2 class="col-lg-offset-3">Quienes somos</h2>
+                <p>Proin gravida nibh vel velit auctor aliquet.
+                    Aenean sollicitudin, lorem quis bibendum auctor, 
+                    nisi elit consequat ipsum, nec sagittis sem nibh id elit.
+                    Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+                    Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt
+                    auctor a ornare odio. Sed non  mauris vitae erat consequat auctor
+                    eu in elit. Class aptent taciti sociosqu ad litora torquent per 
+                    conubia nostra, per inceptos himenaeos. Mauris in erat justo. 
+                    Nullam ac urna eu felis dapibus condimentum sit amet a augue. 
+                    Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc.
+                    Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam,
+                    ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
             </div><!--/.col-sm-6-->
             <div class="col-sm-6">
                 <h2>  &nbsp;</h2>
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                 <div class="row carousel-holder">
+
+                    <div class="col-md-12">
+
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                                 <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -99,21 +114,29 @@
                                     <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>3.jpg" alt="">
                                 </div>
                             </div>
-                            
-                     </div>
+                            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
             </div><!--/.col-sm-6-->
         </div><!--/.row-->
 
         <div class="gap"></div>
-        <h1 class="text-center">Meet the Team</h1>
+        <h1 class="text-center">Conocer al equipo</h1>
         <p class="text-center">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
         <div class="gap"></div>
         
-        <div class=" col-md-4 center-block text-center">
+      <!--  <div class=" col-md-4 center-block text-center">
             <div class="col-md-12 col-xs-6" style=" background: red">
                 <div class="center">
                     <p><img class=" img-responsive img-circle" src="<?php echo $_webParams['ruta_img']; ?>images.jpg" alt=""></p>
-                    <h5>David J. Robbins<small class="designation muted">Senior Vice President</small></h5>
+                    <h5>David J. Robbins Senior Vice President</h5>
                     <p>Morbi accumsan ipsum velit. .</p>
                     <a class="btn btn-social btn-facebook" href="#">
                         <i class="icon-facebook"></i></a> 
@@ -123,9 +146,63 @@
                 </div>
             </div>
         </div>
-    </section><!--/#about-us-->
+    </section>/#about-us-->
     
- <div id="">
+    <div class="contenedor " >
+
+                    <div class="col-sm-3 col-lg-3 col-md-3">
+                        <div class="img-thumbnail_1 center-block">
+                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>images.jpg" alt="">
+                            <div class="caption text-center">
+                                <h4><a href="#">Servicios</a></h4>
+                                <h5>David J. Robbins Senior Vice President</h5>
+                                <p>Morbi accumsan ipsum velit. .</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3 col-lg-3 col-md-3">
+                        <div class="img-thumbnail_1 center-block">
+                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>images.jpg" alt="">
+                            <div class="caption text-center">
+                                <h4><a href="#">Servicios</a></h4>
+                                <h5>David J. Robbins Senior Vice President</h5>
+                                <p>Morbi accumsan ipsum velit. .</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3 col-lg-3 col-md-3">
+                        <div class="img-thumbnail_1 center-block">
+                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>images.jpg" alt="">
+                            <div class="caption text-center">
+                                <h4><a href="#">Servicios</a></h4>
+                                <h5>David J. Robbins Senior Vice President</h5>
+                                <p>Morbi accumsan ipsum velit. .</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="col-sm-3 col-lg-3 col-md-3">
+                        <div class="img-thumbnail_1 center-block">
+                            <img class=" center-block img-circle" src="<?php echo $_webParams['ruta_img']; ?>images.jpg" alt="">
+                            <div class="caption text-center">
+                                <h4><a href="#">Servicios</a></h4>
+                                <h5>David J. Robbins Senior Vice President</h5>
+                                <p>Morbi accumsan ipsum velit. .</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+
+
+  </div>
+    
+ <!-- <div id="">
         <div class="">
             <div class="row">
                 <div class="col-md-6">
@@ -158,4 +235,4 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> #about-us-->

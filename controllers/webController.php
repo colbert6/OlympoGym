@@ -25,6 +25,7 @@ class webController extends controller {
         $this->_view->renderizar_web('inicio',true);
     }
     public function nosotros(){
+        
         $this->_view->renderizar_web('nosotros',false,'nosotros');
     }
     public function productos($categoria=false,$id=false){

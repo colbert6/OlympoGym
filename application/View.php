@@ -20,10 +20,10 @@ class View
         );
         
         if(is_readable($rutaView)){
-            include_once ROOT . 'header.php';
-            include_once ROOT . 'menu.php';
+            //include_once ROOT . 'header.php';
+            //include_once ROOT . 'menu.php';
             include_once $rutaView;
-            include_once ROOT . 'footer.php';
+            //include_once ROOT . 'footer.php';
          } 
         else {
             throw new Exception('Error de vista');

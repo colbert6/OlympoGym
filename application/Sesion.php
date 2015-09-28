@@ -33,6 +33,45 @@ class sesion {
         if (isset($_SESSION[$clave]))
             return $_SESSION[$clave];
     }
+    public static function acceso($level)
+    {
+        if(!Sesion::get('autenticado')){
+            header('location:' . BASE_URL . 'error/access/5050');
+            exit;
+        }
+        
+        if(Sesion::getLevel($level) > Sesion::getLevel(Sesion::get('level'))){
+            header('location:' . BASE_URL . 'error/access/5050');
+            exit;
+        }
+    }
+    
+    public static function accesoView($level)
+    {
+        if(!Sesion::get('autenticado')){
+            return false;
+        }
+        
+        if(Sesion::getLevel($level) > Sesion::getLevel(Sesion::get('level'))){
+            return false;
+        }
+        
+        return true;
+    }
+    
+    public static function getLevel($level)
+    {
+        $role['admin'] = 3;
+        $role['especial'] = 2;
+        $role['usuario'] = 1;
+        
+        if(!array_key_exists($level, $role)){
+            throw new Exception('Error de acceso');
+        }
+        else{
+            return $role[$level];
+        }
+    }
 
 }
 

@@ -14,9 +14,10 @@ class loginController extends controller {
         
         if($datos[0]['nombre']==$_POST['usuario'] && $datos[0]['id_empleado']!=''){
             Sesion::set('autenticado', true);
-            Sesion::set('empleado', $datos[0]['nombe'].' '.$datos[0]['apellido_paterno'].' '.$datos[0]['apellido_materno']);
+            Sesion::set('empleado', $datos[0]['nombre'].' '.$datos[0]['apellido_paterno'].' '.$datos[0]['apellido_materno']);
             Sesion::set('idempleado', $datos[0]['id_empleado']);
-            Sesion::set('perfil', $datos[0]['id_perfil']);
+            Sesion::set('level','especial');
+            //Sesion::set('perfil', $datos[0]['id_perfil_usuario']);
            
             echo '<script>alert("usuario o clave correcta")</script>';
             $this->redireccionar();
@@ -29,7 +30,8 @@ class loginController extends controller {
     
     public function mostrar() {
         echo 'Empleado: ' . Sesion::get('empleado') . '<br>';
-        echo 'Perfil: ' . Sesion::get('perfil') . '<br>';
+        echo 'idempleado: ' . Sesion::get('idempleado') . '<br>';
+        echo 'level: ' . Sesion::get('level') . '<br>';
     }
 
     public function cerrar() {

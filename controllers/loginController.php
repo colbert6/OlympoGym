@@ -13,28 +13,27 @@ class loginController extends controller {
         $datos=$this->_empleados->login_usuario($_POST['usuario'],$_POST['clave']);
         
         if($datos[0]['nombre']==$_POST['usuario'] && $datos[0]['id_empleado']!=''){
-          /*  session::set('autenticado', true);
-            session::set('empleado', $datos[0]['NOMBRES'].' '.$datos[0]['APELLIDOS']);
-            session::set('idempleado', $datos[0]['IDEMPLEADO']);
-            session::set('perfil', $datos[0]['PERFIL']);
-            session::set('idperfil', $datos[0]['IDPERFIL']);
-           */
-             echo '<script>alert("usuario o clave correcta")</script>';
-            //$this->redireccionar();
+            Sesion::set('autenticado', true);
+            Sesion::set('empleado', $datos[0]['nombe'].' '.$datos[0]['apellido_paterno'].' '.$datos[0]['apellido_materno']);
+            Sesion::set('idempleado', $datos[0]['id_empleado']);
+            Sesion::set('perfil', $datos[0]['id_perfil']);
+           
+            echo '<script>alert("usuario o clave correcta")</script>';
+            $this->redireccionar();
             
         }else{
             echo '<script>alert("usuario o clave incorrecta")</script>';
-            //$this->redireccionar();
+            $this->redireccionar();
         }
     }
     
     public function mostrar() {
-        echo 'Empleado: ' . session::get('empleado') . '<br>';
-        echo 'Perfil: ' . session::get('perfil') . '<br>';
+        echo 'Empleado: ' . Sesion::get('empleado') . '<br>';
+        echo 'Perfil: ' . Sesion::get('perfil') . '<br>';
     }
 
     public function cerrar() {
-        session::destroy();
+        Sesion::destroy();
         echo '<script>alert("Sesion finalizada")</script>';
         $this->redireccionar();
     }

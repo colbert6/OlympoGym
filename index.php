@@ -16,7 +16,7 @@ try{
     require_once APP_PATH . 'Registro.php';
     require_once APP_PATH . 'Database.php';
     require_once APP_PATH . 'Sesion.php';
-    //session::init();
+    Sesion::init();
     Bootstrap::run(new Request);
 }
 catch(Exception $e){

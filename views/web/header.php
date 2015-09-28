@@ -78,21 +78,27 @@
 
                         <?php endfor; ?>
                         <?php endif; ?>
-                        <?php if(true){ ?>
+                        <?php if(Sesion::get('autenticado')){ ?>
                         <li><a href="<?php echo BASE_URL ?>index"><label>SISTEMA</label></a></li>
-                        <style type="text/css">
-                            #menu li{
-                                width:19.87%;
-                            }
-                        </style>
-                        <?php }?>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                       <li>
+                           <a href="<?php echo BASE_URL ?>login/cerrar" data-toggle="modal" data-target="#myModal">
+                               <span class="glyphicon glyphicon-log-in"></span> LOGOUT </a>
+                       </li>
+                    </ul>
+                        <?php }else {?>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                        <li>
                            <a href="#" data-toggle="modal" data-target="#myModal">
-                               <span class="glyphicon glyphicon-log-in"></span> Login </a>
+                               <span class="glyphicon glyphicon-log-in"></span> LOGIN  </a>
                        </li>
-                     </ul>
+                    </ul>
+                    
+                        <?php }?>
+                    
+                    
                 </div>
                 <!-- /.navbar-collapse -->
             </div>

@@ -8,7 +8,7 @@
                     <?php for ($i = 0; $i < count($this->datos); $i++) {?>
                             <div class="col-md-3 col-sm-6">
                                 <div class="thumbnail">
-                                   <img src="<?php echo $_webParams['ruta_img']; ?>5.jpg" alt="">
+                                   <img src="<?php echo $_webParams['ruta_img']; ?>web/5.jpg" alt="">
                                    <div class="text-center">
                                        <h4>
                                            <a href="<?php echo BASE_URL."web/productos/".$this->datos[$i]['descripcion'];//."/". $this->datos[$i]['id_categoria_producto'];?>"><?php echo $this->datos[$i]['descripcion']; ?></a>

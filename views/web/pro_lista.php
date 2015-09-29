@@ -19,7 +19,7 @@
             <div class="col-md-3 img-portfolio">
                 <div class="thumbnail">
                 <a href="#">
-                    <img class="img-responsive img-hover" src="http://placehold.it/700x400" alt="">
+                    <img class="img-responsive img-hover" src="<?php echo $_webParams['ruta_img']; ?>web/6.jpg" alt="">
                 </a>
                 <h4 class="text-center">
                     <a href="#"><?php echo $this->datos[$i]['nombre']; ?></a>

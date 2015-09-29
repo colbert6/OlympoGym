@@ -29,14 +29,14 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
                                     <div class="item active">
-                                        <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>1.png" alt="">
+                                        <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/1.png" alt="">
 
                                     </div>
                                     <div class="item">
-                                        <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>2.png" alt="">
+                                        <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/2.png" alt="">
                                     </div>
                                     <div class="item">
-                                        <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>3.jpg" alt="">
+                                        <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/3.jpg" alt="">
                                     </div>
                                 </div>
 

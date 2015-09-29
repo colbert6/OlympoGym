@@ -24,8 +24,8 @@
                 <h4 class="text-center">
                     <a href="#"><?php echo $this->datos[$i]['nombre']; ?></a>
                 </h4>
-                <p class="text-center"> <strong>Precio:</strong><?php echo " ".$this->datos[$i]['precio']; ?></p>
-                <p class="text-center"><strong>Stock:</strong><?php echo " ".$this->datos[$i]['stock']; ?></p>
+                <p class="text-center"> <strong>Precio:</strong><?php echo " S/.".$this->datos[$i]['precio']; ?></p>
+                <p class="text-center"><strong>Stock:</strong><?php echo " ".$this->datos[$i]['stock']." U"; ?></p>
                 <div class="ratings">
                         <p class="text-center"><a href="<?php echo BASE_URL."web/productos/".$this->datos[$i]['descripcion']."/". $this->datos[$i]['id_producto']?>" class="btn btn-warning">Ver Detalles</a></p>
                 </div>

@@ -10,8 +10,44 @@
         <?php if (!$this->informacion) { //saber si se ha pedido informacion de algun servicio?> 
                        
                  
-        <?php for ($i = 0; $i < count($this->datos_servicio); $i++) { ?>
-                 
+        <?php  for ($i = 0; $i < count($this->datos_servicio); $i++) { ?>
+                 <div class="row">
+                    <div class="row carousel-holder">
+                        
+                        <div id="<?php echo "carousel-".$this->datos_servicio[$i]['nombre']; ?>" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="<?php echo "#carousel-".$this->datos_servicio[$i]['nombre']; ?>" data-slide-to="0" class="active"></li>
+                                <li data-target="<?php echo "#carousel-".$this->datos_servicio[$i]['nombre']; ?>" data-slide-to="1"></li>
+                                <li data-target="<?php echo "#carousel-".$this->datos_servicio[$i]['nombre']; ?>" data-slide-to="2"></li>
+                            </ol>
+                           
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/1.png" alt="">
+                                                                       
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/2.png" alt="">
+                                </div>
+                                <div class="item">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/3.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="carousel-caption">
+                                 <a class="link-servicios" href="<?php echo BASE_URL.'web/servicios/'.$this->datos_servicio[$i]['nombre']; ?>" ><?php echo $this->datos_servicio[$i]['nombre']; ?></a>
+                            </div>
+                               
+                            <a class="left carousel-control" href="<?php echo "#carousel-".$this->datos_servicio[$i]['nombre']; ?>" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
+                            </a>
+                            <a class="right carousel-control" href="<?php echo "#carousel-".$this->datos_servicio[$i]['nombre']; ?>" data-slide="next">
+                                <span class="glyphicon glyphicon-chevron-right"></span>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+         <?php /*?>        
                 <div class="row">
                     <div class="row carousel-holder">
                         
@@ -54,7 +90,9 @@
                         </div>   
                     </div>
                 </div>
-        <?php } //lista de Servicios   ?>
+          <?php */ ?> 
+          
+        <?php }  //lista de Servicios   ?>
         <?php }else { //saber si se ha pedido informacion de algun servicio
                 $flag_servicio_informacion=false;
                 for ($i = 0; $i < count($this->datos_servicio); $i++) {
@@ -94,14 +132,14 @@
                            
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>1.png" alt="">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/1.png" alt="">
                                                                        
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>2.png" alt="">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/2.png" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>3.jpg" alt="">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/3.jpg" alt="">
                                 </div>
                             </div>
                             <div class="carousel-caption">
@@ -123,7 +161,7 @@
                 <div class="row">
                     <div class="col-md-12" >
                         <div class="bs-callout bs-callout-info">
-                            <h3 style="text-transform: uppercase;" >SERVICIO DE <?php echo $this->datos[$i]['nombre']; ?></h3>
+                            <h3 style="text-transform: uppercase;" >SERVICIO DE <?php echo $this->datos_servicio[$i]['nombre']; ?></h3>
                             <p>El servicio de cardio ayuda a las personas con padecias en enfermedades cardio vasculares,
                                 ademas de mejorar la presion sanguinea</p>
                         </div>

@@ -71,7 +71,7 @@ class View
         );
         $_webParams = array(
             'ruta_css' => BASE_URL . 'views/web/css/',
-            'ruta_img' => BASE_URL . 'views/web/img/',
+            'ruta_img' => BASE_URL . 'public/img/',
             'ruta_js' => BASE_URL . 'views/web/js/',
             'menu'=>$menu,
             'js' => $js,

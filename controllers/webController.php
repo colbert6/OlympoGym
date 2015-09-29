@@ -3,6 +3,7 @@
 class webController extends controller {
     
     private $_web_servicios;
+    private $_web_img_servicios;
     private $_web_categoria_productos;
     private $_web_productos;
     private $_datos_olympo;
@@ -10,6 +11,7 @@ class webController extends controller {
     public function __construct() {
         parent::__construct();
         $this->_web_servicios = $this->loadModel('servicio');
+        $this->_web_img_servicios = $this->loadModel('imagen_servicio');
         $this->_web_categoria_productos =  $this->loadModel('categoria_producto');
         $this->_web_productos = $this->loadModel('producto');
         
@@ -47,7 +49,8 @@ class webController extends controller {
     }
     public function servicios($servicio=false){
         $this->_view->informacion =$servicio;
-        $this->_view->datos = $this->_web_servicios->getServicios();
+        $this->_view->datos_servicio = $this->_web_servicios->getServicios();
+        $this->_view->img_servicio = $this->_web_img_servicios->getImgServicios();
         $this->_view->setCss(array('servicios'));
         //$this->_view->js=>setJs(array('sexylightbox','jquery.easing'));
         $this->_view->renderizar_web('servicios',true,'servicios');

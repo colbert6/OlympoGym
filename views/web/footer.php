@@ -17,9 +17,9 @@
                     <div class="col-md-6">
 
                         <a href="https://www.facebook.com/OlympoFitness?fref=ts" target="_blank"><img alt="siguenos en facebook" height="40" 
-                        src="<?php echo $_webParams['ruta_img']; ?>facebook.png" title="siguenos en facebook" width="40" /></a>
+                        src="<?php echo $_webParams['ruta_img']; ?>web/facebook.png" title="siguenos en facebook" width="40" /></a>
                         <a href="https://twitter.com/" target="_blank"><img alt="siguenos en Twitter" height="40" 
-                        src="<?php echo $_webParams['ruta_img']; ?>twiter.png" title="siguenos en Twitter" width="40" /></a>
+                        src="<?php echo $_webParams['ruta_img']; ?>web/twiter.png" title="siguenos en Twitter" width="40" /></a>
 
                     </div>
                     <div id="txtFooter">

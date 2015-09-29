@@ -46,7 +46,7 @@
 
 <body>
     <div class="container" >
-        <img class="img-responsive" src="<?php echo $_webParams['ruta_img']; ?>cabecera2.png" alt="">
+        <img class="img-responsive" src="<?php echo $_webParams['ruta_img']; ?>web/cabecera2.png" alt="">
         <!-- Navigation -->
         <nav class="navbar navbar-default" >
             <div   id='div_pegajoso' >

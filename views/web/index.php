@@ -12,13 +12,13 @@
                             </ol>
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>1.png" alt="">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/1.png" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>2.png" alt="">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/2.png" alt="">
                                 </div>
                                 <div class="item">
-                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>3.jpg" alt="">
+                                    <img class="slide-image" src="<?php echo $_webParams['ruta_img']; ?>web/3.jpg" alt="">
                                 </div>
                             </div>
                             <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
@@ -36,7 +36,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="<?php echo $_webParams['ruta_img']; ?>4.jpg" alt="">
+                            <img src="<?php echo $_webParams['ruta_img']; ?>web/4.jpg" alt="">
                             <div class="caption">
                                 <h4><a href="#">Eventos</a>
                                 </h4>
@@ -48,7 +48,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="<?php echo $_webParams['ruta_img']; ?>5.jpg" alt="">
+                            <img src="<?php echo $_webParams['ruta_img']; ?>web/5.jpg" alt="">
                             <div class="caption">
                                 <h4><a href="#">Productos</a>
                                 </h4>
@@ -60,7 +60,7 @@
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="<?php echo $_webParams['ruta_img']; ?>6.jpg" alt="">
+                            <img src="<?php echo $_webParams['ruta_img']; ?>web/6.jpg" alt="">
                             <div class="caption">
                                 <h4><a href="#">Servicios</a>
                                 </h4>
@@ -88,7 +88,7 @@
                                <br>
                                     <div class="media">
                                       <a class="pull-left" href="#">
-                                        <img class="img-thumbnail" src="<?php echo $_webParams['ruta_img']; ?>bienvenida.jpg" alt="">
+                                        <img class="img-thumbnail" src="<?php echo $_webParams['ruta_img']; ?>web/bienvenida.jpg" alt="">
                                       </a>
                                       <div class="media-body">
                                         

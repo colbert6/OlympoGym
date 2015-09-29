@@ -78,18 +78,15 @@
         <div class="row">
             <div class="col-sm-6 ">
                 <h2 class="col-lg-offset-3">Quienes somos</h2>
-                <p>Proin gravida nibh vel velit auctor aliquet.
-                    Aenean sollicitudin, lorem quis bibendum auctor, 
-                    nisi elit consequat ipsum, nec sagittis sem nibh id elit.
-                    Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                    Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt
-                    auctor a ornare odio. Sed non  mauris vitae erat consequat auctor
-                    eu in elit. Class aptent taciti sociosqu ad litora torquent per 
-                    conubia nostra, per inceptos himenaeos. Mauris in erat justo. 
-                    Nullam ac urna eu felis dapibus condimentum sit amet a augue. 
-                    Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc.
-                    Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam,
-                    ut aliquam massa nisl quis neque. Suspendisse in orci enim.</p>
+                <p>GYM HUATULCO FITNESS CENTER es una empresa familiar con 
+                    grandes aspiraciones de fomentar la salud física y mental, 
+                    otorgando beneficios a su vida diaria; contamos con instructores 
+                    capacitados, con años de experiencia en la materia, brindamos también
+                    orientación y atención de médicos generales, especialistas en traumatología
+                    con cédula profesional y servicio nutricional.
+                    Estamos comprometidos con  “mejorar la calidad de vida de las personas
+                    a través de la filosofía del ejercicio, infraestructura, programas, productos 
+                    y de inculcar en la vida de toda la comunidad el valor de la salud y el ejercicio.</p>
             </div><!--/.col-sm-6-->
             <div class="col-sm-6">
                 <h2>  &nbsp;</h2>

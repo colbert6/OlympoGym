@@ -1,5 +1,6 @@
 //-----------MENU PEGAJOSO ---------------------///
 $(document).ready(function() {
+    
               var nav = $('nav');
               var container = $('#div_pegajoso');
               //var contenedor = $('#menu-contenedor');
@@ -21,4 +22,5 @@ $(document).ready(function() {
                   
                 }
               });
+              
             });

@@ -1,18 +1,14 @@
         
   
         
-            </div>    
+             
         </div><!-- row-->
    </div><!-- /.container -->
 
         
      
         <div class="container">
-                <footer>
-                   
-                        
-                   
-                </footer>
+
                 <div align="center" id="footer">
                     <div class="col-md-6">
 
@@ -27,6 +23,7 @@
                     </div>
                 </div>
         </div>
+
    <!-- Modal -->
                 
                 <div class="modal fade" id="myModal" role="dialog">

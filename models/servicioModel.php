@@ -1,19 +1,16 @@
 <?php
-    class servicioModel extends Model{
+    class servicioModel extends Main{
+
+       
         
-        public function __construct() {
-            parent::__construct();
+        public function getServicios() {
+            $resultado = $this->consulta_simple("select * from servicio");
+            return $resultado->fetchall();
         }
+        public function getSercicios($id){
 
-        public function getServicios(){
-
-            $post = $this->_db->query("select * from servicio");
-            return $post->fetchall();
-        }
-        public function getServicio($id){
-
-            $post = $this->_db->query("select * from servicio where id_servicio=$id");
-            return $post->fetchall();
+            $resultado = $this->consulta_simple("select * from servicio where id_servicio=$id");
+            return $resultado->fetchall();
         }
     }
     

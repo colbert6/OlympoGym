@@ -1,5 +1,5 @@
 <?php
-    class imagen_servicioModel extends Model{
+    class imagen_servicioModel extends Main{
         
         public function __construct() {
             parent::__construct();
@@ -7,8 +7,8 @@
 
         public function getImgServicios(){
 
-            $post = $this->_db->query("select * from imagen_servicio");
-            return $post->fetchall();
+            $resultado = $this->consulta_simple("select * from imagen_servicio");
+            return $resultado->fetchall();
         }
         public function getServicio($id){
 

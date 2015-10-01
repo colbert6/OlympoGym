@@ -1,19 +1,17 @@
 <?php
-    class categoria_productoModel extends Model{
-        public function __construct() {
-            parent::__construct();
-        }
-
+    class categoria_productoModel extends Main{
+       
         public function getCategoria_Productos(){
 
-            $post = $this->_db->query("select * from categoria_producto");
-            return $post->fetchall();
+            $resultado = $this->consulta_simple("select * from categoria_producto");
+            return $resultado->fetchall();
         }
         public function getCategoria_Producto($id){
 
-            $post = $this->_db->query("select * from categoria_producto where id_categoria_producto=$id");
-            return $post->fetch();
+            $resultado = $this->consulta("select * from categoria_producto where id_categoria_producto=$id");
+            return $resultado->fetchall();
         }
     }
     
 ?>
+    

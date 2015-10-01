@@ -2,9 +2,10 @@
 abstract class Controller
 {
     protected $_view;
+    protected $_modelo;
     
     public function __construct() {//asiganmos una vista para este contralador
-        $this->_view = new View(new Request);
+         $this->_view = new View(new Request);
     }
     abstract public function index();
     
@@ -13,13 +14,16 @@ abstract class Controller
     {
         $modelo = $modelo . 'Model';
         $rutaModelo = ROOT . 'models' . DS . $modelo . '.php';
-        
-        if(is_readable($rutaModelo)){
+        //verificamos si exxiste y es legible
+       
+        if (is_readable($rutaModelo)) {
+            //requerimos el archivo
             require_once $rutaModelo;
+            //instanciamos
             $modelo = new $modelo;
+
             return $modelo;
-        }
-        else {
+        } else {
             throw new Exception('Error de modelo');
         }
     }

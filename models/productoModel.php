@@ -1,21 +1,20 @@
 <?php
-    class productoModel extends Model{
-        public function __construct() {
-            parent::__construct();
-        }
+    class productoModel extends Main{
+      
 
         public function getProductos(){
-
-            $post = $this->_db->query("select * from servicio");
-            return $post->fetchall();
+            $resultado = $this->consulta_simple("select * from producto");
+            return $resultado->fetchall();
         }
         public function getProducto($id){
-            $post = $this->_db->query("select * from producto where id_producto=$id");
-            return $post->fetchall();
+            
+            $resultado = $this->consulta_simple("select * from producto where id_producto=$id");
+            return $resultado->fetchall();
+            
         }
         public function getProductosxCategoria($categoria){
-             $post = $this->_db->query("select * from producto p inner join categoria_producto ct on (p.id_categoria_producto = ct.id_categoria_producto) where ct.descripcion='$categoria'");
-            return $post->fetchall();
+            $resultado = $this->consulta_simple("select * from producto p inner join categoria_producto ct on (p.id_categoria_producto = ct.id_categoria_producto) where ct.descripcion='$categoria'");
+            return $resultado->fetchall();
         }
         
     }

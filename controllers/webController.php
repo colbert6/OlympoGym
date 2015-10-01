@@ -50,7 +50,7 @@ class webController extends controller {
     public function servicios($servicio=false){
         $this->_view->informacion =$servicio;
         $this->_view->datos_servicio = $this->_web_servicios->getServicios();
-        $this->_view->img_servicio = $this->_web_img_servicios->getImgServicios();
+        //$this->_view->img_servicio = $this->_web_img_servicios->getImgServicios();
         $this->_view->setCss(array('servicios'));
         //$this->_view->js=>setJs(array('sexylightbox','jquery.easing'));
         $this->_view->renderizar_web('servicios',true,'servicios');

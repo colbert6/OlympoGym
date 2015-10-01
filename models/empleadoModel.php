@@ -1,18 +1,19 @@
 <?php
 
-class empleadoModel extends Model{
+class empleadoModel extends Main{
 
     
     public function login_usuario($usuario,$clave) {
         //$datos = array($usuario,$clave);
         
-        $r = $this->_db->query("SELECT * FROM empleado where nombre='".$usuario."'");
-        return $r->fetchall();
+        
+        $resultado = $this->consulta_simple("SELECT * FROM empleado where nombre='".$usuario."'");
+        return $resultado->fetchall();
 
     }
     
     public function seleccion($usuario,$clave){
-         $datos = array($usuario,$clave);
+        $datos = array($usuario,$clave);
         $r = $this->get_consulta("pa_login_android", $datos);
         if ($r[1] == '') {
             $stmt = $r[0];

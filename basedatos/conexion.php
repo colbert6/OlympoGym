@@ -56,7 +56,8 @@ class conexion extends PDO{
                     echo '<script>
                                 alert("Datos GRABADOS Correctamente");
                                 window.location="' . BASE_URL . '";
-                            </script>';
+                                  
+                          </script>';
                 } else {
                     echo '<script>
                                 alert("No se pudo obtener respuesta del HOST indicado. Los datos seran descartados.");
@@ -70,12 +71,12 @@ class conexion extends PDO{
             <html xmlns="http://www.w3.org/1999/xhtml">
                 <head>
                     <link href="<?php echo BASE_URL ?>public/css/bootstrap.css" rel="stylesheet">
-                    <script type="text/javascript">
-                        alert("¡Conexion Fallida!. El sistema se inicializara, los datos que hayan sido guardados no se perderan.");
-
-                    </script>
+                    
                 </head>
                 <body>
+                <script type="text/javascript">
+                        alert("¡Conexion Fallida!. El sistema se inicializara, los datos que hayan sido guardados no se perderan.");
+                    </script>    
                     <div class="row" style="width: 800; margin:0 auto;">
                         <img src="<?php echo BASE_URL ?>public/img/logo.png" height="100" width="800" />
                     </div>

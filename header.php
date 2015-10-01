@@ -102,7 +102,7 @@
                             </li>
                             <li>
                                 <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="assets/img/ui-zac.jpg"></span>
+                                    <span class="photo"><img alt="avatar" src="public/img/ui-zac.jpg"></span>
                                     <span class="subject">
                                     <span class="from">Zac Snider</span>
                                     <span class="time">Just now</span>
@@ -131,13 +131,35 @@
                             </li>
                         </ul>
                     </li>
+                    <li id="header_inbox_bar" class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                            <i class="fa fa-user"></i>
+                            
+                        </a>
+                        <ul class="dropdown-menu extended inbox">
+                            <div class="notify-arrow notify-arrow-green"></div>
+                            <li>
+                                <p class="green">SESION</p>
+                            </li>
+                            <li>
+                               <a href="#">Cambiar Contraseña</a>
+                            </li>
+                            <li>
+                               <a href="<?php echo BASE_URL ?>login/cerrar">Cerrar Sesion</a>
+                            </li>
+                            <li>
+                               <a href="">Configurar Cuenta</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
                     <!-- inbox dropdown end -->
                 </ul>
                 <!--  notification end -->
             </div>
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="<?php echo BASE_URL ?>login/cerrar">Logout</a></li>
+                    <li><a class="logout" href="<?php echo BASE_URL ?>login/cerrar">Cerrar Sesion</a></li>
             	</ul>
             </div>
         </header>

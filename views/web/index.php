@@ -33,12 +33,27 @@
                 </div>
 
                 <div class="row " >
-
+                    <div class="col-sm-6 col-md-3 col-lg-3 branding">
+                    <div class="portfolio-item">
+                        <div class="hover-bg">
+                            <a href="#">
+                                <div class="hover-text">
+                                    <h4>Logo Design</h4>
+                                    <small>Branding</small>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i>
+                                </div>
+                                <img src="<?php echo $_webParams['ruta_img']; ?>web/4.jpg" class="img-responsive" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                   
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="<?php echo $_webParams['ruta_img']; ?>web/4.jpg" alt="">
                             <div class="caption">
-                                <h4><a href="#">Eventos</a>
+                                <h4><a href="#">video</a>
                                 </h4>
                                 <p>Para afianzarnos con nuestros clientes, contamos con eventos a gustos de los mismos. </p>
                             </div>

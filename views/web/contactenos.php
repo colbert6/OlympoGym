@@ -18,7 +18,7 @@
                             Formulario de contacto
                         </h3>
                         
-                        <form id="formu" action=" " method="post"> <!-- formulario -->
+                        <form id="formu" action="<?php echo BASE_URL ?>web/mensaje" method="post"> <!-- formulario -->
                             <fieldset>
                                 <div class="col-md-12 form-group">
                                     <label for="nombre" class="control-label">Nombre:<span>*</span></label>
@@ -30,12 +30,12 @@
                                 </div>
                                 <div class="col-md-12 form-group">
                                     <label for="correo" class="control-label">Correo electrónico:<span>*</span></label>
-                                    <input type="email" id="correo" class="form-control input-sm" placeholder="correo@correo.es" name="correo" required>
+                                    <input type="email" id="correo" class="form-control input-sm" placeholder="email@hotmail.com" name="email" required>
                                 </div>
                                 <input type="hidden" name="pagina" value="Situación">
                                 <div class="col-md-12 form-group">
                                     <label class="control-label">Asunto:<span>*</span></label>
-                                    <textarea name="asunto" class="form-control input-sm" rows="7" cols="32" maxlength="300" placeholder="Escriba su mensaje..." required></textarea>
+                                    <textarea name="mensaje" class="form-control input-sm" rows="7" cols="32" maxlength="300" placeholder="Escriba su mensaje..." required></textarea>
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <input type="submit" name="Enviar" class="btn btn-info btn-sm">

@@ -17,7 +17,6 @@
     <link href="<?php echo $_webParams['ruta_css']; ?>bootstrap.css" rel="stylesheet">
     <link href="<?php echo $_webParams['ruta_css']; ?>shop-homepage.css" rel="stylesheet">
     <link href="<?php echo $_webParams['ruta_css']; ?>font-awesome.min.css" rel="stylesheet">
-    <link href="<?php echo $_webParams['ruta_css']; ?>style.css" rel="stylesheet">
     <!--Archivo JS-->
     <script src="<?php echo $_webParams['ruta_js']; ?>jquery.js"></script>
     <script src="<?php echo $_webParams['ruta_js']; ?>jquery.slimscroll.js"></script>

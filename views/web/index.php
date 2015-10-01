@@ -32,63 +32,53 @@
 
                 </div>
 
-                <div class="row " >
-                    <div class="col-sm-6 col-md-3 col-lg-3 branding">
-                    <div class="portfolio-item">
-                        <div class="hover-bg">
-                            <a href="#">
-                                <div class="hover-text">
-                                    <h4>Logo Design</h4>
-                                    <small>Branding</small>
-                                    <div class="clearfix"></div>
-                                    <i class="fa fa-plus"></i>
-                                </div>
-                                <img src="<?php echo $_webParams['ruta_img']; ?>web/4.jpg" class="img-responsive" alt="...">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                   
+                                 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="<?php echo $_webParams['ruta_img']; ?>web/4.jpg" alt="">
+                           <div class="hover-bg">
+                            <div class="hover-text">
+                                   <a href="<?php echo BASE_URL.'web/productos' ; ?>"> <h4>Productos</h4>
+                                    <h5>Ofrecemos productos pensado en sus objetivos, cardio,
+                                        tonificacion,etc. ademas de asesoria por expertos </h5>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i></a>
+                            </div>    
+                            <img src="<?php echo $_webParams['ruta_img']; ?>web/5.jpg" alt=""> 
                             <div class="caption">
-                                <h4><a href="#">video</a>
-                                </h4>
-                                <p>Para afianzarnos con nuestros clientes, contamos con eventos a gustos de los mismos. </p>
+                              <h4><a href="#">Productos</a></h4>  
                             </div>
-                            
+                           </div>
                         </div>
                     </div>
-
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                           <div class="hover-bg">
+                            <div class="hover-text">
+                                   <a href="<?php echo BASE_URL.'web/servicios' ; ?>"> <h4>Servicios</h4>
+                                    <h5>Ofrecemos servicios pensado en sus objetivos, cardio,
+                                        tonificacion,etc. ademas de asesoria por expertos </h5>
+                                    <div class="clearfix"></div>
+                                    <i class="fa fa-plus"></i></a>
+                            </div>    
+                            <img src="<?php echo $_webParams['ruta_img']; ?>web/4.jpg" alt=""> 
+                            <div class="caption">
+                              <h4><a href="#">Servicios</a></h4>  
+                            </div>
+                           </div>
+                        </div>
+                    </div>    
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="<?php echo $_webParams['ruta_img']; ?>web/5.jpg" alt="">
                             <div class="caption">
                                 <h4><a href="#">Productos</a>
                                 </h4>
-                                <p>Ofrecemos diferentes productos, para cumplir los diferentes objetivos de nuesros clientes</p>
+                                <p>ros clientes</p>
                             </div>
                             
                         </div>
                     </div>
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="<?php echo $_webParams['ruta_img']; ?>web/6.jpg" alt="">
-                            <div class="caption">
-                                <h4><a href="#">Servicios</a>
-                                </h4>
-                                <p>Ofrecemos una Amplia gama de Servicios para todos
-                                    nuestros clientes</p>
-                            </div>
-                            
-                        </div>
-                    </div>
-
-
-
-                </div>
+ 
                 <div class="row">
                      <div class="col-sm-12 col-lg-12 col-md-12" >
                         <ul class="nav nav-tabs" >

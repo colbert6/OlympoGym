@@ -52,7 +52,7 @@ body .scrollpanel .sp-scrollbar.active .sp-thumb {
 }
 
 .caption {
-    height: 130px;
+    height: 80px;
     overflow: hidden;
 }
 
@@ -77,6 +77,58 @@ body .scrollpanel .sp-scrollbar.active .sp-thumb {
 .thumbnail .caption-full {
     padding: 9px;
     color: #333;
+}
+.thumbnail .hover-bg{
+	
+	overflow: hidden;
+	position: relative;
+}
+.hover-bg .hover-text {
+	position: absolute;
+	text-align: center;
+	margin: 0 auto;
+	color: #ffffff;
+	background: rgba(0, 0, 0, 0.66);
+	padding: 10% 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+    transition: all 0.7s;
+}
+
+.hover-bg a{ color: #FCAC45;}
+.hover-bg :hover a{
+	text-decoration: none;
+	color: white;
+}
+.hover-bg .hover-text>h4{
+        text-transform: lowercase;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+            transform: translateY(100%);
+            transition: all 0.3s;
+}
+.hover-bg:hover .hover-text>h4{
+    text-transform: lowercase;
+	opacity: 1;
+    -webkit-backface-visibility:hidden;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+.hover-bg .hover-text>i{
+	opacity: 0;
+	-webkit-transform: translateY(0);
+            transform: translateY(0);
+            transition: all 0.3s;
+}
+.hover-bg:hover .hover-text>i{
+	opacity: 1;
+    -webkit-backface-visibility:hidden;
+   -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+}
+.hover-bg:hover .hover-text{
+	opacity: 1;
 }
 
 .lista_eventos{

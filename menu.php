@@ -56,14 +56,14 @@ Class menu {
 
     function cargar_hijos($padre) {
         for($i=0; $i< count($this->_menus); $i++){
-             if( $this->_menus[$i]['id_padre']!=NULL){
-                if( $this->_menus[$i]['id_padre']==$padre){
+             if( $this->_menus[$i]['id_padre']!=NULL && $this->_menus[$i]['id_padre']==$padre){
+                
                     if($this->_menus[$i]['id_modulo']==$this->_id_hijo)
                         { echo "<li class='active' >";}
                     else
                         { echo "<li>";}  
-                  echo "<a  href='".BASE_URL ."modulo'>Modulos</a></li>";
-                } 
+                  echo "<a  href='".BASE_URL.$this->_menus[$i]['url']."'>".$this->_menus[$i]['nombre']."</a></li>";
+                 
              }
         }
     }

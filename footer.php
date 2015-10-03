@@ -12,7 +12,7 @@
     <!--common script for all pages-->
     <script src="<?php echo $_systemParams['ruta_js']; ?>common-scripts.js"></script>
     
-    
+
   
 
   </body>

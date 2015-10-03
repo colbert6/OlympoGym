@@ -13,6 +13,7 @@
     <link href="<?php echo $_systemParams['ruta_css']; ?>bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="<?php echo $_systemParams['ruta_css']; ?>font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="<?php echo $_systemParams['ruta_css']; ?>jquery.gritter.css" />
      
     
     <!-- Custom styles for this template -->

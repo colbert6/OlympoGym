@@ -15,7 +15,6 @@ class moduloController extends controller{
 
     public function index() {
         $this->_view->datos = $this->_modulo->selecciona();
-        
         $this->_view->renderizar('index','1','2');
     }
     

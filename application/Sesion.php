@@ -72,6 +72,69 @@ class sesion {
             return $role[$level];
         }
     }
+    public static function accesoEstricto(array $level, $noAdmin = false)
+    {
+        if(!Session::get('autenticado')){
+            header('location:' . BASE_URL . 'error/access/5050');
+            exit;
+        }
+        
+        Session::tiempo();
+        
+        if($noAdmin == false){
+            if(Session::get('level') == 'admin'){
+                return;
+            }
+        }
+        
+        if(count($level)){
+            if(in_array(Session::get('level'), $level)){
+                return;
+            }
+        }
+        
+        header('location:' . BASE_URL . 'error/access/5050');
+    }
+    
+    public static function accesoViewEstricto(array $level, $noAdmin = false)
+    {
+        if(!Session::get('autenticado')){
+            return false;
+        }
+        
+        if($noAdmin == false){
+            if(Session::get('level') == 'admin'){
+                return true;
+            }
+        }
+        
+        if(count($level)){
+            if(in_array(Session::get('level'), $level)){
+                return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    public static function tiempo()
+    {
+        if(!Session::get('tiempo') || !defined('SESSION_TIME')){
+            throw new Exception('No se ha definido el tiempo de sesion'); 
+        }
+        
+        if(SESSION_TIME == 0){
+            return;
+        }
+        
+        if(time() - Session::get('tiempo') > (SESSION_TIME * 60)){
+            Session::destroy();
+            header('location:' . BASE_URL . 'error/access/8080');
+        }
+        else{
+            Session::set('tiempo', time());
+        }
+    }
 
 }
 

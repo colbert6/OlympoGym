@@ -16,6 +16,7 @@ Class menu {
     }
 
     function crea_menu() {
+        
         echo "<aside>";
         echo " <div id='sidebar'  class='nav-collapse'>";
               
@@ -27,6 +28,12 @@ Class menu {
         echo "      </ul>";
         echo " </div>";
         echo "</aside>";
+        
+        echo "<section id='main-content'>
+                <section class='wrapper'>
+                 <div class='row'>
+                    <div class='col-lg-12 main-chart'>";
+        
                 
         
     }
@@ -59,7 +66,7 @@ Class menu {
              if( $this->_menus[$i]['id_padre']!=NULL && $this->_menus[$i]['id_padre']==$padre){
                 
                     if($this->_menus[$i]['id_modulo']==$this->_id_hijo)
-                        { echo "<li class='active' >";}
+                        { echo "<li class='active'>";}
                     else
                         { echo "<li>";}  
                   echo "<a  href='".BASE_URL.$this->_menus[$i]['url']."'>".$this->_menus[$i]['nombre']."</a></li>";

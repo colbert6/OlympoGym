@@ -15,6 +15,8 @@ class moduloController extends controller{
 
     public function index() {
         $this->_view->datos = $this->_modulo->selecciona();
+        $this->_view->setCss(array('jquery.dataTables'),true);
+        $this->_view->setJs(array('jquery.dataTables.min','run_table'),true);
         $this->_view->renderizar('index','1','2');
     }
     
@@ -31,23 +33,14 @@ class moduloController extends controller{
     }
 
     public function nuevo() {
-        if ($_POST['guardar'] == 1) {
-            $this->_modulos->descripcion = $_POST['descripcion'];
-            $this->_modulos->url = $_POST['url'];
-            if(isset ($_POST['modulo_padre'])){
-                $this->_modulos->idmodulo_padre = $_POST['modulo_padre'];
-            }else{
-                $this->_modulos->idmodulo_padre = 0;
-            }
-            $this->_modulos->estado = $_POST['estado'];
-            $this->_modulos->inserta();
-            $this->redireccionar('modulos');
+        if (@$_POST['guardar'] == 1) {
+            echo "<script>alert('Hola')</script>";
         }
-        $this->_vista->modulos_padre = $this->_modulos->seleccionar(0);
-        $this->_vista->titulo = 'Registrar Modulo';
-        $this->_vista->action = BASE_URL . 'modulos/nuevo';
-        $this->_vista->setJs(array('funciones_form'));
-        $this->_vista->renderizar('form');
+        
+        $this->_view->titulo = 'Registrar Modulo';
+        $this->_view->action = BASE_URL . 'modulo/nuevo';
+        //$this->_view->setJs(array('funciones_form'));
+        $this->_view->renderizar('form');
     }
 
     public function editar($id) {

@@ -13,12 +13,30 @@ class View
     
     public function renderizar($vista, $id_padre=false,$id_hijo=false)   {
         
+        if(!Sesion::get('autenticado')){
+            $this->renderizar_web('access');
+            exit;
+        }
+        
+        $js = array();
+        $css = array();
+
+        if (count($this->_js)) {
+            $js = $this->_js;
+        }
+        if (count($this->_css)) {
+            $css = $this->_css;
+        }
+        
         $rutaView = ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.php';
       
         $_systemParams = array(
             'ruta_css' => BASE_URL . 'public/css/',
             'ruta_img' => BASE_URL . 'public/img/',
-            'ruta_js' => BASE_URL . 'public/js/'
+            'ruta_js' => BASE_URL . 'public/js/',
+            'js' => $js,
+            'css' => $css
+            
         );
         
         if(is_readable($rutaView)){
@@ -95,22 +113,35 @@ class View
             throw new Exception('Error de vista');
         }
     }
-    public function setCss(array $css)
+    public function setCss(array $css,$public = false)
     {
         if(is_array($css) && count($css)){
-            for($i=0; $i < count($css); $i++){
-                $this->_css[] = BASE_URL . 'views/' . $this->_controlador . '/css/' . $css[$i] . '.css';
+            if(!$public){
+                for($i=0; $i < count($css); $i++){
+                    $this->_css[] = BASE_URL . 'views/' . $this->_controlador . '/css/' . $css[$i] . '.css';
+                }
+            }else{
+                for($i=0; $i < count($css); $i++){
+                    $this->_css[] = BASE_URL . 'public/css/' . $css[$i] . '.css';
+                }
             }
+            
         } else {
             throw new Exception('Error de css');
         }
     }
     
-    public function setJs(array $js)
+    public function setJs(array $js,$public= false)
     {
         if(is_array($js) && count($js)){
-            for($i=0; $i < count($js); $i++){
-                $this->_js[] = BASE_URL . 'views/' . $this->_controlador . '/js/' . $js[$i] . '.js';
+            if(!$public){
+                for($i=0; $i < count($css); $i++){
+                    $this->_js[] = BASE_URL . 'views/' . $this->_controlador . '/js/' . $js[$i] . '.js';
+                }
+            }else{
+                for($i=0; $i < count($js); $i++){
+                    $this->_js[] = BASE_URL . 'public/js/' . $js[$i] . '.js';
+                }
             }
         } else {
             throw new Exception('Error de js');

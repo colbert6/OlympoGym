@@ -8,10 +8,7 @@ define('APP_NAME', 'Mi Framework');
 define('APP_SLOGAN', 'mi primer framework php y mvc...');
 define('APP_COMPANY', 'www.dlancedu.com');
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'olympo_v3');
-define('DB_CHAR', 'utf8');
+//define('SESSION_TIME', 1);
+
 
 ?>

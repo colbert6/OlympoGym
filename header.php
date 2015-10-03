@@ -19,13 +19,22 @@
     <!-- Custom styles for this template -->
     <link href="<?php echo $_systemParams['ruta_css']; ?>style.css" rel="stylesheet">
     <link href="<?php echo $_systemParams['ruta_css']; ?>style-responsive.css" rel="stylesheet">
-
+    
+    
     
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <?php if(isset($_systemParams['css']) && count($_systemParams['css'])){ ?>
+        <?php for($i=0; $i < count($_systemParams['css']); $i++){ ?>
+
+           <link href="<?php echo $_systemParams['css'][$i] ?>" type="text/css" rel="stylesheet" >
+
+        <?php } ?>
+    <?php } ?>
   </head>
 
   <body>

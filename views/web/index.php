@@ -50,6 +50,17 @@
                            </div>
                         </div>
                     </div>
+                        
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <div class="hover-bg">
+                                <iframe width="240" height="188"
+                                        src="https://www.youtube.com/embed/dLMPII2joCE"
+                                        frameborder="100" allowfullscreen>
+                                </iframe>
+                           </div>
+                        </div>
+                    </div>
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                            <div class="hover-bg">
@@ -65,17 +76,6 @@
                               <h4><a href="#">Servicios</a></h4>  
                             </div>
                            </div>
-                        </div>
-                    </div>    
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <img src="<?php echo $_webParams['ruta_img']; ?>web/5.jpg" alt="">
-                            <div class="caption">
-                                <h4><a href="#">Productos</a>
-                                </h4>
-                                <p>ros clientes</p>
-                            </div>
-                            
                         </div>
                     </div>
  

@@ -13,7 +13,6 @@
     <link href="<?php echo $_systemParams['ruta_css']; ?>bootstrap.css" rel="stylesheet">
     <!--external css-->
     <link href="<?php echo $_systemParams['ruta_css']; ?>font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="<?php echo $_systemParams['ruta_css']; ?>jquery.gritter.css" />
      
     
     <!-- Custom styles for this template -->
@@ -40,7 +39,7 @@
                   <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
               </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>OLYMPOGYM</b></a>
+            <a href="<?php echo BASE_URL ?>index" class="logo"><b>OLYMPOGYM</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -124,7 +123,7 @@
                                     <span class="message">
                                         Please, answer asap.
                                     </span>
-                                </a>
+                                </a>    
                             </li>
                             <li>
                                 <a href="#">See all messages</a>
@@ -140,6 +139,9 @@
                             <div class="notify-arrow notify-arrow-green"></div>
                             <li>
                                 <p class="green">SESION</p>
+                            </li>
+                            <li>
+                               <a href="<?php echo BASE_URL ?>web">Volver a Portal Web</a>
                             </li>
                             <li>
                                <a href="#">Cambiar Contraseña</a>

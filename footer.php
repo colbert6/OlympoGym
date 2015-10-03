@@ -9,13 +9,10 @@
     <script src="<?php echo $_systemParams['ruta_js']; ?>jquery.nicescroll.js" type="text/javascript"></script>
 
 
-
     <!--common script for all pages-->
     <script src="<?php echo $_systemParams['ruta_js']; ?>common-scripts.js"></script>
     
-    <script type="text/javascript" src="<?php echo $_systemParams['ruta_js']; ?>gritter/js/jquery.gritter.js"></script>
-    <script type="text/javascript" src="<?php echo $_systemParams['ruta_js']; ?>gritter-conf.js"></script>
-
+    
   
 
   </body>

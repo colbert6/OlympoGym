@@ -4,12 +4,14 @@ class View
     private $_controlador;
     private $_js;
     private $_css;
+    private $_menu;
     
-    public function __construct(Request $peticion) {
+    public function __construct(Request $peticion,$menu) {
         $this->_controlador = $peticion->getControlador();
+        $this->_menu =$menu;
     }
     
-    public function renderizar($vista, $item = false)   {
+    public function renderizar($vista, $id_padre=false,$id_hijo=false)   {
         
         $rutaView = ROOT . 'views' . DS . $this->_controlador . DS . $vista . '.php';
       
@@ -22,6 +24,7 @@ class View
         if(is_readable($rutaView)){
             include_once ROOT . 'header.php';
             include_once ROOT . 'menu.php';
+            new menu($this->_menu,$id_padre,$id_hijo);
             include_once $rutaView;
             include_once ROOT . 'footer.php';
          } 

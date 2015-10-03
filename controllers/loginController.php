@@ -12,7 +12,7 @@ class loginController extends controller {
     public function index() {
         $datos=$this->_empleados->login_usuario($_POST['usuario'],$_POST['clave']);
         
-        if($datos[0]['nombre']==$_POST['usuario'] && $datos[0]['id_empleado']!=''){
+        if($datos[0]['usuario']==$_POST['usuario'] && $datos[0]['clave']==$_POST['clave']){
             Sesion::set('autenticado', true);
             Sesion::set('empleado', $datos[0]['nombre'].' '.$datos[0]['apellido_paterno'].' '.$datos[0]['apellido_materno']);
             Sesion::set('idempleado', $datos[0]['id_empleado']);

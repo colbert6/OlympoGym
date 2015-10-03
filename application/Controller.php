@@ -2,10 +2,12 @@
 abstract class Controller
 {
     protected $_view;
-    protected $_modelo;
+    protected $_modulos;
     
     public function __construct() {//asiganmos una vista para este contralador
-         $this->_view = new View(new Request);
+        $this->_modulos = $this->loadModel('modulo');
+        $menu = $this->_modulos->selecciona();
+        $this->_view = new View(new Request,$menu);
     }
     abstract public function index();
     

@@ -1,6 +1,6 @@
 <?php
 
-class sesion {
+class Session {
 
     public static function init() {
         session_start();
@@ -35,12 +35,12 @@ class sesion {
     }
     public static function acceso($level)
     {
-        if(!Sesion::get('autenticado')){
+        if(!Session::get('autenticado')){
             header('location:' . BASE_URL . 'error/access/5050');
             exit;
         }
         
-        if(Sesion::getLevel($level) > Sesion::getLevel(Sesion::get('level'))){
+        if(Session::getLevel($level) > Session::getLevel(Session::get('level'))){
             header('location:' . BASE_URL . 'error/access/5050');
             exit;
         }
@@ -48,11 +48,11 @@ class sesion {
     
     public static function accesoView($level)
     {
-        if(!Sesion::get('autenticado')){
+        if(!Session::get('autenticado')){
             return false;
         }
         
-        if(Sesion::getLevel($level) > Sesion::getLevel(Sesion::get('level'))){
+        if(Session::getLevel($level) > Session::getLevel(Session::get('level'))){
             return false;
         }
         

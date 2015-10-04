@@ -19,7 +19,7 @@ try{
     require_once APP_PATH . 'Sesion.php';
     require_once BASE_DATOS . 'conexion.php';
     require_once BASE_DATOS . 'Main.php';
-    Sesion::init();
+    Session::init();
     Bootstrap::run(new Request);
 }
 catch(Exception $e){

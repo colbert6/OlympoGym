@@ -10,32 +10,48 @@ class loginController extends controller {
     }
 
     public function index() {
-        $datos=$this->_empleados->login_usuario($_POST['usuario'],$_POST['clave']);
+        if(!$this->getAlphaNum('usuario')){
+                echo '<script>alert("Debe introducir su nombre de usuario")</script>';
+                $this->redireccionar();
+                exit;
+            }
+            
+            if(!$this->getSql('clave')){
+                echo '<script>alert("Debe introducir su clave")</script>';
+                $this->redireccionar();
+                exit;
+            }
+            
+            $datos=$this->_empleados->login_usuario($_POST['usuario'],$_POST['clave']);
+            
+            if(!$datos){
+                echo '<script>alert("Usuario o Clave incorrecta")</script>';
+                $this->redireccionar();
+                exit;
+            }
+            if($datos['estado'] != 1){
+                echo '<script>alert("Este Usuario No esta habilitado")</script>';
+                $this->redireccionar();
+                exit;
+            }
         
-        if($datos[0]['usuario']==$_POST['usuario'] && $datos[0]['clave']==$_POST['clave']){
-            Sesion::set('autenticado', true);
-            Sesion::set('empleado', $datos[0]['nombre'].' '.$datos[0]['apellido_paterno'].' '.$datos[0]['apellido_materno']);
-            Sesion::set('idempleado', $datos[0]['id_empleado']);
-            Sesion::set('level','especial');
+            Session::set('autenticado', true);
+            Session::set('empleado', $datos['nombre'].' '.$datos['apellido_paterno'].' '.$datos['apellido_materno']);
+            Session::set('idempleado', $datos['id_empleado']);
+            Session::set('usuario', $datos['usuario']);
+            Session::set('id_usuario', $datos['id']);
             //Sesion::set('perfil', $datos[0]['id_perfil_usuario']);
            
-            echo '<script>alert("usuario o clave correcta")</script>';
+            echo '<script>alert("Sesion Iniciada")</script>';
             $this->redireccionar();
             
-        }else{
-            echo '<script>alert("usuario o clave incorrecta")</script>';
-            $this->redireccionar();
-        }
+        
     }
     
-    public function mostrar() {
-        echo 'Empleado: ' . Sesion::get('empleado') . '<br>';
-        echo 'idempleado: ' . Sesion::get('idempleado') . '<br>';
-        echo 'level: ' . Sesion::get('level') . '<br>';
-    }
+    
 
     public function cerrar() {
-        Sesion::destroy();
+        Session::destroy();
         echo '<script>alert("Sesion finalizada")</script>';
         $this->redireccionar();
     }

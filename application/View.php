@@ -13,7 +13,7 @@ class View
     
     public function renderizar($vista, $id_padre=false,$id_hijo=false)   {
         
-        if(!Sesion::get('autenticado')){
+        if(!Session::get('autenticado')){
             $this->renderizar_web('access');
             exit;
         }

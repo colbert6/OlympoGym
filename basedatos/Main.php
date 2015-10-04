@@ -48,6 +48,8 @@ class Main extends conexion {
         } else {
             if ($driver != 'mssql') {
                 $sql = $sql . ")";
+            }else {
+                $sql = $sql . " ()";
             }
         }
 //        die($sql);

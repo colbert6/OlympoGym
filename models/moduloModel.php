@@ -3,7 +3,7 @@
 class moduloModel extends Main{
 
     public $idmodulo;
-    public $descripcion;
+    public $nombre;
     public $url;
     public $estado;
     public $idmodulo_padre;
@@ -11,8 +11,21 @@ class moduloModel extends Main{
     public $idperfil;
     
     public function selecciona() {
-        $resultado = $this->consulta_simple("select * from modulo");
-        return $resultado->fetchall();
+        $r = $this->get_consulta("pa_m1_modulo",null);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (conexion::$_servidor == 'oci') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
+        //return $resultado;
     }
         
     public function seleciona() {

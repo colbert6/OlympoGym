@@ -11,7 +11,7 @@ class indexController extends Controller
         //$this->_vista->titulo = 'Portada';
         //llamamos al metodo renderizar para que muestre la vista enviada
         //por parametro
-        if(Sesion::get('autenticado')){
+        if(Session::get('autenticado')){
             $this->_view->renderizar('index');
         }
         else{

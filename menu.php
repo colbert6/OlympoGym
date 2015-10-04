@@ -41,17 +41,17 @@ Class menu {
     function cargar_menu() {
         if(isset($this->_menus) && count($this->_menus)){
             for($i=0; $i< count($this->_menus); $i++){
-                if( $this->_menus[$i]['id_padre']==NULL){
+                if( $this->_menus[$i]['ID_PADRE']==NULL){
                     echo "<li class='sub-menu'>";
-                    if($this->_menus[$i]['id_modulo']==$this->_id_padre)
+                    if($this->_menus[$i]['ID_MODULO']==$this->_id_padre)
                         { echo "  <a class='active' href=''>";}
                     else
                         { echo "  <a href=''>";}
                     echo "      <i ></i>";
-                    echo "      <span> ".$this->_menus[$i]['nombre']."</span>";
+                    echo "      <span> ".$this->_menus[$i]['NOMBRE']."</span>";
                     echo "  </a>";
                     echo "  <ul class='sub'>";
-                    $this->cargar_hijos($this->_menus[$i]['id_modulo']);
+                    $this->cargar_hijos($this->_menus[$i]['ID_MODULO']);
                         echo "  </ul>";
                     echo "</li>";
                 }
@@ -63,13 +63,13 @@ Class menu {
 
     function cargar_hijos($padre) {
         for($i=0; $i< count($this->_menus); $i++){
-             if( $this->_menus[$i]['id_padre']!=NULL && $this->_menus[$i]['id_padre']==$padre){
+             if( $this->_menus[$i]['ID_PADRE']!=NULL && $this->_menus[$i]['ID_PADRE']==$padre){
                 
-                    if($this->_menus[$i]['id_modulo']==$this->_id_hijo)
+                    if($this->_menus[$i]['ID_MODULO']==$this->_id_hijo)
                         { echo "<li class='active'>";}
                     else
                         { echo "<li>";}  
-                  echo "<a  href='".BASE_URL.$this->_menus[$i]['url']."'>".$this->_menus[$i]['nombre']."</a></li>";
+                  echo "<a  href='".BASE_URL.$this->_menus[$i]['URL']."'>".$this->_menus[$i]['NOMBRE']."</a></li>";
                  
              }
         }

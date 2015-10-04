@@ -87,7 +87,7 @@
 
                         <?php endfor; ?>
                         <?php endif; ?>
-                        <?php if(Sesion::get('autenticado')){ ?>
+                        <?php if(Session::get('autenticado')){ ?>
                         <li><a href="<?php echo BASE_URL ?>index"><label>SISTEMA</label></a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">

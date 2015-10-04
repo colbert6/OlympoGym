@@ -37,6 +37,7 @@
 
                             <div class="modal-body">
                                 <form action="<?php echo BASE_URL ?>login" method="post" id="loginForm">
+                                     <input type="hidden" value="1" name="enviar" />
                                   <div class="form-group has-feedback">
                                     <input type="text" class="form-control" required placeholder="Usuario" name="usuario">
                                     <span class="glyphicon glyphicon-user form-control-feedback"></span>

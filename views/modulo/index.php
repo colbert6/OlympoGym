@@ -22,13 +22,13 @@
          <tbody>
             <?php for ($i = 0; $i < count($this->datos); $i++) { ?>
             <tr>
-                <td><?php echo $this->datos[$i]['id_modulo'] ?></td>
-                <td><?php echo $this->datos[$i]['nombre'] ?></td>
-                <td><?php echo $this->datos[$i]['url'] ?></td>
-                <td><?php echo $this->datos[$i]['estado'] ?></td>
-                <td><?php echo $this->datos[$i]['orden'] ?></td>
-                <td><?php echo $this->datos[$i]['modulo_padre'] ?></td>
-                <td><?php echo "<i class='".$this->datos[$i]['icono']."'>" ?></td>
+                <td><?php echo $this->datos[$i]['ID_MODULO'] ?></td>
+                <td><?php echo $this->datos[$i]['NOMBRE'] ?></td>
+                <td><?php echo $this->datos[$i]['URL'] ?></td>
+                <td><?php echo $this->datos[$i]['ESTADO'] ?></td>
+                <td><?php echo $this->datos[$i]['ORDEN'] ?></td>
+                <td><?php echo $this->datos[$i]['MODULO_PADRE'] ?></td>
+                <td><?php echo "<i class='".$this->datos[$i]['ICONO']."'>" ?></td>
                
             </tr>
         <?php } ?>

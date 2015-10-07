@@ -39,7 +39,6 @@ class loginController extends controller {
             Session::set('empleado', $datos['nombre'].' '.$datos['apellido_paterno'].' '.$datos['apellido_materno']);
             Session::set('idempleado', $datos['id_empleado']);
             Session::set('usuario', $datos['usuario']);
-            Session::set('id_usuario', $datos['id']);
             //Sesion::set('perfil', $datos[0]['id_perfil_usuario']);
            
             echo '<script>alert("Sesion Iniciada")</script>';

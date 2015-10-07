@@ -10,11 +10,25 @@ class conexion extends PDO{
         }
         $file = 'config.ini';
         @$settings = parse_ini_file($file, TRUE);
-        $dsn = $settings['database']['driver'] . ':dbname=' . $settings['database']['basedatos'] . '; host=' . $settings['database']['host'] . '; port=' . $settings['database']['puerto'];
+        
+        if($settings['database']['driver']=='sqlsrv'){
+            $dsn = $settings['database']['driver'] . ':Database=' . $settings['database']['basedatos'] . '; server=' . $settings['database']['host'] ;
+        }else{
+            $dsn = $settings['database']['driver'] . ':dbname=' . $settings['database']['basedatos'] . '; host=' . $settings['database']['host'] . '; port=' . $settings['database']['puerto'];
+        }
         self::$_servidor=$settings['database']['driver'];
         $user = $settings['database']['usuario'];
         $password = trim($settings['database']['password']);
         try {
+           /*$nuevo = parent::__construct($dsn,$user, $password);
+            if (!$nuevo) {
+                    echo $dsn." ".$user.$password;
+            }else{
+                echo "errorasas";
+            }
+
+            exit;
+            */
             self::$instancia = parent::__construct($dsn, $user, $password);
             return self::$instancia;
         } catch (PDOException $e) {
@@ -95,7 +109,7 @@ class conexion extends PDO{
                                             <option></option>
                                             <option value="mysql">MySQL</option>
                                             <option value="pgsql">PostgreSQL</option>
-                                            <option value="mssql">SQL Server</option>
+                                            <option value="sqlsrv">SQL Server</option>
                                             <option value="oci">Oracle</option>
                                         </select>    
                                 </div>

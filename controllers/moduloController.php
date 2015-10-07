@@ -17,6 +17,7 @@ class moduloController extends controller{
         $this->_view->datos = $this->_modulo->selecciona();
         $this->_view->setCss(array('jquery.dataTables'),true);
         $this->_view->setJs(array('jquery.dataTables.min','run_table'),true);
+        $this->_view->titulo = 'Lista de Modulos';
         $this->_view->renderizar('index','1','2');
     }
     
@@ -36,7 +37,6 @@ class moduloController extends controller{
         if (@$_POST['guardar'] == 1) {
             echo "<script>alert('Hola')</script>";
         }
-        
         $this->_view->titulo = 'Registrar Modulo';
         $this->_view->action = BASE_URL . 'modulo/nuevo';
         //$this->_view->setJs(array('funciones_form'));

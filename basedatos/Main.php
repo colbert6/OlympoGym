@@ -20,7 +20,7 @@ class Main extends conexion {
         $config = parse_ini_file('config.ini', TRUE);
         $driver = $config['database']['driver'];
         switch ($driver) {
-            case 'mssql': $sql = "execute ";
+            case 'sqlsrv': $sql = "execute ";
                 break;
             case 'mysql': $sql = "call ";
                 break;
@@ -30,7 +30,7 @@ class Main extends conexion {
                 break;
         }
         $sql = $sql . $pa . " ";
-        if ($driver != 'mssql') {
+        if ($driver != 'sqlsrv') {
             $sql = $sql . "(";
         }
 
@@ -40,16 +40,14 @@ class Main extends conexion {
                 if ($i < count($datos)) {
                     $sql = $sql . ",";
                 } else {
-                    if ($driver != 'mssql') {
+                    if ($driver != 'sqlsrv') {
                         $sql = $sql . ")";
                     }
                 }
             }
         } else {
-            if ($driver != 'mssql') {
+            if ($driver != 'sqlsrv') {
                 $sql = $sql . ")";
-            }else {
-                $sql = $sql . " ()";
             }
         }
 //        die($sql);

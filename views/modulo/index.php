@@ -1,8 +1,12 @@
 
-
-                
+<ol class="breadcrumb">
+  <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
+  <li><a href="<?php echo BASE_URL?>modulo" >Modulos</a></li>
+  <li class="active"><?php echo $this->titulo; ?></li>
+</ol>
                   
- <h3><?php echo $this->titulo; ?></h3> 
+ <fieldset>
+    <legend><?php echo $this->titulo; ?></legend>
  
 <?php if (isset($this->datos) && count($this->datos)) { ?>
     
@@ -23,7 +27,7 @@
             <?php for ($i = 0; $i < count($this->datos); $i++) { ?>
             <tr>
                 <td><?php echo $this->datos[$i]['ID_MODULO'] ?></td>
-                <td><?php echo $this->datos[$i]['DESCRIPCION'] ?></td>
+                <td><?php echo $this->datos[$i]['NOMBRE'] ?></td>
                 <td><?php echo $this->datos[$i]['URL'] ?></td>
                 <td><?php echo $this->datos[$i]['ESTADO'] ?></td>
                 <td><?php echo $this->datos[$i]['ORDEN'] ?></td>
@@ -31,11 +35,11 @@
                 <td><?php echo "<i class='".$this->datos[$i]['ICONO']."'>" ?></td>
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
-                        <a class="btn btn-success" href="#">
-                            <i class="fa fa-pencil fa-fw"></i> Delete
+                        <a class="btn btn-success" href="<?php echo BASE_URL."modulo/editar/".$this->datos[$i]['ID_MODULO']?>">
+                            <i class="fa fa-pencil fa-fw"></i> Editar
                         </a>
-                        <a class="btn btn-danger" href="#">
-                            <i class="fa fa-trash-o fa-lg"></i> Delete
+                        <a class="btn btn-danger" href="<?php echo BASE_URL."modulo/eliminar/".$this->datos[$i]['ID_MODULO']?>">
+                            <i class="fa fa-trash-o fa-lg"></i> Borrar
                         </a>
                     </div>
                 </td>
@@ -52,4 +56,4 @@
         <div class="btn-group">
         <a class="btn btn-primary" href="<?php echo BASE_URL?>modulo/nuevo" class="k-button">Nuevo</a>
         </div>
-            
+  </fieldset>           

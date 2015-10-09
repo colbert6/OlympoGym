@@ -48,7 +48,7 @@ Class menu {
                     else
                         { echo "  <a href=''>";}
                     echo "      <i ></i>";
-                    echo "      <span> ".$this->_menus[$i]['DESCRIPCION']."</span>";
+                    echo "      <span> ".$this->_menus[$i]['NOMBRE']."</span>";
                     echo "  </a>";
                     echo "  <ul class='sub'>";
                     $this->cargar_hijos($this->_menus[$i]['ID_MODULO']);
@@ -69,7 +69,7 @@ Class menu {
                         { echo "<li class='active'>";}
                     else
                         { echo "<li>";}  
-                  echo "<a  href='".BASE_URL.$this->_menus[$i]['URL']."'>".$this->_menus[$i]['DESCRIPCION']."</a></li>";
+                  echo "<a  href='".BASE_URL.$this->_menus[$i]['URL']."'>".$this->_menus[$i]['NOMBRE']."</a></li>";
                  
              }
         }

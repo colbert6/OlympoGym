@@ -1,4 +1,9 @@
-
+ 
+<ol class="breadcrumb">
+  <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
+  <li><a href="<?php echo BASE_URL?>modulo" >Modulos</a></li>
+  <li class="active"><?php echo $this->titulo; ?></li>
+</ol>
 
 
 <div class="col-md-8">
@@ -7,38 +12,52 @@
     <div class="col-md-1"></div>
     <div class="col-md-11" style="color:#000">
     <form class="form-horizontal" role="form" id="form_modulo" method="post" action="<?php echo $this->action; ?>">
-
-        <div class="form-group">
+        <input name="guardar" id="guardar" type="hidden" value="1">
+      <?php if(isset ($this->datos[0]['ID_MODULO'])) {?>  
+      <div class="form-group">
         <label class="control-label col-sm-3" >NOMBRE:</label>
         <div class="col-sm-9">
-          <input name="nombre" class="form-control" id="nombre" placeholder="Nombre">
+            <input name="id_modulo" id="id_modulo" class="form-control"  readonly="readonly"
+                   value="<?php echo $this->datos[0]['ID_MODULO'];?>">
+        </div>
+      </div>  
+      <?php } ?>  
+      <div class="form-group">
+        <label class="control-label col-sm-3" >NOMBRE:</label>
+        <div class="col-sm-9">
+          <input name="nombre" id="nombre" class="form-control"  placeholder="Nombre"
+                value="<?php if(isset ($this->datos[0]['NOMBRE']))echo $this->datos[0]['NOMBRE']?>">
         </div>
       </div>
       <div class="form-group">
-        <label class="control-label col-sm-3" for="email">URL:</label>
+        <label class="control-label col-sm-3" for="url">URL:</label>
         <div class="col-sm-9">
-            <input name="url" class="form-control" id="url" placeholder="url">
+            <input name="url" id="url" class="form-control"  placeholder="url"
+                value="<?php if(isset ($this->datos[0]['URL']))echo $this->datos[0]['URL']?>">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-3" for="email">ORDEN:</label>
         <div class="col-sm-9">
-          <input name="orden" class="form-control" id="orden" placeholder="Orden">
+          <input name="orden" id="orden" class="form-control"  placeholder="Orden"
+                 value="<?php if(isset ($this->datos[0]['ORDEN']))echo $this->datos[0]['ORDEN']?>">
         </div>
       </div>
+      <?php if(isset ($this->datos[0]['ESTADO'])) {?>  
       <div class="form-group">
         <label class="control-label col-sm-3" for="email">ESTADO:</label>
         <div class="col-sm-9">
           <input name="estado" class="form-control" id="estado" placeholder="Estado">
         </div>
       </div>
+      <?php }?>  
       <div class="form-group">
         <label class="control-label col-sm-3" >PADRE:</label>
         <div class="col-sm-9"> 
-           <select class="form-control glyphicon">
-               <option value="0"></option>
-               <?php for($i=0;$i<$padres;$i++){ //Aca va la lista de los modulos padres ?> 
-                    <option value=""></option>
+           <select class="form-control glyphicon" name='padre' id='padre'>
+               <option value='0' >NO TIENE MODULO PADRE</option>
+               <?php for($i=0;$i<count($this->modulos_padre);$i++){ //Aca va la lista de los modulos padres ?> 
+                    <option value="<?php echo $this->modulos_padre[$i]['ID_MODULO']."/".$this->modulos_padre[$i]['NOMBRE']?>"><?php echo $this->modulos_padre[$i]['NOMBRE']?></option>
                <?php } ?>
           </select>
         </div>
@@ -46,19 +65,16 @@
       <div class="form-group">
         <label class="control-label col-sm-3" >ICONO:</label>
         <div class="col-sm-9"> 
-          <select class="form-control glyphicon">
-              <option value=""></option>
-               <?php for($i=0;$i<$padres;$i++){ //Aca va la lista de los modulos padres ?> 
-                    <option value=""></option>
-               <?php } ?>
+          <select class="form-control glyphicon" name='icono' id='icono'>
+              <option value="0">SIN MODULO</option>
           </select>
         </div>
       </div>
 
       <div class="form-group"> 
         <div class="col-sm-offset-3 col-sm-9">
-          <a type="submit" class="btn btn-primary"> Guardar</a>
-          <a href="javascript:history.back(1)" type="submit" class="btn btn-danger">Cancelar</a>
+            <button type="submit" class="btn btn-primary"> Guardar</button>
+          <a href="<?php echo BASE_URL?>modulo" type="submit" class="btn btn-danger">Cancelar</a>
         </div>
       </div>
 

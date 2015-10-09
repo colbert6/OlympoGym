@@ -1,3 +1,3 @@
 $(function() {    
-    $( "#descripcion" ).focus(); 
+    $( "#nombre" ).focus(); 
 });

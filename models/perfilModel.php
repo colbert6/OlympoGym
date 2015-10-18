@@ -33,7 +33,7 @@ class perfilModel extends Main{
     
     public function inserta() {
         $datos = array($this->descripcion, $this->nivel);
-        $r = $this->get_consulta("pa_i_perfil_usuario", $datos);
+        $r = $this->get_consulta("pa_i_peus", $datos);
         $error = $r[1];
         $r = null;
         return $error;
@@ -44,7 +44,7 @@ class perfilModel extends Main{
         $datos = array($this->id_modulo, $this->nombre, $this->url,$this->orden, 
             $this->id_padre,$this->modulo_padre,$this->icono);
         
-        $r = $this->get_consulta("pa_u_perfil_usuario", $datos);
+        $r = $this->get_consulta("pa_u_peus", $datos);
         $error = $r[1];
         $r = null;
         return $error;
@@ -54,7 +54,7 @@ class perfilModel extends Main{
 
     public function elimina() {
         $datos = array($this->idmodulo);
-        $r = $this->get_consulta("pa_d_perfil_usuario", $datos);
+        $r = $this->get_consulta("pa_d_peus", $datos);
         $error = $r[1];
         $r = null;
         return $error;

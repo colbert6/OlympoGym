@@ -5,8 +5,10 @@ class Main extends conexion {
     
     protected function consulta_simple($sql) {
            $bd = new conexion();
-           $stmt = $bd->query($sql);
-           return $stmt;
+           $stmt=$bd->prepare($sql); 
+           $stmt->execute();
+           return $stmt->fetchAll();
+           
     }
     protected static function get_consulta($pa, $datos) {
         $bd = new conexion();

@@ -5,6 +5,7 @@ abstract class Controller
     protected $_modulos;
     
     public function __construct() {//asiganmos una vista para este contralador
+    //  
         $this->_modulos = $this->loadModel('modulo');
         $menu = $this->_modulos->selecciona();
         $this->_view = new View(new Request,$menu);

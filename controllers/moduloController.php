@@ -4,16 +4,19 @@ class moduloController extends controller{
 
     private $_modulo;
     private $_id_padre;
-    private $_id_modulo;
+    private $_id_hijo;
 
     public function __construct() {
         /*if (!$this->acceso(42)) {
             $this->redireccionar('error/access/5050');
         }*/
         parent::__construct();
-        $this->_id_padre =1;
-        $this->_id_modulo=2;
         $this->_modulo = $this->loadModel('modulo');
+        
+        $this->_modulo->url = 'modulo';
+        $modulo= $this->_modulo->selecciona_filtro();
+        $this->_id_padre=$modulo[0][5];
+        $this->_id_hijo=$modulo[0][0];
     }
 
     public function index() {
@@ -21,7 +24,9 @@ class moduloController extends controller{
         $this->_view->setCss(array('jquery.dataTables'),true);
         $this->_view->setJs(array('jquery.dataTables.min','run_table'),true);
         $this->_view->titulo = 'Lista de Modulos';
-        $this->_view->renderizar('index',$this->_id_padre,$this->_id_modulo);
+        
+        
+        $this->_view->renderizar('index',$this->_id_padre,$this->_id_hijo);
     }
     public function nuevo() {
         if (@$_POST['guardar'] == 1) {
@@ -38,16 +43,15 @@ class moduloController extends controller{
                 $this->_modulo->id_padre = 0;
                 $this->_modulo->modulo_padre = '0';
             }
-            $this->_modulo->icono = $_POST['icono'];
+            $this->_modulo->icono ='';// $_POST['icono'];
             $this->_modulo->inserta();
             $this->redireccionar('modulo');
         }
         $this->_view->modulos_padre = $this->_modulo->selecciona_padre();
-        
         $this->_view->titulo = 'Registrar Modulo';
         $this->_view->action = BASE_URL . 'modulo/nuevo';
         //$this->_view->setJs(array('funciones_form'));
-        $this->_view->renderizar('form',$this->_id_padre,$this->_id_modulo);
+        $this->_view->renderizar('form',$this->_id_padre,$this->_id_hijo);
     }
  
     public function editar($id) {
@@ -70,7 +74,7 @@ class moduloController extends controller{
                 $this->_modulo->id_padre = 0;
                 $this->_modulo->modulo_padre = '0';
             }
-            $this->_modulo->icono = $_POST['icono'];
+            $this->_modulo->icono = '';//$_POST['icono'];
             $this->_modulo->editar();
             $this->redireccionar('modulo');
         }
@@ -82,7 +86,7 @@ class moduloController extends controller{
         $this->_view->action = BASE_URL . 'modulo/editar/'.$id;
         
         //$this->_vista->setJs(array('funciones_form'));
-        $this->_view->renderizar('form',$this->_id_padre,$this->_id_modulo);
+        $this->_view->renderizar('form',$this->_id_padre,$this->_id_hijo);
     }
 
     public function eliminar($id) {
@@ -91,7 +95,7 @@ class moduloController extends controller{
         }
         $this->_modulos->idmodulo = $this->filtrarInt($id);
         $this->_modulos->elimina();
-        $this->redireccionar('modulos');
+        $this->redireccionar('modulo');
     }
     
 }

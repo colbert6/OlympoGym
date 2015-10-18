@@ -12,6 +12,11 @@ class moduloModel extends Main{
     public $icono;
     
     public function selecciona() {
+        $sql="SELECT `id_modulo`, `nombre`, `url`, `orden`, `estado`, `id_padre`, `modulo_padre`, `icono` "
+            . "FROM modulo WHERE estado='1'";
+        $r = $this->consulta_simple($sql);
+        return $r;
+        /* 
         $r = $this->get_consulta("pa_m1_modulo",null);
         if ($r[1] == '') {
             $stmt = $r[0];
@@ -27,9 +32,26 @@ class moduloModel extends Main{
             return $stmt->fetchall();
         }
         //return $resultado;
+        *
+        */
     }
     public function selecciona_filtro() {
-             
+        if (is_null($this->id_modulo)) {
+            $this->id_modulo = 0;
+        }
+        if (is_null($this->nombre)) {
+            $this->descripcion = '';
+        }
+        if (is_null($this->url)) {
+            $this->url = '';
+        }
+        $sql="SELECT `id_modulo`, `nombre`, `url`, `orden`, `estado`, `id_padre`, `modulo_padre`, `icono` "
+            . "FROM modulo "
+            . "WHERE ( id_modulo= ".$this->id_modulo." or url='".$this->url."')"
+            . " and estado='1'";
+        $r = $this->consulta_simple($sql);
+        return $r;
+        /*     
         $datos = array($this->id_modulo,$this->nombre,$this->id_padre);
         
         $r = $this->get_consulta("pa_m2_modulo",$datos);
@@ -48,9 +70,17 @@ class moduloModel extends Main{
             return $stmt->fetchall();
         }
         //return $resultado;
+         
+         */
     }
     public function selecciona_padre() {
-        $r = $this->get_consulta("pa_m3_modulo",null);
+        $sql="SELECT id_modulo,nombre "
+            . "FROM modulo WHERE id_padre=0 and esatdo='1'";
+        $r = $this->consulta_simple($sql);
+        return $r;
+        /*
+        $datos = array($this->id_modulo=0);
+        $r = $this->consulta_simple('pa_m3_modulo',$datos);
         if ($r[1] == '') {
             $stmt = $r[0];
         } else {
@@ -65,6 +95,8 @@ class moduloModel extends Main{
             return $stmt->fetchall();
         }
         //return $resultado;
+        
+        */
     }
     public function inserta() {
         $datos = array($this->nombre, $this->url, $this->orden,
@@ -77,7 +109,7 @@ class moduloModel extends Main{
 
     public function editar() {
        
-        $datos = array($this->id_modulo, $this->nombre, $this->url,$this->orden, $this->estado,
+        $datos = array($this->id_modulo, $this->nombre, $this->url,$this->orden, 
             $this->id_padre,$this->modulo_padre,$this->icono);
         
         $r = $this->get_consulta("pa_u_modulo", $datos);

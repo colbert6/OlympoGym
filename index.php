@@ -8,7 +8,6 @@ define('APP_PATH', ROOT . 'application' . DS);
 define('BASE_DATOS', ROOT . 'basedatos' . DS);
 
 
-
 try{
     require_once APP_PATH . 'Config.php';
     require_once APP_PATH . 'Request.php';

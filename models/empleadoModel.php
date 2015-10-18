@@ -6,12 +6,13 @@ class empleadoModel extends Main{
     public function login_usuario($usuario,$clave) {
         //$datos = array($usuario,$clave);
         //$resultado = $this->consulta_simple("SELECT * FROM empleado where nombre='$usuario'");
-        $datos = $this->consulta_simple(
+        $r  = $this->consulta_simple(
                 "select * from empleado " .
                 "where usuario = '$usuario' " .
                 "and clave = '" . md5($clave) ."'"
                 );
-        return $datos->fetch();
+       
+        return $r;
 
     }
     

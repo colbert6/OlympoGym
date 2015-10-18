@@ -29,16 +29,16 @@ class loginController extends controller {
                 $this->redireccionar();
                 exit;
             }
-            if($datos['estado'] != 1){
+            if($datos[0][13] != 1){//estado
                 echo '<script>alert("Este Usuario No esta habilitado")</script>';
                 $this->redireccionar();
                 exit;
             }
         
             Session::set('autenticado', true);
-            Session::set('empleado', $datos['nombre'].' '.$datos['apellido_paterno'].' '.$datos['apellido_materno']);
-            Session::set('idempleado', $datos['id_empleado']);
-            Session::set('usuario', $datos['usuario']);
+            Session::set('empleado', $datos[0][2].' '.$datos[0][3].' '.$datos[0][4]);
+            Session::set('idempleado', $datos[0][1]);
+            Session::set('usuario', $datos[0][27]);
             //Sesion::set('perfil', $datos[0]['id_perfil_usuario']);
            
             echo '<script>alert("Sesion Iniciada")</script>';

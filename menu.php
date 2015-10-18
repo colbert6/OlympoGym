@@ -41,17 +41,18 @@ Class menu {
     function cargar_menu() {
         if(isset($this->_menus) && count($this->_menus)){
             for($i=0; $i< count($this->_menus); $i++){
-                if( $this->_menus[$i]['ID_PADRE']==0){
+                
+                if( $this->_menus[$i][5]==0){
                     echo "<li class='sub-menu'>";
-                    if($this->_menus[$i]['ID_MODULO']==$this->_id_padre)
+                    if($this->_menus[$i][0]==$this->_id_padre)
                         { echo "  <a class='active' href=''>";}
                     else
                         { echo "  <a href=''>";}
                     echo "      <i ></i>";
-                    echo "      <span> ".$this->_menus[$i]['NOMBRE']."</span>";
+                    echo "      <span> ".$this->_menus[$i][1]."</span>";
                     echo "  </a>";
                     echo "  <ul class='sub'>";
-                    $this->cargar_hijos($this->_menus[$i]['ID_MODULO']);
+                    $this->cargar_hijos($this->_menus[$i][0]);
                         echo "  </ul>";
                     echo "</li>";
                 }
@@ -63,13 +64,13 @@ Class menu {
 
     function cargar_hijos($padre) {
         for($i=0; $i< count($this->_menus); $i++){
-             if( $this->_menus[$i]['ID_PADRE']!=NULL && $this->_menus[$i]['ID_PADRE']==$padre){
+             if( $this->_menus[$i][5]!=NULL && $this->_menus[$i][5]==$padre){
                 
-                    if($this->_menus[$i]['ID_MODULO']==$this->_id_hijo)
+                    if($this->_menus[$i][0]==$this->_id_hijo)
                         { echo "<li class='active'>";}
                     else
                         { echo "<li>";}  
-                  echo "<a  href='".BASE_URL.$this->_menus[$i]['URL']."'>".$this->_menus[$i]['NOMBRE']."</a></li>";
+                  echo "<a  href='".BASE_URL.$this->_menus[$i][2]."'>".$this->_menus[$i][1]."</a></li>";
                  
              }
         }

@@ -13,8 +13,8 @@ class moduloController extends controller{
         parent::__construct();
         $this->_modulo = $this->loadModel('modulo');
         
-        $this->_modulo->url = 'modulo';
-        $modulo= $this->_modulo->selecciona_filtro();
+        $this->_modulos->url = 'modulo';
+        $modulo= $this->_modulos->selecciona_filtro();
         $this->_id_padre=$modulo[0][5];
         $this->_id_hijo=$modulo[0][0];
     }
@@ -58,7 +58,6 @@ class moduloController extends controller{
         if (!$this->filtrarInt($id)) {
             $this->redireccionar('modulo');
         }
-        
         if (@$_POST['guardar'] == 1) {
             $this->_modulo->id_modulo = $_POST['id_modulo'];
             $this->_modulo->nombre = $_POST['nombre'];
@@ -79,7 +78,10 @@ class moduloController extends controller{
             $this->redireccionar('modulo');
         }
         $this->_modulo->id_modulo = $this->filtrarInt($id);
+        
         $this->_view->datos = $this->_modulo->selecciona_filtro();
+        
+        
         $this->_view->modulos_padre = $this->_modulo->selecciona_padre();
         
         $this->_view->titulo = 'Actualizar Modulo';

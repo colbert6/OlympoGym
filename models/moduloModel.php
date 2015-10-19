@@ -40,7 +40,7 @@ class moduloModel extends Main{
             $this->id_modulo = 0;
         }
         if (is_null($this->nombre)) {
-            $this->descripcion = '';
+            $this->nombre = '';
         }
         if (is_null($this->url)) {
             $this->url = '';

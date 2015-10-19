@@ -75,7 +75,7 @@ class moduloModel extends Main{
     }
     public function selecciona_padre() {
         $sql="SELECT id_modulo,nombre "
-            . "FROM modulo WHERE id_padre=0 and esatdo='1'";
+            . "FROM modulo WHERE id_padre=0 and estado='1'";
         $r = $this->consulta_simple($sql);
         return $r;
         /*

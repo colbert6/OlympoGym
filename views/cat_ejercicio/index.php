@@ -49,7 +49,4 @@
         <a class="btn btn-primary" href="<?php echo BASE_URL?>cat_ejercicio/nuevo" class="k-button">Nuevo</a>
     <?php } ?>
         
-        <div class="btn-group">
-        <a class="btn btn-primary" href="<?php echo BASE_URL?>cat_ejercicio/nuevo" class="k-button">Nuevo</a>
-        </div>
   </fieldset>           

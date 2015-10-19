@@ -42,7 +42,10 @@
             </tr>
         <?php } ?>
         </tbody>
-    </table>  
+    </table> 
+    <div class="btn-group">
+        <a class="btn btn-primary" href="ambiente/nuevo" class="k-button">Nuevo</a>
+    </div>
           
     <?php } else { ?>
     <p>No hay modulos</p>

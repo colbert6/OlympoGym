@@ -43,13 +43,13 @@
         <?php } ?>
         </tbody>
     </table>  
-          
+    <div class="btn-group">
+        <a class="btn btn-primary" href="<?php echo BASE_URL?>cat_empleado/nuevo" class="k-button">Nuevo</a>
+        </div>      
     <?php } else { ?>
     <p>No hay modulos</p>
         <a class="btn btn-primary" href="<?php echo BASE_URL?>cat_empleado/nuevo" class="k-button">Nuevo</a>
     <?php } ?>
         
-        <div class="btn-group">
-        <a class="btn btn-primary" href="<?php echo BASE_URL?>cat_empleado/nuevo" class="k-button">Nuevo</a>
-        </div>
+        
   </fieldset>           

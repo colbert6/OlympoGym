@@ -43,7 +43,9 @@
         <?php } ?>
         </tbody>
     </table>  
-          
+    <div class="btn-group">
+        <a class="btn btn-primary" href="modulo/nuevo" class="k-button">Nuevo</a>
+    </div>      
     <?php } else { ?>
     <p>No hay modulos</p>
         <a class="btn btn-primary" href="<?php echo BASE_URL?>almacen/nuevo" class="k-button">Nuevo</a>

@@ -45,6 +45,7 @@ class moduloModel extends Main{
         if (is_null($this->url)) {
             $this->url = '';
         }
+        
         $sql="SELECT `id_modulo`, `nombre`, `url`, `orden`, `estado`, `id_padre`, `modulo_padre`, `icono` "
             . "FROM modulo "
             . "WHERE ( id_modulo= ".$this->id_modulo." or url='".$this->url."')"

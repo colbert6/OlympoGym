@@ -28,7 +28,11 @@
             <tr>
                 <td><?php echo ($i+1);//id ?></td>
                 <td><?php echo $this->datos[$i][1]//nombre ?></td>    
-                <td><?php echo $this->datos[$i][2]//url ?></td>
+                <td><?php if($this->datos[$i][2]!='0'){ //url
+                    echo $this->datos[$i][2];
+                } else{
+                    echo "sin url";
+                } ?></td>
                 <td><?php echo $this->datos[$i][3]//orden ?></td>
                 <td><?php if($this->datos[$i][4]=='1'){
                     echo 'Activo';
@@ -50,14 +54,14 @@
             </tr>
         <?php } ?>
         </tbody>
-    </table>  
+    </table>
+    <div class="btn-group">
+        <a class="btn btn-primary" href="modulo/nuevo" class="k-button">Nuevo</a>
+        </div>
           
     <?php } else { ?>
     <p>No hay modulos</p>
         <a class="btn btn-primary" href="<?php echo BASE_URL?>modulo/nuevo" class="k-button">Nuevo</a>
     <?php } ?>
         
-        <div class="btn-group">
-        <a class="btn btn-primary" href="<?php echo BASE_URL?>modulo/nuevo" class="k-button">Nuevo</a>
-        </div>
   </fieldset>           

@@ -1,7 +1,7 @@
 <!--CATEGORIA EMPLEADO--> 
 <ol class="breadcrumb">
   <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
-  <li><a href="<?php echo BASE_URL?>ambiente" >Ambiente</a></li>
+  <li><a href="<?php echo BASE_URL?>cat_empleado" >Categoria Empleado</a></li>
   <li class="active"><?php echo $this->titulo; ?></li>
 </ol>
 
@@ -17,7 +17,7 @@
       <div class="form-group">
         <label class="control-label col-sm-3" >IDENTIFICADOR:</label>
         <div class="col-sm-9">
-            <input name="id_ambiente" id="id_ambiente" class="form-control"  readonly="readonly"
+            <input name="id_categoria_empleado" id="id_categoria_empleado" class="form-control"  readonly="readonly"
                    value="<?php echo $this->datos[0][0];?>">
         </div>
       </div>  
@@ -29,18 +29,11 @@
                 value="<?php if(isset ($this->datos[0][1]))echo $this->datos[0][1]?>">
         </div>
       </div>
-      <div class="form-group">
-        <label class="control-label col-sm-3" >NIVEL:</label>
-        <div class="col-sm-9">
-            <input name="nivel" id="nivel" class="form-control"  placeholder="Nivel"
-                value="<?php if(isset ($this->datos[0][2]))echo $this->datos[0][2]?>">
-        </div>
-      </div>
-       
+         
         <div class="form-group" style="margin-top: 8%"> 
         <div class="col-sm-offset-3 col-sm-9">
           <button type="submit" class="btn btn-primary"> Guardar</button>
-          <a style="margin-left: 8%" href="<?php echo BASE_URL?>ambiente" type="submit" class="btn btn-danger">Cancelar</a>
+          <a style="margin-left: 8%" href="<?php echo BASE_URL?>cat_empleado" type="submit" class="btn btn-danger">Cancelar</a>
         </div>
       </div>
 

@@ -1,5 +1,5 @@
 <?php
-class cat_empleadoController extends controller{
+class ambienteController extends controller{
 
     private $_model;
     private $_id_padre;
@@ -10,9 +10,9 @@ class cat_empleadoController extends controller{
             $this->redireccionar('error/access/5050');
         }*/
         parent::__construct();
-        $this->_model = $this->loadModel('cat_empleado');
+        $this->_model = $this->loadModel('ambiente');
         
-        $this->_modulos->url = 'cat_empleado';
+        $this->_modulos->url = 'ambiente';
         $modulo= $this->_modulos->selecciona_filtro();
         $this->_id_padre=$modulo[0][5];
         $this->_id_hijo=$modulo[0][0];
@@ -33,10 +33,10 @@ class cat_empleadoController extends controller{
             $this->_model->descripcion = $_POST['descripcion'];
             
             $this->_model->inserta();
-            $this->redireccionar('cat_empleado');
+            $this->redireccionar('ambiente');
         }
-        $this->_view->titulo = 'Registrar Categoria Empleado';
-        $this->_view->action = BASE_URL . 'cat_empleado/nuevo';
+        $this->_view->titulo = 'Registrar Ambiente';
+        $this->_view->action = BASE_URL . 'ambiente/nuevo';
         //$this->_view->setJs(array('funciones_form'));
         $this->_view->renderizar('form',$this->_id_padre,$this->_id_hijo);
     }
@@ -47,17 +47,17 @@ class cat_empleadoController extends controller{
         }
         
         if (@$_POST['guardar'] == 1) {
-            $this->_model->id_categoria_empleado = $_POST['id_categoria_empleado'];
+            $this->_model->id_ambiente = $_POST['id_ambiente'];
             $this->_model->descripcion = $_POST['descripcion'];
             $this->_model->editar();
             
-            $this->redireccionar('cat_empleado');
+            $this->redireccionar('ambiente');
         }
-        $this->_model->id_categoria_empleado = $this->filtrarInt($id);
+        $this->_model->id_ambiente = $this->filtrarInt($id);
         $this->_view->datos = $this->_model->selecciona_filtro();
         
-        $this->_view->titulo = 'Actualizar Categoria Empleado';
-        $this->_view->action = BASE_URL . 'cat_empleado/editar/'.$id;
+        $this->_view->titulo = 'Actualizar Ambiente';
+        $this->_view->action = BASE_URL . 'ambiente/editar/'.$id;
         
         //$this->_vista->setJs(array('funciones_form'));
         $this->_view->renderizar('form',$this->_id_padre,$this->_id_hijo);
@@ -65,11 +65,11 @@ class cat_empleadoController extends controller{
 
     public function eliminar($id) {
         if (!$this->filtrarInt($id)) {
-            $this->redireccionar('cat_empleado');
+            $this->redireccionar('ambiente');
         }
-        $this->_model->id_categoria_empleado = $this->filtrarInt($id);
+        $this->_model->id_ambiente = $this->filtrarInt($id);
         $this->_model->elimina();
-        $this->redireccionar('cat_empleado');
+        $this->redireccionar('ambiente');
     }
     
 }

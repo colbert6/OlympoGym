@@ -29,13 +29,6 @@
                 value="<?php if(isset ($this->datos[0][1]))echo $this->datos[0][1]?>">
         </div>
       </div>
-      <div class="form-group">
-        <label class="control-label col-sm-3" >NIVEL:</label>
-        <div class="col-sm-9">
-            <input name="nivel" id="nivel" class="form-control"  placeholder="Nivel"
-                value="<?php if(isset ($this->datos[0][2]))echo $this->datos[0][2]?>">
-        </div>
-      </div>
        
         <div class="form-group" style="margin-top: 8%"> 
         <div class="col-sm-offset-3 col-sm-9">

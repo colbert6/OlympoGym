@@ -45,7 +45,8 @@ class almacenController extends controller{
         if (@$_POST['guardar'] == 1) {
             $this->_model->id_almacen = $_POST['id_almacen'];
             $this->_model->descripcion = $_POST['descripcion'];
-            
+            //echo $this->_model->id_almacen." ".$this->_model->descripcion;
+            //exit;
             $this->_model->editar();
             $this->redireccionar('almacen');
         }

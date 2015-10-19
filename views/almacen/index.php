@@ -44,7 +44,7 @@
         </tbody>
     </table>  
     <div class="btn-group">
-        <a class="btn btn-primary" href="modulo/nuevo" class="k-button">Nuevo</a>
+        <a class="btn btn-primary" href="almacen/nuevo" class="k-button">Nuevo</a>
     </div>      
     <?php } else { ?>
     <p>No hay modulos</p>

@@ -42,6 +42,7 @@ class cat_ejercicioModel extends Main{
        
         $datos = array($this->id_categoria_ejercicio,$this->descripcion);
         $r = $this->get_consulta("pa_u_caej", $datos);
+        
         $error = $r[1];
         $r = null;
         return $error;
@@ -53,6 +54,7 @@ class cat_ejercicioModel extends Main{
         $datos = array($this->id_categoria_ejercicio);
         $r = $this->get_consulta("pa_d_caej", $datos);
         $error = $r[1];
+        
         $r = null;
         return $error;
     }

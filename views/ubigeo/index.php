@@ -1,7 +1,7 @@
 
 <ol class="breadcrumb">
   <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
-  <li><a href="<?php echo BASE_URL?>cat_ejercicio" >Categoria de Ejercicio</a></li>
+  <li><a href="<?php echo BASE_URL?>ubigeo" >Ubigeo</a></li>
   <li class="active"><?php echo $this->titulo; ?></li>
 </ol>
                   
@@ -14,8 +14,9 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>DESCRIPCION</th>
-                <th>ESTADO</th>
+                <th>DEPARTAMENTO</th>
+                <th>PROVINCIA</th>
+                <th>DISTRITO</th>
                 <th>ACCIONES</th>
             </tr>
         </thead>
@@ -23,18 +24,20 @@
             <?php for ($i = 0; $i < count($this->datos); $i++) { ?>
             <tr>
                 <td><?php echo $this->datos[$i][0]//id ?></td>
-                <td><?php echo $this->datos[$i][1]//nombre ?></td> 
-                <td><?php if($this->datos[$i][2]=='1'){
+                <td><?php echo $this->datos[$i][1]//nombre ?></td>
+                <td><?php echo $this->datos[$i][2]//nombre ?></td>
+                <td><?php echo $this->datos[$i][3]//nombre ?></td>
+                <!--td><?php /*if($this->datos[$i][2]=='1'){
                     echo 'Activo';
                 } else{
                     echo 'Inactivo';
-                } ?></td>
+                } */?></td-->
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
-                        <a class="btn btn-success" href="<?php echo BASE_URL."cat_ejercicio/editar/".$this->datos[$i][0]?>">
+                        <a class="btn btn-success" href="<?php echo BASE_URL."ubigeo/editar/".$this->datos[$i][0]?>">
                             <i class="fa fa-pencil fa-fw"></i> Editar
                         </a>
-                        <a class="btn btn-danger" href="<?php echo BASE_URL."cat_ejercicio/eliminar/".$this->datos[$i][0]?>">
+                        <a class="btn btn-danger" href="<?php echo BASE_URL."ubigeo/eliminar/".$this->datos[$i][0]?>">
                             <i class="fa fa-trash-o fa-lg"></i> Borrar
                         </a>
                     </div>
@@ -44,13 +47,12 @@
         </tbody>
     </table>  
     <div class="btn-group">
-        <a class="btn btn-primary" href="cat_ejercicio/nuevo" class="k-button">Nuevo</a>
-    </div>
-          
+        <a class="btn btn-primary" href="<?php echo BASE_URL?>ubigeo/nuevo" class="k-button">Nuevo</a>
+        </div>      
     <?php } else { ?>
     <p>No hay modulos</p>
-        <a class="btn btn-primary" href="<?php echo BASE_URL?>cat_ejercicio/nuevo" class="k-button">Nuevo</a>
+        <a class="btn btn-primary" href="<?php echo BASE_URL?>ubigeo/nuevo" class="k-button">Nuevo</a>
     <?php } ?>
-        <di
+        
         
   </fieldset>           

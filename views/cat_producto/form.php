@@ -1,7 +1,7 @@
 <!--CATEGORIA EMPLEADO--> 
 <ol class="breadcrumb">
   <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
-  <li><a href="<?php echo BASE_URL?>cat_ejercicio" >Categoria de Ejercicio</a></li>
+  <li><a href="<?php echo BASE_URL?>cat_producto" >Categoria de Producto</a></li>
   <li class="active"><?php echo $this->titulo; ?></li>
 </ol>
 
@@ -17,7 +17,7 @@
       <div class="form-group">
         <label class="control-label col-sm-3" >IDENTIFICADOR:</label>
         <div class="col-sm-9">
-            <input name="id_categoria_ejercicio" id="id_categoria_ejercicio" class="form-control"  readonly="readonly"
+            <input name="id_categoria_producto" id="id_categoria_producto" class="form-control"  readonly="readonly"
                    value="<?php echo $this->datos[0][0];?>">
         </div>
       </div>  
@@ -33,7 +33,7 @@
         <div class="form-group" style="margin-top: 8%"> 
         <div class="col-sm-offset-3 col-sm-9">
           <button type="submit" class="btn btn-primary"> Guardar</button>
-          <a style="margin-left: 8%" href="<?php echo BASE_URL?>cat_ejercicio" type="submit" class="btn btn-danger">Cancelar</a>
+          <a style="margin-left: 8%" href="<?php echo BASE_URL?>cat_producto" type="submit" class="btn btn-danger">Cancelar</a>
         </div>
       </div>
 

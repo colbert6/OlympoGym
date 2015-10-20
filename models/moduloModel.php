@@ -122,18 +122,18 @@ class moduloModel extends Main{
     
 
     public function elimina() {
-        $datos = array($this->idmodulo);
+        $datos = array($this->id_modulo);
         $r = $this->get_consulta("pa_d_modulo", $datos);
         $error = $r[1];
         $r = null;
         return $error;
     }
     public function seleciona() {
-        if (is_null($this->idmodulo)) {
+        if (is_null($this->id_modulo)) {
             $this->idmodulo = 0;
         }
-        if (is_null($this->descripcion)) {
-            $this->descripcion = '';
+        if (is_null($this->nombre)) {
+            $this->nombre = '';
         }
         if (is_null($this->modulo_padre)) {
             $this->modulo_padre = '';
@@ -141,7 +141,7 @@ class moduloModel extends Main{
         if(is_null($this->idperfil)){
             $this->idperfil=0;
         }
-        $datos = array($this->idmodulo, $this->descripcion, $this->modulo_padre,$this->idperfil);
+        $datos = array($this->idmodulo, $this->nombre, $this->modulo_padre,$this->idperfil);
 //        echo '<pre>';
 //                print_r($datos);exit;
         $r = $this->get_consulta("pa_selecciona_modulos", $datos);

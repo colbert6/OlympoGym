@@ -1,7 +1,7 @@
 
 <ol class="breadcrumb">
   <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
-  <li><a href="<?php echo BASE_URL?>tipo_membresia" >Categoria Empleado</a></li>
+  <li><a href="<?php echo BASE_URL?>tipo_membresia" >Tipo Membresia</a></li>
   <li class="active"><?php echo $this->titulo; ?></li>
 </ol>
                   

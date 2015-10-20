@@ -1,7 +1,7 @@
 <!--CATEGORIA EMPLEADO--> 
 <ol class="breadcrumb">
   <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
-  <li><a href="<?php echo BASE_URL?>cat_producto" >Categoria de Producto</a></li>
+  <li><a href="<?php echo BASE_URL?>ubigeo" >Ubigeo</a></li>
   <li class="active"><?php echo $this->titulo; ?></li>
 </ol>
 
@@ -17,23 +17,37 @@
       <div class="form-group">
         <label class="control-label col-sm-3" >IDENTIFICADOR:</label>
         <div class="col-sm-9">
-            <input name="id_categoria_producto" id="id_categoria_producto" class="form-control"  readonly="readonly"
+            <input name="id_ubigeo" id="id_ubigeo" class="form-control"  readonly="readonly"
                    value="<?php echo $this->datos[0][0];?>">
         </div>
       </div>  
       <?php } ?>  
       <div class="form-group">
-        <label class="control-label col-sm-3" >DESCRIPCION:</label>
+        <label class="control-label col-sm-3" >DEPARTAMENTO:</label>
         <div class="col-sm-9">
-          <input name="descripcion" id="descripcion" class="form-control"  placeholder="Descripcion"
+          <input name="departamento" id="departamento" class="form-control"  placeholder="Departamento"
                 value="<?php if(isset ($this->datos[0][1]))echo $this->datos[0][1]?>">
+        </div>
+      </div>
+        <div class="form-group">
+        <label class="control-label col-sm-3" >PROVINCIA:</label>
+        <div class="col-sm-9">
+          <input name="provincia" id="provincia" class="form-control"  placeholder="Provincia"
+                value="<?php if(isset ($this->datos[0][2]))echo $this->datos[0][1]?>">
+        </div>
+      </div>
+        <div class="form-group">
+        <label class="control-label col-sm-3" >DISTRITO:</label>
+        <div class="col-sm-9">
+          <input name="distrito" id="distrito" class="form-control"  placeholder="Distrito"
+                value="<?php if(isset ($this->datos[0][3]))echo $this->datos[0][1]?>">
         </div>
       </div>
          
         <div class="form-group" style="margin-top: 8%"> 
         <div class="col-sm-offset-3 col-sm-9">
           <button type="submit" class="btn btn-primary"> Guardar</button>
-          <a style="margin-left: 8%" href="<?php echo BASE_URL?>cat_producto" type="submit" class="btn btn-danger">Cancelar</a>
+          <a style="margin-left: 8%" href="<?php echo BASE_URL?>ubigeo" type="submit" class="btn btn-danger">Cancelar</a>
         </div>
       </div>
 

@@ -1,7 +1,7 @@
 <!--CATEGORIA EMPLEADO--> 
 <ol class="breadcrumb">
   <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
-  <li><a href="<?php echo BASE_URL?>tipo_documento" >Categoria Empleado</a></li>
+  <li><a href="<?php echo BASE_URL?>tipo_documento" >Tipo de Documento</a></li>
   <li class="active"><?php echo $this->titulo; ?></li>
 </ol>
 

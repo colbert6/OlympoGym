@@ -1,7 +1,7 @@
 <!--CATEGORIA EMPLEADO--> 
 <ol class="breadcrumb">
   <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
-  <li><a href="<?php echo BASE_URL?>tipo_movimiento" >Categoria Empleado</a></li>
+  <li><a href="<?php echo BASE_URL?>tipo_movimiento" >Tipo de Movimiento</a></li>
   <li class="active"><?php echo $this->titulo; ?></li>
 </ol>
 

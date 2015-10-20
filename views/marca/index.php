@@ -1,7 +1,7 @@
 
 <ol class="breadcrumb">
   <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
-  <li><a href="<?php echo BASE_URL?>cat_producto" >Categoria de Producto</a></li>
+  <li><a href="<?php echo BASE_URL?>marca" >Marca</a></li>
   <li class="active"><?php echo $this->titulo; ?></li>
 </ol>
                   
@@ -31,10 +31,10 @@
                 } ?></td>
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
-                        <a class="btn btn-success" href="<?php echo BASE_URL."cat_producto/editar/".$this->datos[$i][0]?>">
+                        <a class="btn btn-success" href="<?php echo BASE_URL."marca/editar/".$this->datos[$i][0]?>">
                             <i class="fa fa-pencil fa-fw"></i> Editar
                         </a>
-                        <a class="btn btn-danger" href="<?php echo BASE_URL."cat_producto/eliminar/".$this->datos[$i][0]?>">
+                        <a class="btn btn-danger" href="<?php echo BASE_URL."marca/eliminar/".$this->datos[$i][0]?>">
                             <i class="fa fa-trash-o fa-lg"></i> Borrar
                         </a>
                     </div>
@@ -44,11 +44,11 @@
         </tbody>
     </table>  
     <div class="btn-group">
-        <a class="btn btn-primary" href="<?php echo BASE_URL?>cat_producto/nuevo" class="k-button">Nuevo</a>
+        <a class="btn btn-primary" href="<?php echo BASE_URL?>marca/nuevo" class="k-button">Nuevo</a>
         </div>      
     <?php } else { ?>
     <p>No hay modulos</p>
-        <a class="btn btn-primary" href="<?php echo BASE_URL?>cat_producto/nuevo" class="k-button">Nuevo</a>
+        <a class="btn btn-primary" href="<?php echo BASE_URL?>marca/nuevo" class="k-button">Nuevo</a>
     <?php } ?>
         
         

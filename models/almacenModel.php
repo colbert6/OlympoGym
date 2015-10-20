@@ -2,7 +2,7 @@
 
 class almacenModel extends Main{
 
-    public $id_almace;
+    public $id_almacen;
     public $descripcion;
     public $estado;
     

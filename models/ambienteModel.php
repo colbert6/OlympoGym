@@ -8,7 +8,7 @@ class ambienteModel extends Main{
     
     public function selecciona() {
         $sql="SELECT `id_ambiente`, `descripcion`, `estado` "
-            . "FROM `categoria_empleado` WHERE estado=1";
+            . "FROM `ambiente` WHERE estado=1";
         $r = $this->consulta_simple($sql);
         return $r;
         
@@ -39,7 +39,6 @@ class ambienteModel extends Main{
     }
 
     public function editar() {
-       
         $datos = array($this->id_ambiente,$this->descripcion);
         
         $r = $this->get_consulta("pa_u_ambiente", $datos);

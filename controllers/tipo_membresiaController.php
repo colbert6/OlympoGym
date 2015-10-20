@@ -24,7 +24,7 @@ class tipo_membresiaController extends controller{
         $this->_view->datos = $this->_model->selecciona();
         $this->_view->setCss(array('jquery.dataTables'),true);
         $this->_view->setJs(array('jquery.dataTables.min','run_table'),true);
-        $this->_view->titulo = 'Lista de Productos';
+        $this->_view->titulo = 'Lista de Tipos de Membresia';
         $this->_view->renderizar('index',$this->_id_padre,$this->_id_hijo);
     }
     public function nuevo() {
@@ -33,7 +33,7 @@ class tipo_membresiaController extends controller{
             $this->_model->inserta();
             $this->redireccionar('tipo_membresia');
         }
-        $this->_view->titulo = 'Registrar Categoria de Producto';
+        $this->_view->titulo = 'Registrar Tipo de Membresia';
         $this->_view->action = BASE_URL . 'tipo_membresia/nuevo';
         //$this->_view->setJs(array('funciones_form'));
         $this->_view->renderizar('form',$this->_id_padre,$this->_id_hijo);
@@ -54,7 +54,7 @@ class tipo_membresiaController extends controller{
         $this->_model->id_tipo_membresia = $this->filtrarInt($id);
         $this->_view->datos = $this->_model->selecciona_filtro();
         
-        $this->_view->titulo = 'Actualizar Categoria de Producto';
+        $this->_view->titulo = 'Actualizar Tipo de Membresia';
         $this->_view->action = BASE_URL . 'tipo_membresia/editar/'.$id;
         
         //$this->_vista->setJs(array('funciones_form'));

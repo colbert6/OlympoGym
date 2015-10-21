@@ -1,13 +1,14 @@
 <?php
 
-class almacenModel extends Main{
+class hrModel extends Main{
 
     public $id_almacen;
     public $descripcion;
     public $estado;
     
     public function selecciona() {
-        $r = $this->get_consulta("pa_m1_almacen",null);
+        $r = $this->get_consulta("pa_m1_empleado",NULL);
+        
         if ($r[1] == '') {
             $stmt = $r[0];
         } else {
@@ -17,6 +18,7 @@ class almacenModel extends Main{
         if (BaseDatos::$_servidor == 'OCI') {
             oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
             return $data;
+           
         } else {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             return $stmt->fetchall();
@@ -28,24 +30,15 @@ class almacenModel extends Main{
             $this->id_almacen = 0;
         }
         if (is_null($this->descripcion)) {
-            $this->descripcion = 'nulo';
+            $this->descripcion = '';
         }
-        $datos = array($this->id_almacen,$this->descripcion);
+        $sql="SELECT `id_almacen`, `descripcion`, `estado` "
+            . "FROM `almacen` "
+            . "WHERE ( id_almacen=".$this->id_almacen." or descripcion='".$this->descripcion."' ) "
+            . "and estado='1'";
         
-        $r = $this->get_consulta("pa_m2_almacen",$datos);
-        if ($r[1] == '') {
-            $stmt = $r[0];
-        } else {
-            die($r[1]);
-        }
-        $r = null;
-        if (BaseDatos::$_servidor == 'OCI') {
-            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
-            return $data;
-        } else {
-            $stmt->setFetchMode(PDO::FETCH_ASSOC);
-            return $stmt->fetchall();
-        }
+        $r = $this->consulta_simple($sql);
+        return $r;
       
     }
     

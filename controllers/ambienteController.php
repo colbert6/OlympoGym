@@ -14,15 +14,15 @@ class ambienteController extends controller{
         
         $this->_modulos->url = 'ambiente';
         $modulo= $this->_modulos->selecciona_filtro();
-        $this->_id_padre=$modulo[0][5];
-        $this->_id_hijo=$modulo[0][0];
+        $this->_id_padre=$modulo[0]['ID_PADRE'];
+        $this->_id_hijo=$modulo[0]['ID_MODULO'];
     }
     
 
     public function index() {
         
         $this->_view->datos = $this->_model->selecciona();
-        $this->_view->setCss(array('jquery.dataTables'),true);
+        $this->_view->setCss(array('jquery.dataTables'),true);// con el true es public
         $this->_view->setJs(array('jquery.dataTables.min','run_table'),true);
         $this->_view->titulo = 'Lista de Categoria de Empleados';
         $this->_view->renderizar('index',$this->_id_padre,$this->_id_hijo);

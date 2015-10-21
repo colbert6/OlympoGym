@@ -7,10 +7,20 @@ class ambienteModel extends Main{
     public $estado;
     
     public function selecciona() {
-        $sql="SELECT `id_ambiente`, `descripcion`, `estado` "
-            . "FROM `ambiente` WHERE estado=1";
-        $r = $this->consulta_simple($sql);
-        return $r;
+        $r = $this->get_consulta("pa_m1_ambiente",null);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
         
     }
     public function selecciona_filtro() {
@@ -20,13 +30,23 @@ class ambienteModel extends Main{
         if (is_null($this->descripcion)) {
             $this->descripcion = '';
         }
-        $sql="SELECT `id_ambiente`, `descripcion`, `estado` "
-            . "FROM `ambiente` "
-            . "WHERE ( id_ambiente=".$this->id_ambiente." or descripcion='".$this->descripcion."' ) "
-            . "and estado='1'";
         
-        $r = $this->consulta_simple($sql);
-        return $r;
+        $datos = array($this->id_ambiente,$this->descripcion);
+        
+        $r = $this->get_consulta("pa_m2_ambiente",$datos);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
       
     }
     

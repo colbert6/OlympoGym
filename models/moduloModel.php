@@ -12,11 +12,7 @@ class moduloModel extends Main{
     public $icono;
     
     public function selecciona() {
-        $sql="SELECT `id_modulo`, `nombre`, `url`, `orden`, `estado`, `id_padre`, `modulo_padre`, `icono` "
-            . "FROM modulo WHERE estado='1'";
-        $r = $this->consulta_simple($sql);
-        return $r;
-        /* 
+      
         $r = $this->get_consulta("pa_m1_modulo",null);
         if ($r[1] == '') {
             $stmt = $r[0];
@@ -24,7 +20,7 @@ class moduloModel extends Main{
             die($r[1]);
         }
         $r = null;
-        if (conexion::$_servidor == 'oci') {
+        if (BaseDatos::$_servidor == 'OCI') {
             oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
             return $data;
         } else {
@@ -32,28 +28,20 @@ class moduloModel extends Main{
             return $stmt->fetchall();
         }
         //return $resultado;
-        *
-        */
+       
     }
     public function selecciona_filtro() {
         if (is_null($this->id_modulo)) {
             $this->id_modulo = 0;
         }
         if (is_null($this->nombre)) {
-            $this->nombre = '';
+            $this->nombre = 'nulo';
         }
         if (is_null($this->url)) {
-            $this->url = '';
+            $this->url = 'nulo';
         }
-        
-        $sql="SELECT `id_modulo`, `nombre`, `url`, `orden`, `estado`, `id_padre`, `modulo_padre`, `icono` "
-            . "FROM modulo "
-            . "WHERE ( id_modulo= ".$this->id_modulo." or url='".$this->url."')"
-            . " and estado='1'";
-        $r = $this->consulta_simple($sql);
-        return $r;
-        /*     
-        $datos = array($this->id_modulo,$this->nombre,$this->id_padre);
+         
+        $datos = array($this->id_modulo,$this->nombre,$this->url);
         
         $r = $this->get_consulta("pa_m2_modulo",$datos);
         if ($r[1] == '') {
@@ -62,7 +50,7 @@ class moduloModel extends Main{
             die($r[1]);
         }
         $r = null;
-        if (conexion::$_servidor == 'oci') {
+        if (BaseDatos::$_servidor == 'OCI') {
             oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
             return $data;
         } else {
@@ -71,24 +59,18 @@ class moduloModel extends Main{
             return $stmt->fetchall();
         }
         //return $resultado;
-         
-         */
+        
     }
-    public function selecciona_padre() {
-        $sql="SELECT id_modulo,nombre "
-            . "FROM modulo WHERE id_padre=0 and estado='1'";
-        $r = $this->consulta_simple($sql);
-        return $r;
-        /*
-        $datos = array($this->id_modulo=0);
-        $r = $this->consulta_simple('pa_m3_modulo',$datos);
+    public function selecciona_padre($id) {
+        $datos=array($id);
+        $r = $this->get_consulta('pa_m3_modulo',$datos);
         if ($r[1] == '') {
             $stmt = $r[0];
         } else {
             die($r[1]);
         }
         $r = null;
-        if (conexion::$_servidor == 'oci') {
+        if (BaseDatos::$_servidor == 'OCI') {
             oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
             return $data;
         } else {
@@ -97,7 +79,6 @@ class moduloModel extends Main{
         }
         //return $resultado;
         
-        */
     }
     public function inserta() {
         $datos = array($this->nombre, $this->url, $this->orden,

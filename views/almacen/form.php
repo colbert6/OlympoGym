@@ -26,7 +26,7 @@
         <label class="control-label col-sm-3" >DESCRIPCION:</label>
         <div class="col-sm-9">
           <input name="descripcion" id="descripcion" class="form-control"  placeholder="Descripcion"
-                value="<?php if(isset ($this->datos[0]['DESCRIPCION']))echo $this->datos[0][1]?>">
+                value="<?php if(isset ($this->datos[0]['DESCRIPCION']))echo $this->datos[0]['DESCRIPCION']?>">
         </div>
       </div>
 

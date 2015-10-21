@@ -25,7 +25,7 @@
       <div class="form-group">
         <label class="control-label col-sm-3" >NOMBRE:</label>
         <div class="col-sm-9">
-          <input name="nombre" id="nombre" class="form-control"  placeholder="Nombre"
+          <input name="nombre" id="nombre" class="form-control"  placeholder="Nombre" autofocus
                 value="<?php if(isset ($this->datos[0]['NOMBRE']))echo $this->datos[0]['NOMBRE']?>">
         </div>
       </div>
@@ -50,10 +50,10 @@
            <select class="form-control glyphicon" name='padre' id='padre'>
                <option value='0' >NO TIENE MODULO PADRE</option>
                <?php for($i=0;$i<count($this->modulos_padre);$i++){ //Aca va la lista de los modulos padres ?> 
-                <?php if( $this->datos[0][5]==$this->modulos_padre[$i][0]){?>
-                     <option selected value="<?php echo $this->modulos_padre[$i][0]."/".$this->modulos_padre[$i][1]?>"><?php echo $this->modulos_padre[$i][1]?></option>
+                <?php if( $this->datos[0]['ID_PADRE']==$this->modulos_padre[$i]['ID_MODULO']){?>
+                     <option selected value="<?php echo $this->modulos_padre[$i]['ID_MODULO']."/".$this->modulos_padre[$i]['NOMBRE']?>"><?php echo $this->modulos_padre[$i]['NOMBRE']?></option>
                 <?php }else{?>
-                     <option value="<?php echo $this->modulos_padre[$i][0]."/".$this->modulos_padre[$i][1]?>"><?php echo $this->modulos_padre[$i][1]?></option>
+                     <option value="<?php echo $this->modulos_padre[$i]['ID_MODULO']."/".$this->modulos_padre[$i]['NOMBRE']?>"><?php echo $this->modulos_padre[$i]['NOMBRE']?></option>
                 <?php } ?>
                <?php } ?>
           </select>

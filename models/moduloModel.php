@@ -35,10 +35,10 @@ class moduloModel extends Main{
             $this->id_modulo = 0;
         }
         if (is_null($this->nombre)) {
-            $this->nombre = '';
+            $this->nombre = 'nulo';
         }
         if (is_null($this->url)) {
-            $this->url = '';
+            $this->url = 'nulo';
         }
          
         $datos = array($this->id_modulo,$this->nombre,$this->url);
@@ -50,7 +50,7 @@ class moduloModel extends Main{
             die($r[1]);
         }
         $r = null;
-        if (conexion::$_servidor == 'OCI') {
+        if (BaseDatos::$_servidor == 'OCI') {
             oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
             return $data;
         } else {
@@ -61,9 +61,9 @@ class moduloModel extends Main{
         //return $resultado;
         
     }
-    public function selecciona_padre() {
-        
-        $r = $this->consulta_simple('pa_m3_modulo',null);
+    public function selecciona_padre($id) {
+        $datos=array($id);
+        $r = $this->get_consulta('pa_m3_modulo',$datos);
         if ($r[1] == '') {
             $stmt = $r[0];
         } else {

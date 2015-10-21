@@ -64,9 +64,9 @@ Class menu {
 
     function cargar_hijos($padre) {
         for($i=0; $i< count($this->_menus); $i++){
-             if( $this->_menus[$i][5]!=NULL && $this->_menus[$i][5]==$padre){
+             if( $this->_menus[$i]['ID_PADRE']!=NULL && $this->_menus[$i]['ID_PADRE']==$padre){
                 
-                    if($this->_menus[$i][0]==$this->_id_hijo)
+                    if($this->_menus[$i]['ID_MODULO']==$this->_id_hijo)
                         { echo "<li class='active'>";}
                     else
                         { echo "<li>";}  

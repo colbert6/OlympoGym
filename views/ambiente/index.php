@@ -48,7 +48,7 @@
     </div>
           
     <?php } else { ?>
-    <p>No hay modulos</p>
+    <p>NO SE ENCONTRARON DATOS</p>
         <a class="btn btn-primary" href="<?php echo BASE_URL?>ambiente/nuevo" class="k-button">Nuevo</a>
     <?php } ?>
   </fieldset>           

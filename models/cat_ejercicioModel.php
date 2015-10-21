@@ -7,10 +7,20 @@ class cat_ejercicioModel extends Main{
     public $estado;
     
     public function selecciona() {
-        $sql="SELECT `id_categoria_ejercicio`, `descripcion`, `estado` "
-            . "FROM `categoria_ejercicio` WHERE estado=1";
-        $r = $this->consulta_simple($sql);
-        return $r;
+        $r = $this->get_consulta("pa_m1_caej",null);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
         
     }
     public function selecciona_filtro() {
@@ -20,13 +30,22 @@ class cat_ejercicioModel extends Main{
         if (is_null($this->descripcion)) {
             $this->descripcion = '';
         }
-        $sql="SELECT `id_categoria_ejercicio`, `descripcion`, `estado` "
-            . "FROM `categoria_ejercicio` "
-            . "WHERE ( id_categoria_ejercicio=".$this->id_categoria_ejercicio." or descripcion='".$this->descripcion."' ) "
-            . "and estado='1'";
+        $datos = array($this->id_categoria_ejercicio,$this->descripcion);
         
-        $r = $this->consulta_simple($sql);
-        return $r;
+        $r = $this->get_consulta("pa_m2_caej",$datos);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
       
     }
     
@@ -47,8 +66,6 @@ class cat_ejercicioModel extends Main{
         $r = null;
         return $error;
     }
-
-    
 
     public function elimina() {
         $datos = array($this->id_categoria_ejercicio);

@@ -7,10 +7,20 @@ class cat_productoModel extends Main{
     public $estado;
     
     public function selecciona() {
-        $sql="SELECT `id_categoria_producto`, `descripcion`, `estado` "
-            . "FROM `categoria_producto` WHERE estado=1";
-        $r = $this->consulta_simple($sql);
-        return $r;
+        $r = $this->get_consulta("pa_m1_capr",null);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
         
     }
     public function selecciona_filtro() {
@@ -20,14 +30,22 @@ class cat_productoModel extends Main{
         if (is_null($this->descripcion)) {
             $this->descripcion = '';
         }
-        $sql="SELECT `id_categoria_producto`, `descripcion`, `estado` "
-            . "FROM `categoria_producto` "
-            . "WHERE ( id_categoria_producto=".$this->id_categoria_producto." or descripcion='".$this->descripcion."' ) "
-            . "and estado='1'";
+        $datos = array($this->id_categoria_evento,$this->descripcion);
         
-        $r = $this->consulta_simple($sql);
-        return $r;
-      
+        $r = $this->get_consulta("pa_m2_capr",$datos);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
     }
     
     public function inserta() {

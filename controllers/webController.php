@@ -12,7 +12,7 @@ class webController extends controller {
         parent::__construct();
         $this->_web_servicios = $this->loadModel('servicio');
         $this->_web_img_servicios = $this->loadModel('imagen_servicio');
-        $this->_web_categoria_productos =  $this->loadModel('categoria_producto');
+        $this->_web_categoria_productos =  $this->loadModel('cat_producto');
         $this->_web_productos = $this->loadModel('producto');
         
         //$this->$_datos_olympo = $this->loadModel('articulos');

@@ -28,19 +28,15 @@
             <tr>
                 <td><?php echo ($i+1);//id ?></td>
                 <td><?php echo $this->datos[$i]['NOMBRE']//nombre ?></td>    
-                <td><?php if($this->datos[$i]['URL']!='0'){ //url
-                    echo $this->datos[$i]['URL'];
-                } else{
-                    echo "Sin Url";
-                } ?></td>
+                <td><?php echo $this->datos[$i]['URL'];?></td>
                 <td><?php echo $this->datos[$i]['ORDEN']//orden ?></td>
                 <td><?php if($this->datos[$i]['ESTADO']=='1'){
                     echo 'Activo';
                 } else{
                     echo 'Inactivo';
                 } ?></td>
-                <td><?php echo $this->datos[$i]['MODULO_PADRE']//padre ?></td>
                 <!--td><?php //echo "<i class='".$this->datos[$i]['ICONO']."'>" ?></td-->
+                <td><?php echo $this->datos[$i]['MODULO_PADRE']; ?></td>
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
                         <a class="btn btn-success" href="<?php echo BASE_URL."modulo/editar/".$this->datos[$i]['ID_MODULO']?>">
@@ -60,7 +56,7 @@
         </div>
           
     <?php } else { ?>
-    <p>No hay modulos</p>
+    <p>NO SE ENCONTRARON DATOS</p>
         <a class="btn btn-primary" href="<?php echo BASE_URL?>modulo/nuevo" class="k-button">Nuevo</a>
     <?php } ?>
         

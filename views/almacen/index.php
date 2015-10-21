@@ -22,19 +22,19 @@
          <tbody>
             <?php for ($i = 0; $i < count($this->datos); $i++) { ?>
             <tr>
-                <td><?php echo $this->datos[$i][0]//id ?></td>
-                <td><?php echo $this->datos[$i][1]//nombre ?></td> 
-                <td><?php if($this->datos[$i][2]=='1'){
+                <td><?php echo $this->datos[$i]['ID_ALMACEN']//id ?></td>
+                <td><?php echo $this->datos[$i]['DESCRIPCION']//nombre ?></td> 
+                <td><?php if($this->datos[$i]['ESTADO']=='1'){
                     echo 'Activo';
                 } else{
                     echo 'Inactivo';
                 } ?></td>
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
-                        <a class="btn btn-success" href="<?php echo BASE_URL."almacen/editar/".$this->datos[$i][0]?>">
+                        <a class="btn btn-success" href="<?php echo BASE_URL."almacen/editar/".$this->datos[$i]['ID_ALMACEN']?>">
                             <i class="fa fa-pencil fa-fw"></i> Editar
                         </a>
-                        <a class="btn btn-danger" href="<?php echo BASE_URL."almacen/eliminar/".$this->datos[$i][0]?>">
+                        <a class="btn btn-danger" href="<?php echo BASE_URL."almacen/eliminar/".$this->datos[$i]['ID_ALMACEN']?>">
                             <i class="fa fa-trash-o fa-lg"></i> Borrar
                         </a>
                     </div>

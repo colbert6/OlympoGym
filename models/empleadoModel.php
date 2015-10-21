@@ -6,13 +6,21 @@ class empleadoModel extends Main{
     public function login_usuario($usuario,$clave) {
         //$datos = array($usuario,$clave);
         //$resultado = $this->consulta_simple("SELECT * FROM empleado where nombre='$usuario'");
-        $r  = $this->consulta_simple(
-                "select * from empleado " .
-                "where usuario = '$usuario' " .
-                "and clave = '" . md5($clave) ."'"
-                );
-       
-        return $r;
+        $datos = array($usuario,md5($clave));
+        $r = $this->get_consulta("pa_m3_empleado",$datos);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
 
     }
     

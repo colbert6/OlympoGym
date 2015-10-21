@@ -8,7 +8,11 @@ class PDO_conexion extends BaseDatos {
 
     public function __construct($config) {
         $this->set($config);
+        if($this->driver=='sqlsrv'){
+            $dsn = $this->driver . ':Database=' . $this->dbname . '; server=' . $this->host ;
+        }else{
         $dns = $this->driver . ':dbname=' . $this->dbname . '; host=' . $this->host . '; port=' . $this->port;
+        }
         parent::__construct($dns, $this->user, $this->password);
         
     }

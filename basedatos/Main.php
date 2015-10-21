@@ -12,7 +12,10 @@ class Main {
                 throw new PDOException('No se encontro el archivo: '.$site_path);
             } else {
                 self::$db = DatabaseFactory::create($site_path);
-                set_time_limit(20);
+                if(self::$db=='ERROR'){
+                  throw new PDOException('H');
+                }
+          
             }
             // $this->exec = DatabaseFactory::getExecute($site_path);
         } catch (PDOException $e) {
@@ -63,115 +66,79 @@ class Main {
 
             <html xmlns="http://www.w3.org/1999/xhtml">
                 <head>
-                    <script type="text/javascript" src="<?php echo BASE_URL ?>public/js/jquery.js"></script>
-                    <script type="text/javascript" src="<?php echo BASE_URL ?>public/js/jquery.min.js"></script>
-
-                    <script type="text/javascript">
-                        alert("¡Conexion Fallida!. El sistema se inicializara, los datos que hayan sido guardados no se perderan.");
-                        
-                        $(document).ready(function(){
-                            setTimeout("$('#bienvenido1').fadeIn(600)",0);
-                            setTimeout("$('#bienvenido1').fadeOut(500)",1900);
-                            setTimeout("$('#bienvenido2').fadeIn(600)",1700);
-                            setTimeout("$('#bienvenido2').fadeOut(400)",3200);
-                            setTimeout("$('#bienvenido2').fadeIn(500)",3500);
-                            setTimeout("$('#bienvenido2').fadeOut(500)",4700);
-                            setTimeout("$('#bienvenido3').fadeIn(500)",5000);
-                            setTimeout("$('#bienvenido3').fadeOut(1500)",7500);
-                            setTimeout("$('#formulario_bd').fadeIn(500)",7800);
-                                        
-                            var delay_linea = 8000;//8000
-                            var intervalo = 500;
-                            setTimeout("$('#linealogo').fadeIn(500)",delay_linea);
-                            setTimeout("$('#linea1').fadeIn(500)",delay_linea+(intervalo*2));
-                            setTimeout("$('#linea2').fadeIn(500)",delay_linea+(intervalo*3));
-                            setTimeout("$('#linea3').fadeIn(500)",delay_linea+(intervalo*4));
-                            setTimeout("$('#linea4').fadeIn(500)",delay_linea+(intervalo*5));
-                            setTimeout("$('#linea5').fadeIn(500)",delay_linea+(intervalo*6));
-                            setTimeout("$('#linea6').fadeIn(500)",delay_linea+(intervalo*7));
-                            setTimeout("$('#linea7').fadeIn(500)",delay_linea+(intervalo*8));
-                                        
-                        });
-                    </script>
+                    <link href="<?php echo BASE_URL ?>public/css/bootstrap.css" rel="stylesheet">
+                    
                 </head>
                 <body>
-                    <div id="bienvenido1" style="display: none; width: 100%; height: 100%; position:absolute;top:50%;margin-top:-50px;">
-                        <table align="center"><tr><td><text style="font-family: Arial; font-size: 50;">Bienvenido</text></td></tr></table></div>
-                    <div id="bienvenido2" style="display: none; width: 100%; height: 100%; position:absolute;top:50%;margin-top:-50px;">
-                        <table align="center"><tr><td><text style="font-family: Arial; font-size: 26;">Procederemos a inicializar el sistema...</text></td></tr></table></div>
-                    <div id="bienvenido3" style="display: none; width: 100%; height: 100%; position:absolute;top:50%;margin-top:-50px;">
-                        <table align="center"><tr><td><text style="font-family: Arial; font-size: 26;">Necesitaremos datos t&eacute;cnicos del sistema.<br>Contacte con el administrador si es que los desconoce.</text></td></tr></table></div>
-                    <div id="linealogo" style="display: none; width: 100%; height: 100%; position:absolute;top:20%;margin-top:-50px;" align="center">
-                        <img src="<?php echo BASE_URL ?>lib/img/logo.png" height="91" width="383" />
+                <script type="text/javascript">
+                        alert("¡Conexion Fallida!. El sistema se inicializara, los datos que hayan sido guardados no se perderan.");
+                    </script>    
+                    <div class="row" style="width: 800; margin:0 auto;">
+                        <img src="<?php echo BASE_URL ?>public/img/logo.png" height="100" width="800" />
                     </div>
-                    <div id="formulario_bd" style="width: 100%; height: 100%; position:absolute;top:40%;margin-top:-50px;">
-                        <form method="post" action="index" id="frm" >
+                     <div class="row" style="width: 800; margin:0 auto;">
+                         <h2>ES NECESARIO LLENAR ALGUNOS DATOS</h2>
+                         <h4>Para mayor informacion contacte con la FISI</h4>
+                    </div>
+                    <div class="row" style="width: 800; margin:1% auto ;">
+                        <form method="post" action="#"  class="form-horizontal" role="form">
+                        <fieldset>    
                             <input type="hidden" name="guardar" id="guardar" value="1"/>
-
-                            <table class="tabForm" align="center">
-                                
-                                <tr style="display: none" id="linea1">
-                                    <td><label for="sgbd"><text style="font-family: Arial">SGBD: </text></label></td>
-                                    <td>
-                                        <select placeholder="Seleccione..." class="combo" name="sgbd" required id="sqbd">
+                            <div class="form-group">
+                                <label for="sgbd" class="col-lg-4 control-label">SGBD: </label>
+                                <div class="col-lg-4">
+                                  <select placeholder="Seleccione..." class="form-control" name="sgbd" required id="sqbd">
                                             <option></option>
-                                            <option value="mysql">MySQL</option>            
-                                            <option value="pgsql">PostgreSQL</option>            
-                                            <option value="mssql">SQL Server</option>            
-                                            <option value="oci">Oracle</option>            
-                                        </select>
-                                        <span class="k-invalid-msg" data-for="sgbd"></span>
-                                    </td>
-                                    <td>
-                                        <div class="k-invalid-msg msgerror" data-for="sgbd"></div>
-                                    </td>
-                                </tr>
-                                <tr style="display: none" id="linea2">
-                                    <td><label for="usuario"><text style="font-family: Arial">Usuario: </text></label></td>
-                                    <td><input type="text" placeholder="Ingrese usuario" required class="k-textbox" name="usuario" value="" /></td>
-                                    <td>
-                                        <div class="k-invalid-msg msgerror" data-for="usuario"></div>
-                                    </td>
-                                </tr>
-                                <tr style="display: none" id="linea3">
-                                    <td><label for="password"><text style="font-family: Arial">Clave: </text></label></td>
-                                    <td><input type="password" placeholder="Ingrese contrase&ntilde;a" class="k-textbox" name="clave" value="" /></td>
-                                    <td>
-                                        <div class="msgerror"></div>
-                                    </td>
-                                </tr>
-                                <tr style="display: none" id="linea4">
-                                    <td><label for="host"><text style="font-family: Arial">Host: </text></label></td>
-                                    <td><input type="text" placeholder="Ingrese host" class="k-textbox" required name="host" value="" /></td>
-                                    <td>
-                                        <div class="k-invalid-msg msgerror" data-for="host"></div>
-                                    </td>
-                                </tr>
-                                <tr style="display: none" id="linea5">
-                                    <td><label for="puerto"><text style="font-family: Arial">Puerto: </text></label></td>
-                                    <td><input type="text" placeholder="Ingrese puerto" class="k-textbox" required name="puerto" value="" /></td>
-                                    <td>
-                                        <div class="k-invalid-msg msgerror" data-for="puerto"></div>
-                                    </td>
-                                </tr>
-                                <tr style="display: none" id="linea6">
-                                    <td><label for="basedatos"><text style="font-family: Arial">Base de Datos: </text></label></td>
-                                    <td><input type="text" placeholder="Ingrese nombre bd" class="k-textbox" required name="basedatos" value="" /></td>
-                                    <td>
-                                        <div class="k-invalid-msg msgerror" data-for="basedatos"></div>
-                                    </td>
-                                </tr>
-                                <tr style="display: none" id="linea7">
-                                    <td colspan="2" align="center">
-                                        <p><button type="submit" class="k-button" id="saveform">Guardar</button>
-                                            <button type="button" class="k-button cancel" onclick="window.location = '<?php echo BASE_URL ?>'">Cancelar</button></p>
-                                    </td>
-                                    <td>
-                                        <div class="msgerror"></div>
-                                    </td>
-                                </tr>
-                            </table>
-
+                                            <option value="mysql">MySQL</option>
+                                            <option value="pgsql">PostgreSQL</option>
+                                            <option value="sqlsrv">SQL Server</option>
+                                            <option value="oci">Oracle</option>
+                                        </select>    
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="usuario" class="col-lg-4 control-label"> Usuario: </label>
+                                <div class="col-lg-4">
+                                <input type="text" placeholder="Ingrese usuario" required class="form-control" name="usuario" value="" />
+                                </div> 
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="col-lg-4 control-label"> Clave: </label>
+                                <div class="col-lg-4">
+                                <input type="password" placeholder="Ingrese contrase&ntilde;a" class="form-control" name="clave" value="" />
+                                </div> 
+                            </div>
+                            <div class="form-group">
+                                <label for="host" class="col-lg-4 control-label"> Host: </label>
+                                <div class="col-lg-4">
+                                <input type="text" placeholder="Ingrese host" class="form-control" required name="host" value="" />
+                                </div> 
+                            </div> 
+                            <div class="form-group">
+                                <label for="puerto" class="col-lg-4 control-label"> Puerto: </label>
+                                <div class="col-lg-4">
+                                <input type="text" placeholder="Ingrese puerto" class="form-control" required name="puerto" value="" />
+                                </div> 
+                            </div>
+                            <div class="form-group">
+                                <label for="basedatos" class="col-lg-4 control-label"> Base de Datos: </label>
+                                <div class="col-lg-4">
+                                <input type="text" placeholder="Ingrese nombre bd" class="form-control" required name="basedatos" value="" />
+                                </div> 
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-4 control-label"> </label>
+                                 <div class="col-lg-2">
+                                   <button type="submit" class="btn btn-success" >Guardar</button>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button type="button" class="btn btn-danger" onclick="window.location = '<?php echo BASE_URL ?>'">Cancelar</button>
+                                
+                                </div>
+                            </div>    
+                                
+                                
+                        </fieldset>    
                         </form>
                     </div>
                 </body>

@@ -27,26 +27,26 @@
             <?php for ($i = 0; $i < count($this->datos); $i++) { ?>
             <tr>
                 <td><?php echo ($i+1);//id ?></td>
-                <td><?php echo $this->datos[$i][1]//nombre ?></td>    
-                <td><?php if($this->datos[$i][2]!='0'){ //url
-                    echo $this->datos[$i][2];
+                <td><?php echo $this->datos[$i]['NOMBRE']//nombre ?></td>    
+                <td><?php if($this->datos[$i]['URL']!='0'){ //url
+                    echo $this->datos[$i]['URL'];
                 } else{
-                    echo "sin url";
+                    echo "Sin Url";
                 } ?></td>
-                <td><?php echo $this->datos[$i][3]//orden ?></td>
-                <td><?php if($this->datos[$i][4]=='1'){
+                <td><?php echo $this->datos[$i]['ORDEN']//orden ?></td>
+                <td><?php if($this->datos[$i]['ESTADO']=='1'){
                     echo 'Activo';
                 } else{
                     echo 'Inactivo';
                 } ?></td>
-                <td><?php echo $this->datos[$i][6]//padre ?></td>
+                <td><?php echo $this->datos[$i]['MODULO_PADRE']//padre ?></td>
                 <!--td><?php //echo "<i class='".$this->datos[$i]['ICONO']."'>" ?></td-->
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
-                        <a class="btn btn-success" href="<?php echo BASE_URL."modulo/editar/".$this->datos[$i][0]?>">
+                        <a class="btn btn-success" href="<?php echo BASE_URL."modulo/editar/".$this->datos[$i]['ID_MODULO']?>">
                             <i class="fa fa-pencil fa-fw"></i> Editar
                         </a>
-                        <a class="btn btn-danger" href="<?php echo BASE_URL."modulo/eliminar/".$this->datos[$i][0]?>">
+                        <a class="btn btn-danger" href="<?php echo BASE_URL."modulo/eliminar/".$this->datos[$i]['ID_MODULO']?>">
                             <i class="fa fa-trash-o fa-lg"></i> Borrar
                         </a>
                     </div>

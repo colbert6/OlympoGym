@@ -21,12 +21,17 @@ class OCI_conexion extends BaseDatos {
     public function __construct($config) {
         $this->set($config);
         self::$link = oci_connect($this->user, $this->password, $this->host . '/' . $this->dbname);
+
         return self::$link;
+            
     }
 
     public static function singleton($config) {
         if (self::$instancia == null) {
             self::$instancia = new self($config);
+        }
+        if (!self::$link) {
+            return 'ERROR';
         }
         return self::$instancia;
     }

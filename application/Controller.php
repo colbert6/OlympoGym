@@ -6,12 +6,8 @@ abstract class Controller
     
     public function __construct() {//asiganmos una vista para este contralador
     //  
-        /*$this->_modulos = $this->loadModel('modulo');
+        $this->_modulos = $this->loadModel('modulo');
         $menu = $this->_modulos->selecciona();
-        */
-        $this->_mod = $this->loadModel('hr');
-        $menu = $this->_mod->selecciona();
-        print_r($menu);exit;
         $this->_view = new View(new Request,$menu);
     }
     abstract public function index();

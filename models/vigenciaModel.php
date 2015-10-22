@@ -13,7 +13,7 @@ class vigenciaModel extends Main{
             die($r[1]);
         }
         $r = null;
-        if (conexion::$_servidor == 'oci') {
+        if (BaseDatos::$_servidor == 'oci') {
             oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
             return $data;
         } else {
@@ -30,19 +30,29 @@ class vigenciaModel extends Main{
             $this->id_vigencia = 0;
         }
         if (is_null($this->descripcion)) {
-            $this->descripcion = '';
+            $this->descripcion = 'nulo';
         }
-        $sql="SELECT `id_vigencia`, `descripcion` "
-            . "FROM `vigencia` "
-            . "WHERE ( id_vigencia=".$this->id_vigencia." or descripcion='".$this->descripcion."' ) ";
+        $datos = array($this->id_vigencia,$this->descripcion);
         
-        $r = $this->consulta_simple($sql);
-        return $r;
+        $r = $this->get_consulta("pa_m2_vigencia",$datos);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
       
     }
     
     public function inserta() {
-        $datos = array($this->descripcion);
+        $datos = array($this->descripcion,$this->duracion,$this->unidad_tiempo);
         $r = $this->get_consulta("pa_i_vigencia", $datos);
         $error = $r[1];
         $r = null;
@@ -51,7 +61,7 @@ class vigenciaModel extends Main{
 
     public function editar() {
        
-        $datos = array($this->id_vigencia,$this->descripcion);
+        $datos = array($this->id_vigencia,$this->descripcion,$this->duracion,$this->unidad_tiempo);
         $r = $this->get_consulta("pa_u_vigencia", $datos);
         $error = $r[1];
         $r = null;

@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 <!--MODULO--> 
 <ol class="breadcrumb">
   <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
   <li><a href="<?php echo BASE_URL?>socio" >Socio</a></li>
+=======
+<!--CATEGORIA EMPLEADO--> 
+<ol class="breadcrumb">
+  <li><a href="<?php echo BASE_URL?>index"  >Inicio</a></li>
+  <li><a href="<?php echo BASE_URL?>marca" >Marca</a></li>
+>>>>>>> 7a14b4ccf10db21ed6793a0af147b44746227242
   <li class="active"><?php echo $this->titulo; ?></li>
 </ol>
 
@@ -11,6 +18,7 @@
     <legend><?php echo $this->titulo; ?></legend>
     <div class="col-md-1"></div>
     <div class="col-md-11" style="color:#000">
+<<<<<<< HEAD
     <form class="form-horizontal" role="form" id="form_modulo" method="post" action="<?php echo $this->action; ?>">
         <input name="guardar" id="guardar" type="hidden" value="1">
       <?php if(isset ($this->datos[0]['ID_SOCIO'])) {?>  
@@ -19,10 +27,21 @@
         <div class="col-sm-9">
             <input name="id_modulo" id="id_modulo" class="form-control"  readonly="readonly"
                    value="<?php echo $this->datos[0]['ID_MODULO'];?>">
+=======
+    <form class="form-horizontal" role="form" id="form_perfil" method="post" action="<?php echo $this->action; ?>">
+        <input name="guardar" id="guardar" type="hidden" value="1">
+      <?php if(isset ($this->datos[0][0])) {?>  
+      <div class="form-group">
+        <label class="control-label col-sm-3" >IDENTIFICADOR:</label>
+        <div class="col-sm-9">
+            <input name="id_marca" id="id_marca" class="form-control"  readonly="readonly"
+                   value="<?php echo $this->datos[0][0];?>">
+>>>>>>> 7a14b4ccf10db21ed6793a0af147b44746227242
         </div>
       </div>  
       <?php } ?>  
       <div class="form-group">
+<<<<<<< HEAD
         <label class="control-label col-sm-3" for"nombre">NOMBRE(S):</label>
         <div class="col-sm-9">
           <input name="nombre" id="nombre" class="form-control"  placeholder="Nombre(s)" autofocus
@@ -160,6 +179,19 @@
         <div class="col-sm-offset-3 col-sm-9">
           <button type="submit" class="btn btn-primary"> Guardar</button>
           <a style="margin-left: 8%" href="<?php echo BASE_URL?>modulo" type="submit" class="btn btn-danger">Cancelar</a>
+=======
+        <label class="control-label col-sm-3" >DESCRIPCION:</label>
+        <div class="col-sm-9">
+          <input name="descripcion" id="descripcion" class="form-control"  placeholder="Descripcion"
+                value="<?php if(isset ($this->datos[0][1]))echo $this->datos[0][1]?>">
+        </div>
+      </div>
+         
+        <div class="form-group" style="margin-top: 8%"> 
+        <div class="col-sm-offset-3 col-sm-9">
+          <button type="submit" class="btn btn-primary"> Guardar</button>
+          <a style="margin-left: 8%" href="<?php echo BASE_URL?>marca" type="submit" class="btn btn-danger">Cancelar</a>
+>>>>>>> 7a14b4ccf10db21ed6793a0af147b44746227242
         </div>
       </div>
 

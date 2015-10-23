@@ -28,9 +28,9 @@ class cat_productoModel extends Main{
             $this->id_categoria_producto = 0;
         }
         if (is_null($this->descripcion)) {
-            $this->descripcion = '';
+            $this->descripcion = 'nulo';
         }
-        $datos = array($this->id_categoria_evento,$this->descripcion);
+        $datos = array($this->id_categoria_producto,$this->descripcion);
         
         $r = $this->get_consulta("pa_m2_capr",$datos);
         if ($r[1] == '') {

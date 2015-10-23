@@ -1,5 +1,5 @@
 <?php
-class concepto_triajeController extends controller{
+class vigenciaController extends controller{
     private $_model;
     private $_id_padre;
     private $_id_hijo;
@@ -9,10 +9,11 @@ class concepto_triajeController extends controller{
             $this->redireccionar('error/access/5050');
         }*/
         parent::__construct();
-        $this->_model = $this->loadModel('concepto_triaje');
+        $this->_model = $this->loadModel('vigencia');
         
-        $this->_modulos->url = 'concepto_triaje';
+        $this->_modulos->url = 'vigencia';
         $modulo= $this->_modulos->selecciona_filtro();
+        
         $this->_id_padre=$modulo[0]['ID_PADRE'];
         $this->_id_hijo=$modulo[0]['ID_MODULO'];
     }
@@ -23,38 +24,41 @@ class concepto_triajeController extends controller{
         $this->_view->datos = $this->_model->selecciona();
         $this->_view->setCss(array('jquery.dataTables'),true);
         $this->_view->setJs(array('jquery.dataTables.min','run_table'),true);
-        $this->_view->titulo = 'Lista de Conceptos de Triaje';
+        $this->_view->titulo = 'Lista de Vigencia';
         $this->_view->renderizar('index',$this->_id_padre,$this->_id_hijo);
     }
     public function nuevo() {
         if (@$_POST['guardar'] == 1) {
             $this->_model->descripcion = $_POST['descripcion'];
+            $this->_model->duracion = $_POST['duracion'];
+            $this->_model->unidad_tiempo = $_POST['unidad_tiempo'];
             $this->_model->inserta();
-            $this->redireccionar('concepto_triaje');
+            $this->redireccionar('vigencia');
         }
-        $this->_view->titulo = 'Registrar Concepto de Triaje';
-        $this->_view->action = BASE_URL . 'concepto_triaje/nuevo';
+        $this->_view->titulo = 'Registrar vigencia';
+        $this->_view->action = BASE_URL . 'vigencia/nuevo';
         //$this->_view->setJs(array('funciones_form'));
         $this->_view->renderizar('form',$this->_id_padre,$this->_id_hijo);
     }
  
     public function editar($id) {
         if (!$this->filtrarInt($id)) {
-            $this->redireccionar('concepto_triaje');
+            $this->redireccionar('vigencia');
         }
         
         if (@$_POST['guardar'] == 1) {
-            $this->_model->id_concepto_triaje = $_POST['id_concepto_triaje'];
+            $this->_model->id_vigencia = $_POST['id_vigencia'];
             $this->_model->descripcion = $_POST['descripcion'];
+            $this->_model->duracion = $_POST['duracion'];
+            $this->_model->unidad_tiempo = $_POST['unidad_tiempo'];
             $this->_model->editar();
             
-            $this->redireccionar('concepto_triaje');
+            $this->redireccionar('vigencia');
         }
-        $this->_model->id_concepto_triaje = $this->filtrarInt($id);
+        $this->_model->id_vigencia = $this->filtrarInt($id);
         $this->_view->datos = $this->_model->selecciona_filtro();
-        
-        $this->_view->titulo = 'Actualizar Concepto Triaje';
-        $this->_view->action = BASE_URL . 'concepto_triaje/editar/'.$id;
+        $this->_view->titulo = 'Actualizar Vigencia';
+        $this->_view->action = BASE_URL . 'vigencia/editar/'.$id;
         
         //$this->_vista->setJs(array('funciones_form'));
         $this->_view->renderizar('form',$this->_id_padre,$this->_id_hijo);
@@ -62,12 +66,13 @@ class concepto_triajeController extends controller{
 
     public function eliminar($id) {
         if (!$this->filtrarInt($id)) {
-            $this->redireccionar('concepto_triaje');
+            $this->redireccionar('vigencia');
         }
-        $this->_model->id_concepto_triaje = $this->filtrarInt($id);
+        $this->_model->id_vigencia = $this->filtrarInt($id);
         $this->_model->elimina();
-        $this->redireccionar('concepto_triaje');
+        $this->redireccionar('vigencia');
     }
     
 }
 ?>
+

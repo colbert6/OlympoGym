@@ -29,15 +29,23 @@ class perfilModel extends Main{
             $this->id_perfil_usuario = 0;
         }
         if (is_null($this->descripcion)) {
-            $this->descripcion = '';
+            $this->descripcion = 'nulo';
         }
-        $sql="SELECT id_perfil_usuario, descripcion, nivel, estado "
-            . "FROM perfil_usuario "
-            . "WHERE ( id_perfil_usuario=".$this->id_perfil_usuario." or descripcion='".$this->descripcion."' ) "
-            . "and estado='1'";
-        
-        $r = $this->consulta_simple($sql);
-        return $r;
+        $datos=array($this->id_perfil_usuario,$this->descripcion);
+        $r = $this->get_consulta("pa_m2_peus",$datos);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
       
     }
     
@@ -51,8 +59,7 @@ class perfilModel extends Main{
 
     public function editar() {
        
-        $datos = array($this->id_modulo, $this->nombre, $this->url,$this->orden, 
-            $this->id_padre,$this->modulo_padre,$this->icono);
+        $datos = array($this->id_perfil_usuario,$this->descripcion, $this->nivel);
         
         $r = $this->get_consulta("pa_u_peus", $datos);
         $error = $r[1];

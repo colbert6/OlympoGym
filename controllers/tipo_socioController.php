@@ -13,8 +13,8 @@ class tipo_socioController extends controller{
         
         $this->_modulos->url = 'tipo_socio';
         $modulo= $this->_modulos->selecciona_filtro();
-        $this->_id_padre=$modulo[0][5];
-        $this->_id_hijo=$modulo[0][0];
+        $this->_id_padre=$modulo[0]['ID_PADRE'];
+        $this->_id_hijo=$modulo[0]['ID_MODULO'];
     }
     
 

@@ -4,7 +4,7 @@
   <li><a href="<?php echo BASE_URL?>modulo" >Modulos</a></li>
   <li class="active"><?php echo $this->titulo; ?></li>
 </ol>
-                  
+                 
  <fieldset>
     <legend><?php echo $this->titulo; ?></legend>
  

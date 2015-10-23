@@ -6,14 +6,14 @@ class marcaModel extends Main{
     public $descripcion;
     
     public function selecciona() {
-        $r = $this->get_consulta("pa_m1_modulo",null);
+        $r = $this->get_consulta("pa_m1_marca",null);
         if ($r[1] == '') {
             $stmt = $r[0];
         } else {
             die($r[1]);
         }
         $r = null;
-        if (conexion::$_servidor == 'oci') {
+        if (BaseDatos::$_servidor == 'oci') {
             oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
             return $data;
         } else {
@@ -30,13 +30,24 @@ class marcaModel extends Main{
             $this->id_marca = 0;
         }
         if (is_null($this->descripcion)) {
-            $this->descripcion = '';
+            $this->descripcion = 'nulo';
         }
-        $sql="SELECT `id_marca`, `descripcion` "
-            . "FROM `marca` "
-            . "WHERE ( id_marca=".$this->id_marca." or descripcion='".$this->descripcion."' ) "
-            . "and estado='1'";
-        
+        $datos=array($this->id_marca,$this->descripcion);
+        $r = $this->get_consulta("pa_m2_marca",$datos);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'oci') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
+        //return $resultado;
         $r = $this->consulta_simple($sql);
         return $r;
       

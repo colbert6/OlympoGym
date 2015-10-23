@@ -8,10 +8,20 @@ class perfilModel extends Main{
     public $estado;
     
     public function selecciona() {
-        $sql="SELECT id_perfil_usuario, descripcion, nivel, estado "
-            . "FROM perfil_usuario WHERE estado=1";
-        $r = $this->consulta_simple($sql);
-        return $r;
+       $r = $this->get_consulta("pa_m1_peus",null);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
         
     }
     public function selecciona_filtro() {

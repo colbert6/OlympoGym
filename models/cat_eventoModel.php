@@ -28,7 +28,7 @@ class cat_eventoModel extends Main{
             $this->id_categoria_evento = 0;
         }
         if (is_null($this->descripcion)) {
-            $this->descripcion = '';
+            $this->descripcion = 'nulo';
         }
         $datos = array($this->id_categoria_evento,$this->descripcion);
         

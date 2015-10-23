@@ -13,20 +13,20 @@
     <div class="col-md-11" style="color:#000">
     <form class="form-horizontal" role="form" id="form_perfil" method="post" action="<?php echo $this->action; ?>">
         <input name="guardar" id="guardar" type="hidden" value="1">
-      <?php if(isset ($this->datos[0][0])) {?>  
+      <?php if(isset ($this->datos[0]['ID_CATEGORIA_PRODUCTO'])) {?>  
       <div class="form-group">
         <label class="control-label col-sm-3" >IDENTIFICADOR:</label>
         <div class="col-sm-9">
             <input name="id_categoria_producto" id="id_categoria_producto" class="form-control"  readonly="readonly"
-                   value="<?php echo $this->datos[0][0];?>">
+                   value="<?php echo $this->datos[0]['ID_CATEGORIA_PRODUCTO'];?>">
         </div>
       </div>  
       <?php } ?>  
       <div class="form-group">
         <label class="control-label col-sm-3" >DESCRIPCION:</label>
         <div class="col-sm-9">
-          <input name="descripcion" id="descripcion" class="form-control"  placeholder="Descripcion"
-                value="<?php if(isset ($this->datos[0][1]))echo $this->datos[0][1]?>">
+          <input name="descripcion" id="descripcion" class="form-control"  placeholder="Descripcion" autofocus
+                value="<?php if(isset ($this->datos[0]['DESCRIPCION']))echo $this->datos[0]['DESCRIPCION']?>">
         </div>
       </div>
          

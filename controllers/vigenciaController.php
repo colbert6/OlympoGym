@@ -13,7 +13,7 @@ class vigenciaController extends controller{
         
         $this->_modulos->url = 'vigencia';
         $modulo= $this->_modulos->selecciona_filtro();
-        print_r($modulo);exit;
+        
         $this->_id_padre=$modulo[0]['ID_PADRE'];
         $this->_id_hijo=$modulo[0]['ID_MODULO'];
     }
@@ -57,7 +57,6 @@ class vigenciaController extends controller{
         }
         $this->_model->id_vigencia = $this->filtrarInt($id);
         $this->_view->datos = $this->_model->selecciona_filtro();
-        
         $this->_view->titulo = 'Actualizar Vigencia';
         $this->_view->action = BASE_URL . 'vigencia/editar/'.$id;
         

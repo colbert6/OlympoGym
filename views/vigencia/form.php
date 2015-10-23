@@ -13,12 +13,12 @@
     <div class="col-md-11" style="color:#000">
     <form class="form-horizontal" role="form" id="form_perfil" method="post" action="<?php echo $this->action; ?>">
         <input name="guardar" id="guardar" type="hidden" value="1">
-      <?php if(isset ($this->datos[0][0])) {?>  
+      <?php if(isset ($this->datos[0]['ID_VIGENCIA'])) {?>  
       <div class="form-group">
         <label class="control-label col-sm-3" >IDENTIFICADOR:</label>
         <div class="col-sm-9">
             <input name="id_vigencia" id="id_vigencia" class="form-control"  readonly="readonly"
-                   value="<?php echo $this->datos[0][0];?>">
+                   value="<?php echo $this->datos[0]['ID_VIGENCIA'];?>">
         </div>
       </div>  
       <?php } ?>  
@@ -26,21 +26,21 @@
         <label class="control-label col-sm-3" >DESCRIPCION:</label>
         <div class="col-sm-9">
           <input name="descripcion" id="descripcion" class="form-control"  placeholder="Descripcion"
-                value="<?php if(isset ($this->datos[0][1]))echo $this->datos[0][1]?>">
+                value="<?php if(isset ($this->datos[0]['DESCRIPCION']))echo $this->datos[0]['DESCRIPCION']?>">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-3" >DURACION:</label>
         <div class="col-sm-9">
           <input name="duracion" id="duracion" class="form-control"  placeholder="Duracion"
-                value="<?php if(isset ($this->datos[0][2]))echo $this->datos[0][2]?>">
+                value="<?php if(isset ($this->datos[0]['DURACION']))echo $this->datos[0]['DURACION']?>">
         </div>
       </div>
       <div class="form-group">
         <label class="control-label col-sm-3" >UNIDAD DE TIEMPO:</label>
         <div class="col-sm-9">
           <input name="unidad_tiempo" id="unidad_tiempo" class="form-control"  placeholder="Unidad de Tiempo"
-                value="<?php if(isset ($this->datos[0][3]))echo $this->datos[0][3]?>">
+                value="<?php if(isset ($this->datos[0]['UNIDAD_TIEMPO']))echo $this->datos[0]['UNIDAD_TIEMPO']?>">
         </div>
       </div>
          

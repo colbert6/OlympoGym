@@ -59,16 +59,29 @@ class socioModel extends Main{
         if (is_null($this->id_socio)) {
             $this->id_socio = 0;
         }
+        if (is_null($this->id_tipo_socio)) {
+            $this->id_tipo_socio = 0;
+        }
+        if (is_null($this->aliass)) {
+            $this->aliass = 'nulo';
+        }
+        if (is_null($this->dni)) {
+            $this->dni = 'nulo';
+        }
         if (is_null($this->nombre)) {
             $this->nombre = 'nulo';
         }
-        if (is_null($this->url)) {
-            $this->url = 'nulo';
+        if (is_null($this->apellido_paterno)) {
+            $this->apellido_paterno = 'nulo';
+        }
+        if (is_null($this->apellido_materno)) {
+            $this->apellido_materno = 'nulo';
         }
          
-        $datos = array($this->id_modulo,$this->nombre,$this->url);
+        $datos = array($this->id_socio,$this->id_tipo_socio,$this->aliass,$this->dni,
+                        $this->nombre,$this->apellido_paterno,$this->apellido_materno);
         
-        $r = $this->get_consulta("pa_m2_modulo",$datos);
+        $r = $this->get_consulta("pa_m2_socio",$datos);
         if ($r[1] == '') {
             $stmt = $r[0];
         } else {
@@ -83,7 +96,7 @@ class socioModel extends Main{
             
             return $stmt->fetchall();
         }
-        //return $resultado;
+        
         
     }
     

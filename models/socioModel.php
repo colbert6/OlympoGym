@@ -166,7 +166,7 @@ class socioModel extends Main{
                        $this->grado_estudio,
                        $this->ingresos);
 
-        
+       
         $r = $this->get_consulta("pa_u_socio", $datos);
         $error = $r[1];
         $r = null;

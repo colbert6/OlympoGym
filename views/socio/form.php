@@ -1,10 +1,9 @@
 
 <!--MODULO--> 
 <?php 
-  
+
     if($this->isReadOnly){
         $bloqueo = "readonly='readonly'";
-        echo "Model";
     }else{
         $bloqueo = "";
     }
@@ -78,7 +77,7 @@
            <select <?php echo $bloqueo;?> class="form-control glyphicon" name='id_tipo_socio' id='padre'>
                <option value='' >Selecciona...</option>
                <?php for($i=0;$i<count($this->tipo_socio);$i++){ ?> 
-                <?php if( $this->datos[0]['ID_TIPO_SOCIO']==$this->tipo_socio[$i]['ID_TIPO_SOCIO']){?>
+                <?php if( strcmp($this->datos[0]['ID_TIPO_SOCIO'], $this->tipo_socio[$i]['ID_TIPO_SOCIO']) == 0){?>
                      <option selected value="<?php echo $this->tipo_socio[$i]['ID_TIPO_SOCIO'];?>"><?php echo $this->tipo_socio[$i]['DESCRIPCION']?></option>
                 <?php }else{?>
                      <option value="<?php echo $this->tipo_socio[$i]['ID_TIPO_SOCIO'];?>"><?php echo $this->tipo_socio[$i]['DESCRIPCION']?></option>
@@ -94,7 +93,7 @@
           <select <?php echo $bloqueo;?> class="form-control glyphicon" name='id_ubigeo' id='id_ubigeo'>
                <option value='' >Selecciona...</option>
                <?php for($i=0;$i<count($this->ubigeo);$i++){ ?> 
-                <?php if( $this->datos[0]['ID_UBIGEO']==$this->ubigeo[$i]['ID_UBIGEO']){?>
+                <?php if(strcmp($this->datos[0]['ID_UBIGEO'], $this->ubigeo[$i]['ID_UBIGEO']) == 0){?>
                      <option selected value="<?php echo $this->ubigeo[$i]['ID_UBIGEO'];?>"><?php echo $this->ubigeo[$i]['DEPARTAMENTO'].", ".$this->ubigeo[$i]['PROVINCIA'].", ".$this->ubigeo[$i]['DISTRITO']?></option>
                 <?php }else{?>
                      <option value="<?php echo $this->ubigeo[$i]['ID_UBIGEO'];?>"><?php echo $this->ubigeo[$i]['DEPARTAMENTO'].", ".$this->ubigeo[$i]['PROVINCIA'].", ".$this->ubigeo[$i]['DISTRITO']?></option>
@@ -150,23 +149,16 @@
         <label class="control-label col-sm-3" for="sexo" >SEXO:</label>
         <div class="col-sm-9">
           <select <?php echo $bloqueo;?> class="form-control glyphicon" name='sexo' id='sexo'>
-              <?php if(isset ($this->datos[0]['SEXO'])){?>
-              <?php     for ($i=0; $i <2 ; $i++) { 
-                           if($this->datos[0]['SEXO'] == 1){
-                              echo "<option selected value='1' >Masculino</option>";       
-                           }else{
-                              echo "<option value='1' >Masculino</option>";
-                           }
-                           if($this->datos[0]['SEXO'] == 0){
-                              echo "<option selected value='0' >Femenino</option>";
-                           }else{
-                              echo "<option value='0' >Femenino</option>";
-                           }
-                        }?>
-              <?php }else{?>
-                       <option value='' >Selecciona...</option>
-                       <option value='1' >Masculino</option>
-                       <option value='0' >Femenino</option>
+            <option value='' >Selecciona...</option>
+
+              <?php 
+               $sexo = array("femenino","masculino");
+                for($i=0;$i<count($sexo);$i++){  ?> 
+                <?php if(strcmp($this->datos[0]['SEXO'], $i) == 0 ){?>
+                     <option selected value="<?php echo $i;?>"><?php echo strtoupper($sexo[$i]);?></option>
+                <?php }else{?>
+                     <option value="<?php echo $i;?>"><?php echo strtoupper($sexo[$i]);?></option>
+                <?php } ?>
                <?php } ?>
           </select>
         </div>
@@ -177,35 +169,16 @@
         <div class="col-sm-9">
           <select <?php echo $bloqueo;?> class="form-control glyphicon" name='estado_civil' id='estado_civil'>
                <option value='' >Selecciona...</option>
-               <?php if(isset($this->datos[0]['ESTADO_CIVIL'])){?>
-               <?php      for ($i=0; $i < 4 ; $i++) { 
-                              if(strcmp($this->datos[0]['ESTADO_CIVIL'], 'soltero') == 0){
-                                  echo "<option selected value='soltero' >Soltero</option>";
-                              }else{
-                                  echo "<option value='soltero' >Soltero</option>";
-                              }
-                              if(strcmp($this->datos[0]['ESTADO_CIVIL'], 'casado') == 0){
-                                  echo "<option selected value='casado' >Casado</option>";
-                              }else{
-                                  echo "<option value='casado' >Casado</option>";
-                              }
-                              if(strcmp($this->datos[0]['ESTADO_CIVIL'], 'divorciado') == 0){
-                                  echo "<option selected value='divorciado' >Divorciado</option>";
-                              }else{
-                                  echo "<option value='divorciado' >Divorciado</option>";
-                              }
-                              if(strcmp($this->datos[0]['ESTADO_CIVIL'], 'viudo') == 0){
-                                  echo "<option selected value='viudo' >Viudo</option>";
-                              }else{
-                                  echo "<option value='viudo' >Viudo</option>";
-                              }
-                          }?>
+               <?php 
+               $estado_civil = array('soltero','casado','divorciado','viudo');
+                for($i=0;$i<count($estado_civil);$i++){ ?> 
+                <?php if(strcmp($this->datos[0]['ESTADO_CIVIL'], $estado_civil[$i])==0){?>
+                     <option selected value="<?php echo $estado_civil[$i];?>"><?php echo strtoupper($estado_civil[$i]);?></option>
                 <?php }else{?>
-               <option value='soltero' >Soltero</option>
-               <option value='casado' >Casado</option>
-               <option value='divorciado' >Divorciado</option>
-               <option value='viudo' >Viudo</option>
-               <?php }?>
+                     <option value="<?php echo $estado_civil[$i];?>"><?php echo strtoupper($estado_civil[$i]);;?></option>
+                <?php } ?>
+               <?php } ?>
+              
           </select>
         </div>
       </div>

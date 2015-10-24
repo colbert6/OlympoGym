@@ -146,11 +146,11 @@ class socioController extends controller{
 
     public function eliminar($id) {
         if (!$this->filtrarInt($id)) {
-            $this->redireccionar('ambiente');
+            $this->redireccionar('socio');
         }
-        $this->_socio->id_ambiente = $this->filtrarInt($id);
+        $this->_socio->id_socio = $this->filtrarInt($id);
         $this->_socio->elimina();
-        $this->redireccionar('ambiente');
+        $this->redireccionar('socio');
     }
     
 }

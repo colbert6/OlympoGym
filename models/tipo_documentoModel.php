@@ -6,10 +6,20 @@ class tipo_documentoModel extends Main{
     public $descripcion;
     
     public function selecciona() {
-        $sql="SELECT `id_tipo_documento`, `descripcion` "
-            . "FROM `tipo_documento` WHERE estado=1";
-        $r = $this->consulta_simple($sql);
-        return $r;
+        $r = $this->get_consulta("pa_m1_tido",null);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
         
     }
     public function selecciona_filtro() {
@@ -17,15 +27,24 @@ class tipo_documentoModel extends Main{
             $this->id_tipo_documento = 0;
         }
         if (is_null($this->descripcion)) {
-            $this->descripcion = '';
+            $this->descripcion = 'nulo';
         }
-        $sql="SELECT `id_tipo_documento`, `descripcion` "
-            . "FROM `tipo_documento` "
-            . "WHERE ( id_tipo_documento=".$this->id_tipo_documento." or descripcion='".$this->descripcion."' ) "
-            . "and estado='1'";
+        $datos = array($this->id_tipo_documento,$this->descripcion);
         
-        $r = $this->consulta_simple($sql);
-        return $r;
+        $r = $this->get_consulta("pa_m2_tido",$datos);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
       
     }
     

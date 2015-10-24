@@ -54,7 +54,7 @@ class perfilController extends controller{
             $this->redireccionar('perfil');
         }
         $this->_model->id_perfil_usuario = $this->filtrarInt($id);
-        $this->_view->datos = $this->_perfil->selecciona_filtro();
+        $this->_view->datos = $this->_model->selecciona_filtro();
         
         $this->_view->titulo = 'Actualizar Perfil';
         $this->_view->action = BASE_URL . 'perfil/editar/'.$id;

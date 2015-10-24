@@ -1,12 +1,15 @@
 <?php
 
-class tipo_socioModel extends Main{
+class turnoModel extends Main{
 
-    public $id_tipo_socio;
+    public $id_turno;
     public $descripcion;
+    public $hora_entrada;
+    public $hora_salida;
     
     public function selecciona() {
-        $r = $this->get_consulta("pa_m1_tiso",null);
+      
+        $r = $this->get_consulta("pa_m1_turno",null);
         if ($r[1] == '') {
             $stmt = $r[0];
         } else {
@@ -20,19 +23,26 @@ class tipo_socioModel extends Main{
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             return $stmt->fetchall();
         }
-        
+        //return $resultado;
+       
     }
     public function selecciona_filtro() {
-        if (is_null($this->id_tipo_socio)) {
-            $this->id_tipo_socio = 0;
+        if (is_null($this->id_turno)) {
+            $this->id_turno = 0;
         }
         if (is_null($this->descripcion)) {
-            $this->descripcion = 'SIN DESCRIPCION';
+            $this->scripcion = 'nulo';
         }
+        if (is_null($this->hora_entrada)) {
+            $this->hora_entrada = 'nulo';
+        }
+        if (is_null($this->hora_salida)) {
+            $this->hora_salida = 'nulo';
+        } 
 
-        $datos = array($this->id_tipo_socio,$this->descripcion);
+        $datos = array($this->id_turno,$this->descripcion,$this->hora_entrada,$this->hora_salida);
         
-        $r = $this->get_consulta("pa_m2_tiso",$datos);
+        $r = $this->get_consulta("pa_m2_turno",$datos);
         if ($r[1] == '') {
             $stmt = $r[0];
         } else {
@@ -47,12 +57,14 @@ class tipo_socioModel extends Main{
             
             return $stmt->fetchall();
         }
-      
+        //return $resultado;
+        
     }
     
     public function inserta() {
-        $datos = array($this->descripcion);
-        $r = $this->get_consulta("pa_i_tiso", $datos);
+        $datos = array($this->descripcion,$this->hora_entrada, 
+            $this->hora_salida);
+        $r = $this->get_consulta("pa_i_turno", $datos);
         $error = $r[1];
         $r = null;
         return $error;
@@ -60,8 +72,10 @@ class tipo_socioModel extends Main{
 
     public function editar() {
        
-        $datos = array($this->id_tipo_socio,$this->descripcion);
-        $r = $this->get_consulta("pa_u_tiso", $datos);
+        $datos = array($this->id_turno,$this->descripcion,
+            $this->hora_entrada,$this->hora_salida);
+        
+        $r = $this->get_consulta("pa_u_turno", $datos);
         $error = $r[1];
         $r = null;
         return $error;
@@ -70,10 +84,9 @@ class tipo_socioModel extends Main{
     
 
     public function elimina() {
-        $datos = array($this->id_tipo_socio);
-        $r = $this->get_consulta("pa_d_tiso", $datos);
+        $datos = array($this->id_turno);
+        $r = $this->get_consulta("pa_d_turno", $datos);
         $error = $r[1];
-        
         $r = null;
         return $error;
     }
@@ -82,5 +95,3 @@ class tipo_socioModel extends Main{
 }
 
 ?>
-
-

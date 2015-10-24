@@ -35,6 +35,9 @@
                 <td><?php echo $this->datos[$i]['DNI']//orden ?></td>
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
+                        <a class="btn btn-default" href="<?php echo BASE_URL."socio/vermas/".$this->datos[$i]['ID_SOCIO']?>">
+                            <i class="fa fa-eye fa-fw"></i> Ver Mas
+                        </a>
                         <a class="btn btn-success" href="<?php echo BASE_URL."socio/editar/".$this->datos[$i]['ID_SOCIO']?>">
                             <i class="fa fa-pencil fa-fw"></i> Editar
                         </a>

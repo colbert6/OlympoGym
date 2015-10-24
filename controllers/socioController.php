@@ -47,7 +47,6 @@ class socioController extends controller{
             $this->_socio->sexo = $_POST['sexo'];
             $this->_socio->estado_civil = $_POST['estado_civil'];
             $this->_socio->ocupacion = $_POST['ocupacion'];
-            $this->_socio->estado = $_POST['estado'];
             $this->_socio->grupo_sanguineo = $_POST['grupo_sanguineo'];
             $this->_socio->hobby = $_POST['hobby'];
             $this->_socio->nacionalidad = $_POST['nacionalidad'];
@@ -60,9 +59,7 @@ class socioController extends controller{
             $this->_socio->sector = $_POST['sector'];
             $this->_socio->grado_estudio = $_POST['grado_estudio'];
             $this->_socio->ingresos = $_POST['ingresos'];
-            $this->_socio->usuario = $_POST['usuario'];
-            $this->_socio->clave = $_POST['clave'];
-            $this->_socio->perfil_usuario = $_POST['id_perfil_usuario'];
+            
             
             $this->_socio->inserta();
             $this->redireccionar('socio');
@@ -73,7 +70,11 @@ class socioController extends controller{
         //$this->_view->setJs(array('funciones_form'));
         $this->_view->renderizar('form',$this->_id_padre,$this->_id_hijo);
     }
- 
+    public function vermas($id){
+        if (!$this->filtrarInt($id)) {
+            $this->redireccionar('cat_empleado');
+        }
+    }
     public function editar($id) {
         if (!$this->filtrarInt($id)) {
             $this->redireccionar('cat_empleado');

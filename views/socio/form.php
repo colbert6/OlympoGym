@@ -40,7 +40,7 @@
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-3" for="apellido_materno" >APELLIDO PATERNO:</label>
+        <label class="control-label col-sm-3" for="apellido_materno" >APELLIDO MATERNO:</label>
         <div class="col-sm-9">
           <input name="apellido_materno" id="apellido_materno" class="form-control"  placeholder="Apellido Materno" 
                 value="<?php if(isset ($this->datos[0]['APELLIDO_MATERNO']))echo $this->datos[0]['APELLIDO_MATERNO']?>">
@@ -66,7 +66,7 @@
       <div class="form-group">
         <label class="control-label col-sm-3" >TIPO SOCIO:</label>
         <div class="col-sm-9"> 
-           <select class="form-control glyphicon" name='tipo_socio' id='padre'>
+           <select class="form-control glyphicon" name='id_tipo_socio' id='padre'>
                <option value='' >Selecciona...</option>
                <?php for($i=0;$i<count($this->tipo_socio);$i++){ ?> 
                 <?php if( $this->datos[0]['TIPO_SOCIO']==$this->tipo_socio[$i]['DESCRIPCION']){?>
@@ -75,6 +75,17 @@
                      <option value="<?php echo $this->tipo_socio[$i]['ID_TIPO_SOCIO'];?>"><?php echo $this->tipo_socio[$i]['DESCRIPCION']?></option>
                 <?php } ?>
                <?php } ?>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-sm-3" for="id_ubigeo" >UBIGEO:</label>
+        <div class="col-sm-9">
+          <select class="form-control glyphicon" name='id_ubigeo' id='id_ubigeo'>
+               <option value='' >Selecciona...</option>
+                <option value='1' >OTRO</option>
+                <option value='1' >OTRO1</option>
           </select>
         </div>
       </div>
@@ -110,6 +121,8 @@
                 value="<?php if(isset ($this->datos[0]['DIRECCION'])) echo $this->datos[0]['DIRECCION']?>">
         </div>
       </div>
+
+      
 
       <div class="form-group">
         <label class="control-label col-sm-3" for="fecha_nacimiento" >FECHA NACIMIENTO:</label>
@@ -283,7 +296,7 @@
       <div class="form-group">
         <label class="control-label col-sm-3" for="ingreso" >INGRESO:</label>
         <div class="col-sm-9">
-          <input name="ingreso" id="ingreso" class="form-control"  type="text" placeholder="Ingreso" 
+          <input name="ingresos" id="ingreso" class="form-control"  type="text" placeholder="Ingreso" 
                 value="<?php if(isset ($this->datos[0]['INGRESO'])) echo $this->datos[0]['INGRESO']?>">
         </div>
       </div>

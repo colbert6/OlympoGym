@@ -31,9 +31,7 @@ class socioModel extends Main{
     public $sector; //q
     public $grado_estudio;
     public $ingresos;
-    public $usuario;
-    public $clave;
-    public $id_perfil_usuario;
+
 
     
     public function selecciona() {
@@ -101,9 +99,37 @@ class socioModel extends Main{
     }
     
     public function inserta() {
-        $datos = array($this->nombre, $this->url, $this->orden,
-        $this->id_padre,$this->modulo_padre,$this->icono);
+        $datos = array($this->id_tipo_socio,
+                       $this->id_ubigeo,
+                       $this->dni,
+                       $this->aliass,
+                       $this->nombre,
+                       $this->apellido_paterno,
+                       $this->apellido_materno,
+                       $this->email,
+                       $this->telefono,
+                       $this->celular,
+                       $this->direccion,
+                       $this->fecha_nacimiento,
+                       $this->sexo,
+                       $this->estado_civil,
+                       $this->ocupacion,
+                       $this->grupo_sanguineo,
+                       $this->hobby,
+                       $this->nacionalidad,
+                       $this->seguro_medico,
+                       $this->observacion,
+                       $this->antecedente_medico,
+                       $this->codigo_postal,
+                       $this->fax,
+                       $this->numero_hijo,
+                       $this->sector,
+                       $this->grado_estudio,
+                       $this->ingresos);
+
+        
         $r = $this->get_consulta("pa_i_socio", $datos);
+        
         $error = $r[1];
         $r = null;
         return $error;

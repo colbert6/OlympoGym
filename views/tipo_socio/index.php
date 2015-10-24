@@ -26,6 +26,7 @@
                 
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
+                        
                         <a class="btn btn-success" href="<?php echo BASE_URL."tipo_socio/editar/".$this->datos[$i]['ID_TIPO_SOCIO']?>">
                             <i class="fa fa-pencil fa-fw"></i> Editar
                         </a>

@@ -137,8 +137,35 @@ class socioModel extends Main{
 
     public function editar() {
        
-        $datos = array($this->id_modulo, $this->nombre, $this->url,$this->orden, 
-            $this->id_padre,$this->modulo_padre,$this->icono);
+        $datos = array($this->id_socio,
+                       $this->id_tipo_socio,
+                       $this->id_ubigeo,
+                       $this->dni,
+                       $this->aliass,
+                       $this->nombre,
+                       $this->apellido_paterno,
+                       $this->apellido_materno,
+                       $this->email,
+                       $this->telefono,
+                       $this->celular,
+                       $this->direccion,
+                       $this->fecha_nacimiento,
+                       $this->sexo,
+                       $this->estado_civil,
+                       $this->ocupacion,
+                       $this->grupo_sanguineo,
+                       $this->hobby,
+                       $this->nacionalidad,
+                       $this->seguro_medico,
+                       $this->observacion,
+                       $this->antecedente_medico,
+                       $this->codigo_postal,
+                       $this->fax,
+                       $this->numero_hijo,
+                       $this->sector,
+                       $this->grado_estudio,
+                       $this->ingresos);
+
         
         $r = $this->get_consulta("pa_u_socio", $datos);
         $error = $r[1];
@@ -149,7 +176,7 @@ class socioModel extends Main{
     
 
     public function elimina() {
-        $datos = array($this->id_modulo);
+        $datos = array($this->id_socio);
         $r = $this->get_consulta("pa_d_socio", $datos);
         $error = $r[1];
         $r = null;

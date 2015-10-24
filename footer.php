@@ -16,7 +16,8 @@
 
         <?php } ?>
     <?php } ?>
-                    
+    
+    <script src="<?php echo $_systemParams['ruta_js']; ?>validaciones.js"></script>                
     <script src="<?php echo $_systemParams['ruta_js']; ?>bootstrap.min.js"></script>
     <script class="include" type="text/javascript" src="<?php echo $_systemParams['ruta_js']; ?>jquery.dcjqaccordion.2.7.js"></script>
     <script src="<?php echo $_systemParams['ruta_js']; ?>jquery.scrollTo.min.js"></script>

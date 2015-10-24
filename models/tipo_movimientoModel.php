@@ -6,10 +6,20 @@ class tipo_movimientoModel extends Main{
     public $descripcion;
     
     public function selecciona() {
-        $sql="SELECT `id_tipo_movimiento`, `descripcion` "
-            . "FROM `tipo_movimiento` WHERE estado=1";
-        $r = $this->consulta_simple($sql);
-        return $r;
+        $r = $this->get_consulta("pa_m1_timo",null);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
         
     }
     public function selecciona_filtro() {
@@ -17,15 +27,24 @@ class tipo_movimientoModel extends Main{
             $this->id_tipo_movimiento = 0;
         }
         if (is_null($this->descripcion)) {
-            $this->descripcion = '';
+            $this->descripcion = 'nulo';
         }
-        $sql="SELECT `id_tipo_movimiento`, `descripcion` "
-            . "FROM `tipo_movimiento` "
-            . "WHERE ( id_tipo_movimiento=".$this->id_tipo_movimiento." or descripcion='".$this->descripcion."' ) "
-            . "and estado='1'";
         
-        $r = $this->consulta_simple($sql);
-        return $r;
+        $datos=array($this->id_tipo_movimiento,$this->descripcion);
+        $r = $this->get_consulta("pa_m2_timo",$datos);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'OCI') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
       
     }
     

@@ -23,21 +23,17 @@
          <tbody>
             <?php for ($i = 0; $i < count($this->datos); $i++) { ?>
             <tr>
-                <td><?php echo $this->datos[$i][0]//id ?></td>
-                <td><?php echo $this->datos[$i][1]//nombre ?></td>
-                <td><?php echo $this->datos[$i][2]//nombre ?></td>
-                <td><?php echo $this->datos[$i][3]//nombre ?></td>
-                <!--td><?php /*if($this->datos[$i][2]=='1'){
-                    echo 'Activo';
-                } else{
-                    echo 'Inactivo';
-                } */?></td-->
+                <td><?php echo $this->datos[$i]['ID_UBIGEO']//id ?></td>
+                <td><?php echo $this->datos[$i]['DEPARTAMENTO']//nombre ?></td>
+                <td><?php echo $this->datos[$i]['PROVINCIA']//nombre ?></td>
+                <td><?php echo $this->datos[$i]['DISTRITO']//nombre ?></td>
+               
                 <td>
                     <div class="btn-group" role="group" aria-label="...">
-                        <a class="btn btn-success" href="<?php echo BASE_URL."ubigeo/editar/".$this->datos[$i][0]?>">
+                        <a class="btn btn-success" href="javascript:void(0)" onclick="editar('<?php echo BASE_URL."ubigeo/editar/".$this->datos[$i][0]?>')">
                             <i class="fa fa-pencil fa-fw"></i> Editar
                         </a>
-                        <a class="btn btn-danger" href="<?php echo BASE_URL."ubigeo/eliminar/".$this->datos[$i][0]?>">
+                        <a class="btn btn-danger" href="javascript:void(0)" onclick="eliminar('<?php echo BASE_URL."ubigeo/eliminar/".$this->datos[$i][0]?>')">
                             <i class="fa fa-trash-o fa-lg"></i> Borrar
                         </a>
                     </div>

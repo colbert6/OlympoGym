@@ -38,15 +38,18 @@
                 <!--td><?php //echo "<i class='".$this->datos[$i]['ICONO']."'>" ?></td-->
                 <td><?php echo $this->datos[$i]['MODULO_PADRE']; ?></td>
                 <td>
+                    
                     <div class="btn-group" role="group" aria-label="...">
-                        <a class="btn btn-success" href="<?php echo BASE_URL."modulo/editar/".$this->datos[$i]['ID_MODULO']?>">
-                            <i class="fa fa-pencil fa-fw"></i> Editar
+                        <a class="btn btn-success" href="javascript:void(0)" onclick="editar('<?php echo BASE_URL."modulo/editar/".$this->datos[$i]['ID_MODULO']?>')">
+                           <i class="fa fa-pencil fa-fw"></i> Editar
                         </a>
-                        <a class="btn btn-danger" href="<?php echo BASE_URL."modulo/eliminar/".$this->datos[$i]['ID_MODULO']?>">
-                            <i class="fa fa-trash-o fa-lg"></i> Borrar
+                        <a class="btn btn-danger" href="javascript:void(0)" onclick="eliminar('<?php echo BASE_URL."modulo/eliminar/".$this->datos[$i]['ID_MODULO']?>')">
+                           <i class="fa fa-trash-o fa-lg"></i> Borrar
                         </a>
                     </div>
                 </td>
+                
+                
             </tr>
         <?php } ?>
         </tbody>

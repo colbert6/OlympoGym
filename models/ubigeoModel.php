@@ -8,8 +8,21 @@ class ubigeoModel extends Main{
     public $distrito;
     
     public function selecciona() {
-        $sql="SELECT `id_ubigeo`, `departamento`, `provincia`, `distrito` "
-            . "FROM `ubigeo` WHERE 1";
+        $r = $this->get_consulta("pa_m1_ubigeo",null);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'oci') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
+        //return $resultado;
         $r = $this->consulta_simple($sql);
         return $r;
         
@@ -27,12 +40,21 @@ class ubigeoModel extends Main{
         if (is_null($this->distrito)) {
             $this->distrito = '';
         }
-        $sql="SELECT `id_ubigeo`, `departamento`, `provincia`, `distrito` "
-            . "FROM `ubigeo` "
-            . "WHERE ( id_ubigeo=".$this->id_ubigeo." or departamento='".$this->departamento."' "
-                . "or provincia='".$this->provincia."' or distrito='".$this->distrito."' ) "
-            . "and estado='1'";
-        
+        $r = $this->get_consulta("pa_m1_vigencia",null);
+        if ($r[1] == '') {
+            $stmt = $r[0];
+        } else {
+            die($r[1]);
+        }
+        $r = null;
+        if (BaseDatos::$_servidor == 'oci') {
+            oci_fetch_all($stmt, $data, null, null, OCI_FETCHSTATEMENT_BY_ROW);
+            return $data;
+        } else {
+            $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            return $stmt->fetchall();
+        }
+        //return $resultado;
         $r = $this->consulta_simple($sql);
         return $r;
       

@@ -1,14 +1,15 @@
 <?php
 
-class perfilModel extends Main{
+class turnoModel extends Main{
 
-    public $id_perfil_usuario;
+    public $id_turno;
     public $descripcion;
-    public $nivel;
-    public $estado;
+    public $hora_entrada;
+    public $hora_salida;
     
     public function selecciona() {
-       $r = $this->get_consulta("pa_m1_peus",null);
+      
+        $r = $this->get_consulta("pa_m1_turno",null);
         if ($r[1] == '') {
             $stmt = $r[0];
         } else {
@@ -22,17 +23,26 @@ class perfilModel extends Main{
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
             return $stmt->fetchall();
         }
-        
+        //return $resultado;
+       
     }
     public function selecciona_filtro() {
-        if (is_null($this->id_perfil_usuario)) {
-            $this->id_perfil_usuario = 0;
+        if (is_null($this->id_turno)) {
+            $this->id_turno = 0;
         }
         if (is_null($this->descripcion)) {
-            $this->descripcion = 'nulo';
+            $this->scripcion = 'nulo';
         }
-        $datos=array($this->id_perfil_usuario,$this->descripcion);
-        $r = $this->get_consulta("pa_m2_peus",$datos);
+        if (is_null($this->hora_entrada)) {
+            $this->hora_entrada = 'nulo';
+        }
+        if (is_null($this->hora_salida)) {
+            $this->hora_salida = 'nulo';
+        } 
+
+        $datos = array($this->id_turno,$this->descripcion,$this->hora_entrada,$this->hora_salida);
+        
+        $r = $this->get_consulta("pa_m2_turno",$datos);
         if ($r[1] == '') {
             $stmt = $r[0];
         } else {
@@ -44,14 +54,17 @@ class perfilModel extends Main{
             return $data;
         } else {
             $stmt->setFetchMode(PDO::FETCH_ASSOC);
+            
             return $stmt->fetchall();
         }
-      
+        //return $resultado;
+        
     }
     
     public function inserta() {
-        $datos = array($this->descripcion, $this->nivel);
-        $r = $this->get_consulta("pa_i_peus", $datos);
+        $datos = array($this->descripcion,$this->hora_entrada, 
+            $this->hora_salida);
+        $r = $this->get_consulta("pa_i_turno", $datos);
         $error = $r[1];
         $r = null;
         return $error;
@@ -59,9 +72,10 @@ class perfilModel extends Main{
 
     public function editar() {
        
-        $datos = array($this->id_perfil_usuario,$this->descripcion, $this->nivel);
+        $datos = array($this->id_turno,$this->descripcion,
+            $this->hora_entrada,$this->hora_salida);
         
-        $r = $this->get_consulta("pa_u_peus", $datos);
+        $r = $this->get_consulta("pa_u_turno", $datos);
         $error = $r[1];
         $r = null;
         return $error;
@@ -70,8 +84,8 @@ class perfilModel extends Main{
     
 
     public function elimina() {
-        $datos = array($this->idmodulo);
-        $r = $this->get_consulta("pa_d_peus", $datos);
+        $datos = array($this->id_turno);
+        $r = $this->get_consulta("pa_d_turno", $datos);
         $error = $r[1];
         $r = null;
         return $error;

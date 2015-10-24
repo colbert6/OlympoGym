@@ -65,8 +65,11 @@ class socioController extends controller{
             $this->_socio->inserta();
             $this->redireccionar('socio');
         }
+        $this->_view->isReadOnly = false;
         $this->_view->tipo_socio = $this->_tipo_socio->selecciona();
+        $this->_view->ubigeo = $this->_ubigeo->selecciona();
         $this->_view->titulo = 'Registrar Socio';
+
         $this->_view->action = BASE_URL . 'socio/nuevo';
         //$this->_view->setJs(array('funciones_form'));
         $this->_view->renderizar('form',$this->_id_padre,$this->_id_hijo);

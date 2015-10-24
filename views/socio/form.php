@@ -1,8 +1,10 @@
 
 <!--MODULO--> 
 <?php 
+  
     if($this->isReadOnly){
         $bloqueo = "readonly='readonly'";
+        echo "Model";
     }else{
         $bloqueo = "";
     }

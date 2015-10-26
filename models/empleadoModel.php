@@ -56,16 +56,16 @@ class empleadoModel extends Main{
             $this->id_empleado=0;
         }
         if(is_null($this->nombre)){
-            $this->nombre='';
+            $this->nombre='nulo';
         }
         if(is_null($this->apellido_paterno)){
-            $this->apellido_paterno='';
+            $this->apellido_paterno='nulo';
         }
         if(is_null($this->apellido_materno)){
-            $this->apellido_materno='';
+            $this->apellido_materno='nulo';
         }
         if(is_null($this->dni)){
-            $this->dni='';
+            $this->dni='nulo';
         }
         $datos = array($this->id_empleado,$this->nombre,$this->apellido_paterno,$this->apellido_materno,$this->dni);
         
@@ -104,7 +104,9 @@ class empleadoModel extends Main{
             $this->hobby,$this->aliass,$this->nacionalidad,$this->seguro_medico,$this->observacion,
             $this->antecedente_medico,$this->codigo_postal,$this->numero_hijo, $this->sector,
             $this->grado_estudio,$this->tipo_vivienda,$this->anio_contratacion, $this->usuario,$this->clave,$this->id_perfil_usuario);
+        
         $r = $this->get_consulta("pa_u_empleado", $datos);
+        print_r( $r);exit;
         $error = $r[1];
         $r = null;
         return $error;
